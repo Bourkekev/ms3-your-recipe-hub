@@ -4,6 +4,7 @@
 ## UX
 
 I wanted ...
+ - [x] To do something
 
 ### User Stories
 
@@ -41,7 +42,11 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 
 ### Surface
 
+### Database Schema
 
+Based on the functionality required and the data to be stored, I created my database structure.
+
+![Schema](static/design/recipe-app-DB-diagram.png)
 
 ## Technologies Used
 
