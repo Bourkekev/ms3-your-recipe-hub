@@ -2,4 +2,10 @@
 
 {% block content %}
     <h1>Home Page</h1>
+    {% for recipe in recipes %}
+       {{recipe.title}}
+       {{recipe.category_name}}
+       {{recipe.short_description}}
+   {% endfor %}
+
 {% endblock %}
