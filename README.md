@@ -46,7 +46,7 @@ This formed the basis of my wireframes, which were created in Balsamiq:
 
 Based on the functionality required and the data to be stored, I created my database structure.
 
-![Schema](static/design/recipe-app-DB-diagram.png)
+![Schema](README_resources/recipe-app-DB-diagram.png)
 
 ## Technologies Used
 
