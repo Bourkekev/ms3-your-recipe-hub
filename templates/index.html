@@ -3,9 +3,9 @@
 {% block content %}
     <h1>Home Page</h1>
     {% for recipe in recipes %}
-       {{recipe.title}}
-       {{recipe.category_name}}
-       {{recipe.short_description}}
+       <h2>{{recipe.title}}</h2>
+       <p>{{recipe.category_name}}</p>
+       <p>{{recipe.short_description}}</p>
    {% endfor %}
 
 {% endblock %}
