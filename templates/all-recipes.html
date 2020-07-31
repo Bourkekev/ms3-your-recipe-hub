@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Home Page</h1>
+    <h1>All Recipes</h1>
     {% for recipe in recipes %}
        <h2>{{recipe.title}}</h2>
        <p>{{recipe.category_name}} - {{recipe.course_name}}</p>
