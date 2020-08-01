@@ -33,7 +33,9 @@ This section determines what the users should be able to do on the website. User
 
 ### Structure
 
+To list the pages I needed and to visialise the site structure, I designed my visual sitemap in Gloomap. In the sitemap below, the pages marked in green represent site User (logged in) pages:
 
+![Sitemap](README_resources/gloomap-sitemap.png)
 
 ### Skeleton
 
@@ -71,6 +73,7 @@ Based on the functionality required and the data to be stored, I created my data
 6. [TinyPNG](https://tinypng.com/) - To keep transparent png sizes to a minimum I used the online png compressing service [TinyPNG](https://tinypng.com/), as well as the desktop application.
 7. [Coolor](https://coolors.co/) - Used top help determine the colour scheme.
 8. [The Padwan Project](https://github.com/Eventyret/Padawan) - While I did not use this tool to generate my project's starting point as I started with [Code Institute's Full template](https://github.com/Code-Institute-Org/gitpod-full-template), I did use it as a reference.
+9. [Gloomaps](https://www.gloomaps.com/) - For creating my sitemap.
 
 
 ## Features
