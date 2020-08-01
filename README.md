@@ -1,5 +1,6 @@
 # Milestone 3 - Your Recipe Hub - by Kevin Bourke
 
+This project is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. There many sites in existence that have this kind of functionailty already, such as Kitchen Stories and Allrecipes.
 
 ## UX
 
