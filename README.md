@@ -50,7 +50,7 @@ I sketched up some very rough ideas on paper and then designed the final wirefra
 
 ### Database Schema
 
-Based on the functionality required and the data to be stored, I created my database structure.
+Based on the functionality required and the data to be stored, I created my database structure. The Recipe and Categories documents (or tables) would have fields of the same name, so a recipe can be saved to a course type and a category.
 
 ![Schema](README_resources/recipe-app-DB-diagram.png)
 
