@@ -4,8 +4,9 @@ This project is a recipe website where users can search for recipes via text sea
 
 ## UX
 
-I wanted ...
- - [x] To do something
+I wanted the site to have 2 main features.
+ - [x] Users should be able to browse or search the site for recipes.
+ - [x] If they would like, users should be able to upload their own recipes.
 
 ### User Stories
 
