@@ -37,10 +37,14 @@ To list the pages I needed and to visialise the site structure, I designed my vi
 
 ![Sitemap](README_resources/gloomap-sitemap.png)
 
+I also listed out the features I wanted on the homepage.
+
 ### Skeleton
 
-This formed the basis of my wireframes, which were created in Balsamiq:
+I sketched up some very rough ideas on paper and then designed the final wireframes, which were created in Balsamiq:
 
+- [Home page on desktop wireframe](README_resources/wireframes/recipes-homepage-desktop.png)
+- [Home page on mobile wireframe](README_resources/wireframes/recipes-homepage-mobile.png)
 
 ### Surface
 
