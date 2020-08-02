@@ -45,8 +45,20 @@ I also listed out the features I wanted on the homepage.
 
 I sketched up some very rough ideas on paper and then designed the final wireframes, which were created in Balsamiq:
 
-- [Home page on desktop wireframe](README_resources/wireframes/recipes-homepage-desktop.png)
-- [Home page on mobile wireframe](README_resources/wireframes/recipes-homepage-mobile.png)
+- [Home page on desktop wireframe](README_resources/wireframes/homepage-desktop.png)
+- [Home page on mobile wireframe](README_resources/wireframes/homepage-mobile.png)
+- [All Recipes on desktop wireframe](README_resources/wireframes/all-recipes-desktop.png)
+- [All Recipes on mobile wireframe](README_resources/wireframes/all-recipes-mobile.png)
+- [Recipe page on desktop wireframe](README_resources/wireframes/recipe-page-desktop.png)
+- [Recipe page on mobile wireframe](README_resources/wireframes/recipe-page-mobile.png)
+- [Add Recipe on desktop wireframe](README_resources/wireframes/add-recipe-desktop.png)
+- [Add Recipe on mobile wireframe](README_resources/wireframes/add-recipe-mobile.png)
+- [Recipes Category on desktop wireframe](README_resources/wireframes/category-recipes-desktop.png)
+- [Recipes Category on mobile wireframe](README_resources/wireframes/category-recipes-mobile.png)
+- [Sign up on desktop wireframe](README_resources/wireframes/sign-up-desktop.png)
+- [Sign up on mobile wireframe](README_resources/wireframes/sign-up-mobile.png)
+
+There is also a login page which is very similar to the sign up page except with no email field and different intro text, and also an Edit Recipe page which is basically identical to Add Recipe except the values are pre-populated from the database.
 
 ### Surface
 
