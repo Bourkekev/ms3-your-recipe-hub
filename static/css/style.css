@@ -27,6 +27,11 @@ nav ul a {
     font-size:4rem;
 }
 /* Recipe Single page */
+.recipe-details {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
 .recipe-summary-item:not(:last-child) {
     border-right: 1px solid #bababa;
 }

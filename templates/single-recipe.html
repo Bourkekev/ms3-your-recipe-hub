@@ -6,7 +6,7 @@
             {{recipe.course_name}} - {{recipe.category_name}}
         </div>
     </div>
-    <div class="row">
+    <div class="row recipe-details">
         <div class="col s12 l6">
             <h1>{{recipe.title}}</h1>
             <div class="recipe-meta">
@@ -27,8 +27,8 @@
                         <i class="medium material-icons">access_time</i><span>Prep time</span>
                     </div>
                     <div class="portion">
-                        <div class="value">{{recipe.portions}}</div>
-                        <div class="unit">People</div>
+                        <div class="value">{{recipe.prep_time}}</div>
+                        <div class="unit">Minutes</div>
                     </div>
                 </div>
                 <div class="col s4 recipe-summary-item center-align">
@@ -36,14 +36,45 @@
                         <span class="mdi medium mdi-stove"></span><span>Cook time</span>
                     </div>
                     <div class="portion">
-                        <div class="value">{{recipe.portions}}</div>
-                        <div class="unit">People</div>
+                        <div class="value">{{recipe.cook_time}}</div>
+                        <div class="unit">Minutes</div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col">PRINT</div>
             </div>
         </div>
         <div class="col s12 l6">
             <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+        </div>
+    </div>
+    <div class="row recipe-description">
+        <div class="col">
+            <h2>Description</h2>
+            <p>{{recipe.short_description}}</p>
+        </div>
+    </div>
+    <div class="row recipe-description">
+        <div class="col l5">
+            <h2>Ingredients</h2>
+            <p>{{recipe.ingredients}}</p>
+        </div>
+        <div class="col l7">
+            <h2>Method</h2>
+            <p>{{recipe.method}}</p>
+        </div>
+    </div>
+    <div class="row recipe-description">
+        <div class="col">
+            <h2>Chef's Notes</h2>
+            <p>{{recipe.chef_notes}}</p>
+        </div>
+    </div>
+    <div class="row recipe-description">
+        <div class="col">
+            <h2>Nutritional Information</h2>
+            <p>{{recipe.nutrition}}</p>
         </div>
     </div>
 {% endblock %}
