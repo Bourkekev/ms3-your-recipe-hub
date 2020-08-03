@@ -4,3 +4,32 @@ html {
 body {
     font-size: 1.6rem;
 }
+/* Defaults */
+img {
+    max-width: 100%;
+    height:auto;
+}
+/* Navbar */
+nav ul a {
+    font-size: 1.4rem;
+}
+/* Helper classes */
+/* center content that uses flexbox */
+.flex-justify-center {
+    justify-content: center;
+}
+/* Material Icons */
+.material-icons.orange600 { 
+    color: #FB8C00; 
+}
+/* extended material icons */
+.mdi.medium {
+    font-size:4rem;
+}
+/* Recipe Single page */
+.recipe-summary-item:not(:last-child) {
+    border-right: 1px solid #bababa;
+}
+.recipe-summary-item .value {
+    font-size: 5rem;
+}

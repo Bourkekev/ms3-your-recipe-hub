@@ -7,7 +7,6 @@
        <p>{{recipe.category_name}} - {{recipe.course_name}}</p>
        <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
        <p>{{recipe.short_description}}</p>
-       <p>{{recipe._id}}</p>
        <a href="{{url_for('single_recipe', recipe_id=recipe._id)}}">View</a>
    {% endfor %}
 

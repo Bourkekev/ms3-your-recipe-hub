@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Single Recipes</h1>
-    <p>{{recipe.title}}</p>
-    <p>{{recipe.category_name}} - {{recipe.course_name}}</p>
-
+    <div class="row">
+        <div class="col s12">
+            {{recipe.course_name}} - {{recipe.category_name}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l6">
+            <h1>{{recipe.title}}</h1>
+            <div class="recipe-meta">
+                By {{recipe.user_name}} - {{recipe.date}}
+            </div>
+            <div class="row recipe-summary-wrapper">
+                <div class="col s4 recipe-summary-item center-align">
+                    <div class="portion-header valign-wrapper flex-justify-center">
+                        <i class="medium material-icons">people</i><span>Serves</span>
+                    </div>
+                    <div class="portion">
+                        <div class="value">{{recipe.portions}}</div>
+                        <div class="unit">People</div>
+                    </div>
+                </div>
+                <div class="col s4 recipe-summary-item center-align">
+                    <div class="portion-header valign-wrapper flex-justify-center">
+                        <i class="medium material-icons">access_time</i><span>Prep time</span>
+                    </div>
+                    <div class="portion">
+                        <div class="value">{{recipe.portions}}</div>
+                        <div class="unit">People</div>
+                    </div>
+                </div>
+                <div class="col s4 recipe-summary-item center-align">
+                    <div class="portion-header valign-wrapper flex-justify-center">
+                        <span class="mdi medium mdi-stove"></span><span>Cook time</span>
+                    </div>
+                    <div class="portion">
+                        <div class="value">{{recipe.portions}}</div>
+                        <div class="unit">People</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+        </div>
+    </div>
 {% endblock %}
