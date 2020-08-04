@@ -46,7 +46,11 @@
             </div>
         </div>
         <div class="col s12 l6">
-            <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+            {% if recipe.image_url %}
+                <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+            {% else %}
+                <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
+            {% endif %}
         </div>
     </div>
     <div class="row recipe-description">

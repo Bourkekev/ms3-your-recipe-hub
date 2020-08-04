@@ -15,7 +15,11 @@
     {% for recipe in recipes %}
        <h2>{{recipe.title}}</h2>
        <p>{{recipe.category_name}} - {{recipe.course_name}}</p>
-       <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+       {% if recipe.image_url %}
+                <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+            {% else %}
+                <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
+        {% endif %}
        <p>{{recipe.short_description}}</p>
        <a href="{{url_for('single_recipe', recipe_id=recipe._id)}}">View</a>
    {% endfor %}
