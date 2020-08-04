@@ -22,7 +22,7 @@
                 <label for="category_name">Food Category</label>
             </div>
             <div class="input-field col s12 l4">
-                <span class="mdi prefix mdi-food-drumstick"></span>
+                <span class="mdi prefix mdi-pasta"></span>
                 <select id="course_name" name="course_name" class="validate" required>
                     <option value="" disabled selected>Choose the course</option>
                     {% for course in courses %}
@@ -30,6 +30,15 @@
                     {% endfor %}
                 </select>
                 <label for="course_name">Course</label>
+            </div>
+        </div>
+        <!-- recipe image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">image</i>
+                <input id="image_url" name="image_url" type="text" minlength="5" 
+                maxlength="2000" class="validate">
+                <label for="image_url">Recipe Image URL</label>
             </div>
         </div>
         <!-- recipe description -->

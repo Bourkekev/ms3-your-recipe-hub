@@ -32,6 +32,11 @@ nav ul a {
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
+.nutrition, .chef-notes {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    margin-top: 30px;
+}
 .recipe-summary-item:not(:last-child) {
     border-right: 1px solid #bababa;
 }
