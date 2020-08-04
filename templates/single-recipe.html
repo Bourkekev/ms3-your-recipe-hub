@@ -49,7 +49,11 @@
             {% if recipe.image_url %}
                 <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
             {% else %}
-                <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
+                <picture>
+                    <source media="(max-width: 480px)" 
+                    srcset="{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}">
+                    <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
+                </picture>
             {% endif %}
         </div>
     </div>

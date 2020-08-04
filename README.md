@@ -99,10 +99,14 @@ Based on the functionality required and the data to be stored, I created my data
 ### Existing Features
 
 
-
 #### Minor Features
 Expand the sections below for more info on details
 
+<details>
+  <summary><strong>Responsive images</strong></summary>
+As the recipe images are provided by external users I could not make these smaller for mobile.
+To allow me to use a different image for the 'no recipe image' for mobile I used the `<picture>` element. This allowed me to create a smaller image just for a mobile.
+</details>
 
 <details>
   <summary><strong>Skip to main content</strong></summary>
