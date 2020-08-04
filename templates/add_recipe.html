@@ -12,13 +12,23 @@
             </div>
             <div class="input-field col s12 l4">
                 <span class="mdi prefix mdi-food-drumstick"></span>
-                <select>
+                <select id="category_name" name="category_name" class="validate" required>
                     <option value="" disabled selected>Choose the category</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
                 </select>
-                <label>Food Category</label>
+                <label for="category_name">Food Category</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <span class="mdi prefix mdi-food-drumstick"></span>
+                <select id="course_name" name="course_name" class="validate" required>
+                    <option value="" disabled selected>Choose the course</option>
+                    {% for course in courses %}
+                        <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="course_name">Course</label>
             </div>
         </div>
         <div class="row">
