@@ -38,3 +38,10 @@ nav ul a {
 .recipe-summary-item .value {
     font-size: 5rem;
 }
+/* Forms */
+.input-field .prefix {
+    font-size: 2.4rem;
+}
+.input-field > label {
+    font-size: 1.4rem;
+}

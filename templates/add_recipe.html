@@ -1,18 +1,71 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Add Recipe</h1>
-<div class="row">
+<div class="row card-panel grey lighten-5">
     <form class="col s12" method="POST" action="">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12 l4">
                 <i class="material-icons prefix">restaurant_menu</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
+                <input id="title" name="title" type="text" minlength="5" 
+                maxlength="50" class="validate" required>
+                <label for="title">Recipe Title</label>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Telephone</label>
+            <div class="input-field col s12 l4">
+                <span class="mdi prefix mdi-food-drumstick"></span>
+                <select>
+                    <option value="" disabled selected>Choose the category</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+                <label>Food Category</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_align_left</i>
+                <textarea id="short_description" name="short_description" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="short_description">Recipe Description</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_bulleted</i>
+                <textarea id="ingredients" name="ingredients" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="ingredients">Ingredients</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_numbered</i>
+                <textarea id="method" name="method" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="method">Method</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">speaker_notes</i>
+                <textarea id="chef_notes" name="chef_notes" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="chef_notes">Chef's Notes</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <span class="mdi prefix mdi-nutrition"></span>
+                <textarea id="nutrition" name="nutrition" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="nutrition">Nutritional Information (If known)</label>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit Recipe
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
         </div>
     </form>
