@@ -2,6 +2,16 @@
 
 {% block content %}
     <h1>All Recipes</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     {% for recipe in recipes %}
        <h2>{{recipe.title}}</h2>
        <p>{{recipe.category_name}} - {{recipe.course_name}}</p>

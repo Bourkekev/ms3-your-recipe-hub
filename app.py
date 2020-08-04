@@ -50,8 +50,9 @@ def add_recipe():
          "user_name": "Kevin"
       }
       mongo.db.recipes.insert_one(recipe)
-      flash("Recipe successfully added")
-      return redirect(url_for("home_recipes"))
+      flash("Recipe successfully added.")
+      return redirect(url_for("all_recipes"))
+
    categories = mongo.db.categories.find().sort("category_name", 1)
    courses = mongo.db.courses.find().sort("course_name", 1)
    return render_template("add_recipe.html", categories=categories, courses=courses)
