@@ -42,6 +42,7 @@ nav ul a {
 .input-field .prefix {
     font-size: 2.4rem;
 }
+label,
 .input-field > label {
     font-size: 1.4rem;
 }
