@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
-
-{% block content %}
-    <h1>All Recipes</h1>
-    {% with messages = get_flashed_messages() %}
+{% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul class="flashes">
                 {% for message in messages %}
@@ -11,6 +8,9 @@
             </ul>
         {% endif %}
     {% endwith %}
+    
+{% block content %}
+    <h1>All Recipes</h1>
 
     {% for recipe in recipes %}
        <h2>{{recipe.title}}</h2>
