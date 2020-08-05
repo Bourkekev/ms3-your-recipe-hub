@@ -30,7 +30,11 @@
                 <select id="course_name" name="course_name" class="validate" required>
                     <option value="" disabled selected>Choose the course</option>
                     {% for course in courses %}
-                        <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+                        {% if course.course_name == recipe.course_name %}
+                            <option value="{{ course.course_name }}" selected>{{ course.course_name }}</option>
+                        {% else %}
+                            <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="course_name">Course</label>
