@@ -60,6 +60,15 @@ def add_recipe():
    return render_template("add_recipe.html", categories=categories, courses=courses)
 
 
+@app.route('/edit_recipe/<recipe_id>', methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+   the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+
+   categories = mongo.db.categories.find().sort("category_name", 1)
+   courses = mongo.db.courses.find().sort("course_name", 1)
+   return render_template("edit_recipe.html", recipe=the_recipe, categories=categories, courses=courses)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
            port=os.environ.get('PORT'),

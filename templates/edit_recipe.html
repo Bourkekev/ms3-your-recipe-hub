@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Recipe</h1>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+        <!-- title, category and course -->
+        <div class="row">
+            <div class="input-field col s12 l4">
+                <i class="material-icons prefix">restaurant_menu</i>
+                <input id="title" name="title" type="text" minlength="5" 
+                maxlength="50" class="validate" required>
+                <label for="title">Recipe Title</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <span class="mdi prefix mdi-food-drumstick"></span>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose the category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Food Category</label>
+            </div>
+            <div class="input-field col s12 l4">
+                <span class="mdi prefix mdi-pasta"></span>
+                <select id="course_name" name="course_name" class="validate" required>
+                    <option value="" disabled selected>Choose the course</option>
+                    {% for course in courses %}
+                        <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="course_name">Course</label>
+            </div>
+        </div>
+        <!-- recipe image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">image</i>
+                <input id="image_url" name="image_url" type="text" minlength="5" 
+                maxlength="2000" class="validate">
+                <label for="image_url">Recipe Image URL</label>
+            </div>
+        </div>
+        <!-- recipe description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_align_left</i>
+                <textarea id="short_description" name="short_description" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="short_description">Recipe Description</label>
+              </div>
+        </div>
+        <!-- Ingredients -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_bulleted</i>
+                <textarea id="ingredients" name="ingredients" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="ingredients">Ingredients</label>
+              </div>
+        </div>
+        <!-- Method -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">format_list_numbered</i>
+                <textarea id="method" name="method" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="method">Method</label>
+              </div>
+        </div>
+        <!-- portion and times -->
+        <div class="row">
+            <div class="input-field col s12 l4">
+                <p class="range-field">
+                    <i class="material-icons prefix">people</i>
+                    <label for="portions">Number of portions</label>
+                    <input id="portions" name="portions" type="range" 
+                    min="1" max="12" step="1" value="1" required />
+                </p>
+            </div>
+            <div class="input-field col s12 l4">
+                <p class="range-field">
+                    <i class="material-icons prefix">access_time</i>
+                    <label for="prep_time">Prep Time (in minutes)</label>
+                    <input id="prep_time" name="prep_time" type="range" 
+                    min="0" max="150" step="5" value="15" required />
+                </p>
+            </div>
+            <div class="input-field col s12 l4">
+                <p class="range-field">
+                    <span class="mdi prefix medium mdi-stove"></span>
+                    <label for="cook_time">Cooking Time (in minutes)</label>
+                    <input id="cook_time" name="cook_time" type="range" 
+                    min="0" max="150" step="5" value="15" required />
+                </p>
+            </div>
+        </div>
+        <!-- Chef notes-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">speaker_notes</i>
+                <textarea id="chef_notes" name="chef_notes" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="chef_notes">Chef's Notes</label>
+              </div>
+        </div>
+        <!-- Nutritional info -->
+        <div class="row">
+            <div class="input-field col s12">
+                <span class="mdi prefix mdi-nutrition"></span>
+                <textarea id="nutrition" name="nutrition" minlength="5"
+                maxlength="300" class="materialize-textarea"></textarea>
+                <label for="nutrition">Nutritional Information (If known)</label>
+              </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light btn-large" type="submit">Edit Recipe
+                    <i class="material-icons right">edit</i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
