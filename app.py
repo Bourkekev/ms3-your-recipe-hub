@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 
 from os import path
 if path.exists("env.py"):
@@ -47,6 +48,7 @@ def add_recipe():
          "cook_time": request.form.get("cook_time"),
          "chef_notes": request.form.get("chef_notes"),
          "nutrition": request.form.get("nutrition"),
+         "date": datetime.utcnow(),
          "user_name": "Kevin"
       }
       mongo.db.recipes.insert_one(recipe)
