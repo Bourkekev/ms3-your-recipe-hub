@@ -8,13 +8,13 @@
             <div class="input-field col s12 l4">
                 <i class="material-icons prefix">restaurant_menu</i>
                 <input id="title" name="title" type="text" minlength="5" 
-                maxlength="50" class="validate" required>
+                maxlength="50" value="{{ recipe.title }}" class="validate" required>
                 <label for="title">Recipe Title</label>
             </div>
             <div class="input-field col s12 l4">
                 <span class="mdi prefix mdi-food-drumstick"></span>
                 <select id="category_name" name="category_name" class="validate" required>
-                    <option value="" disabled selected>Choose the category</option>
+                    <option value="" disabled>Choose the category</option>
                     {% for category in categories %}
                         {% if category.category_name == recipe.category_name %}
                         <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
