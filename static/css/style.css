@@ -26,6 +26,10 @@ nav ul a {
 .mdi.medium {
     font-size:4rem;
 }
+/* Modal adjustments */
+.modal-footer.center-align {
+    text-align: center;
+}
 /* Recipe Single page */
 .recipe-details {
     border-bottom: 1px solid #ccc;
