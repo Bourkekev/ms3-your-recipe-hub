@@ -22,7 +22,13 @@ nav ul a {
 .material-icons.orange600 { 
     color: #FB8C00; 
 }
+i.material-icons.small {
+    font-size: 3rem;
+}
 /* extended material icons */
+.mdi.small {
+    font-size:3rem;
+}
 .mdi.medium {
     font-size:4rem;
 }

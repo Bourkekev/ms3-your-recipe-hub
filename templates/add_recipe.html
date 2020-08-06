@@ -46,8 +46,9 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_align_left</i>
                 <textarea id="short_description" name="short_description" minlength="5"
-                maxlength="500" class="materialize-textarea"></textarea>
-                <label for="short_description">Recipe Description</label>
+                maxlength="250" class="materialize-textarea" oninput="descLenOut.value = short_description.value.length"></textarea>
+                <small>Characters used: </small><output name="descLenOut" id="descLenOut"></output>
+                <label for="short_description">Recipe Description (Max 250 characters)</label>
               </div>
         </div>
         <!-- Ingredients -->
