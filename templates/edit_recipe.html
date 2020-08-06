@@ -63,8 +63,9 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_bulleted</i>
                 <textarea id="ingredients" name="ingredients" minlength="5"
-                maxlength="1000" class="materialize-textarea">{{ recipe.ingredients }}</textarea>
-                <label for="ingredients">Ingredients</label>
+                maxlength="1000" class="materialize-textarea" oninput="ingLenOut.value = ingredients.value.length">{{ recipe.ingredients }}</textarea>
+                <small>Characters used: </small><output name="ingLenOut" id="ingLenOut"></output>
+                <label for="ingredients">Ingredients (max 1000 characters)</label>
               </div>
         </div>
         <!-- Method -->
@@ -72,7 +73,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">format_list_numbered</i>
                 <textarea id="method" name="method" minlength="5"
-                maxlength="1000" class="materialize-textarea">{{ recipe.method }}</textarea>
+                maxlength="2000" class="materialize-textarea">{{ recipe.method }}</textarea>
                 <label for="method">Method</label>
               </div>
         </div>
