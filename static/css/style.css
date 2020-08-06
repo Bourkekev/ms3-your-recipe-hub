@@ -30,6 +30,13 @@ nav ul a {
 .modal-footer.center-align {
     text-align: center;
 }
+.modal-content.card-panel {
+    margin-top: 0;
+}
+/* make modal footer auto height as delete button was hidden */
+.modal .modal-footer {
+    height: auto;
+}
 /* Recipe Single page */
 .recipe-details {
     border-bottom: 1px solid #ccc;
