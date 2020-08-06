@@ -63,6 +63,7 @@ def add_recipe():
 @app.route('/edit_recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
    if request.method == "POST":
+      overall_time = int(request.form.get("prep_time")) + int(request.form.get("cook_time"))
       submit_edit = {
          "title": request.form.get("title"),
          "category_name": request.form.get("category_name"),
@@ -71,9 +72,10 @@ def edit_recipe(recipe_id):
          "ingredients": request.form.get("ingredients"),
          "method": request.form.get("method"),
          "portions": request.form.get("portions"),
-         "prep_time": request.form.get("prep_time"),
-         "cook_time": request.form.get("cook_time"),
+         "prep_time": int(request.form.get("prep_time")),
+         "cook_time": int(request.form.get("cook_time")),
          "chef_notes": request.form.get("chef_notes"),
+         "total_time" : overall_time,
          "nutrition": request.form.get("nutrition"),
          "date": datetime.utcnow(),
          "user_name": "Kevin"
