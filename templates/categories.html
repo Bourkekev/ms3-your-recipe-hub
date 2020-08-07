@@ -1,21 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1><span class="mdi prefix mdi-shape-outline"></span> Manage Categories</h1>
-<a class="waves-effect waves-light btn-large" href="{{url_for('add_category')}}">Add Category <i class="material-icons">library_add</i></a>
-<div class="row categories">
-    {% for category in categories %}
-        <div class="col-12">
-            <div class="card teal lighten-4">
-                <div class="card-content">
-                    <span class="card-title">{{ category.category_name }}</span>
-                </div>
-                <div class="card-action">
-                    <a href="{{ url_for('edit_category', category_id=category._id) }}" class="waves-effect waves-light amber darken-3 btn">Edit Category</a>
-                    <a href="{{ url_for('delete_category', category_id=category._id) }}" class="waves-effect waves-light red darken-3 btn">Delete Category</a>
+    <h1><span class="mdi prefix mdi-shape-outline"></span> Manage Categories</h1>
+    <a class="waves-effect waves-light btn-large" href="{{url_for('add_category')}}">Add Category <i class="material-icons">library_add</i></a>
+    <div class="row categories">
+        {% for category in categories %}
+            <div class="col-12">
+                <div class="card teal lighten-4">
+                    <div class="card-content">
+                        <span class="card-title">{{ category.category_name }}</span>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ url_for('edit_category', category_id=category._id) }}" class="waves-effect waves-light amber darken-3 btn">Edit Category</a>
+                        <a href="{{ url_for('delete_category', category_id=category._id) }}" class="waves-effect waves-light red darken-3 btn">Delete Category</a>
+                        <a href="#delete-{{category._id}}"
+                            class="waves-effect waves-light btn-small red darken-4 modal-trigger">
+                            <i class="material-icons right">delete</i>Delete
+                            this category</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor%}
-</div>
 
+            <!-- Delete recipe Modal Structure -->
+            <div id="delete-{{category._id}}" class="modal">
+                <div class="modal-content card-panel orange darken-3 white-text">
+                    <h4>Warning</h4>
+                    <p>This action will delete this category - {{category.category_name}}. Are you sure you want to delete it?</p>
+                </div>
+                <div class="modal-footer center-align">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">No, do not delete</a>
+                    <a href="{{ url_for('delete_category', category_id=category._id) }}"
+                        class="waves-effect waves-light btn-small red darken-4"><i class="material-icons right">delete</i>Yes, Delete
+                        this category</a>
+                </div>
+            </div>
+
+        {% endfor%}
+    </div>
+    
 {% endblock %}
