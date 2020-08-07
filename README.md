@@ -62,6 +62,10 @@ There is also a login page which is very similar to the sign up page except with
 
 ### Surface
 
+Green stands for nature and growth, and . It is also a literal representation of healthy foods, like vegetables and salads.
+https://99designs.ie/blog/tips/color-psychology/
+https://99designs.ie/blog/creative-inspiration/color-combinations/
+
 ### Database Schema
 
 Based on the functionality required and the data to be stored, I created my database structure. The Recipe and Categories documents (or tables) would have fields of the same name, so a recipe can be saved to a course type and a category.
