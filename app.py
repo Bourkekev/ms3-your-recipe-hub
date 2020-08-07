@@ -71,7 +71,7 @@ def edit_recipe(recipe_id):
          "short_description": request.form.get("short_description"),
          "ingredients": request.form.get("ingredients"),
          "method": request.form.get("method"),
-         "portions": request.form.get("portions"),
+         "portions": int(request.form.get("portions")),
          "prep_time": int(request.form.get("prep_time")),
          "cook_time": int(request.form.get("cook_time")),
          "chef_notes": request.form.get("chef_notes"),
@@ -114,6 +114,20 @@ def add_category():
 
    return render_template("add_category.html")
 
+
+@app.route('/edit_category/<category_id>', methods=["GET", "POST"])
+def edit_category(category_id):
+   if request.method == "POST":
+      submit_edit = {
+         "category_name": request.form.get("category_name")
+      }
+      mongo.db.categories.update({"_id": ObjectId(category_id)}, submit_edit)
+      flash("Category successfully updated")
+      return redirect(url_for('get_categories'))
+
+   category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+   return render_template("edit_category.html", category=category)
+   
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

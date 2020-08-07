@@ -21,7 +21,7 @@
         <div class="col s12 l6">
             <h1>{{recipe.title}}</h1>
             <div class="recipe-meta">
-                By {{recipe.user_name}} - {{recipe.date}}
+                By {{recipe.user_name}} - {{recipe.date.strftime('%d %b, %Y')}}
             </div>
             <div class="row recipe-summary-wrapper">
                 <div class="col s4 recipe-summary-item center-align">

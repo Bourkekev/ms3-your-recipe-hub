@@ -140,7 +140,9 @@ To run locally, you can clone this repository directly into the editor of your c
 
 ## Issues I had to overcome
 
+### Formatting of Ingredients and method
 
+I wanted my ingredients on different lines, as they are easier to read and then I could style them a bit nicer, but when my Ingredients were output it was all in what looked like one paragraph with no line breaks. I thought it was to do with the input field not saving the line breaks. But after going down the wrong path with that, it turned out the ingredients just needed the CSS property 'white-space' set to pre-wrap.
 
 ## Credits and References
 
@@ -150,8 +152,9 @@ To run locally, you can clone this repository directly into the editor of your c
 
 ### Technical
  - For general references for Python and Flask I used my Code Institue notes, [MDN web docs](https://developer.mozilla.org/en-US/), [w3schools](https://www.w3schools.com/js/default.asp), [Python Offical Docs](https://www.python.org/doc/).
+ - For Python's datetime formatting I referenced https://www.programiz.com/python-programming/datetime/strftime
+ - Form field character count - [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp).
  
-
 ### Content
 
 
