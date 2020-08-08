@@ -17,7 +17,7 @@ app.secret_key = os.environ.get('SECRET_KEY')
 mongo = PyMongo(app)
 
 
-# error handling
+# 404 error handling
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
@@ -32,6 +32,11 @@ def home_recipes():
 @app.route('/all_recipes')
 def all_recipes():
    return render_template("all-recipes.html", recipes=mongo.db.recipes.find())
+
+
+@app.route('/course/<course_name>')
+def course_list(course_name):
+   return render_template("all-recipes.html", recipes=mongo.db.recipes.find({"course_name": "Main Course"}))
 
 
 @app.route('/single_recipe/<recipe_id>')

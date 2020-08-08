@@ -81,10 +81,12 @@ Based on the functionality required and the data to be stored, I created my data
 4. Python
 5. [Flask Framework](https://palletsprojects.com/p/flask/)
 6. Jinja templating for Python
-4. [Bootstrap Framework](https://getbootstrap.com/)
-5. [Font Awesome](https://fontawesome.com/)
-6. Google Fonts
-9. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation, and animation of certain elements.
+7. [MongoDB Database](https://www.mongodb.com/)
+8. [Heroku hosting platform](https://heroku.com)
+9. [Materialize Framework](https://materializecss.com/)
+10. [Font Awesome](https://fontawesome.com/)
+11. Google Fonts
+12. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation, and animation of certain elements.
 
 ### Tools Used
 1. [VS Code](https://code.visualstudio.com/) and [Brackets](http://brackets.io/) code editors.
@@ -170,7 +172,7 @@ So I knew I need something unique that users do not have control over, so the ca
 ### Media
 - The photos and vectors (except logo) used in this site were obtained from:
 
- - Ha'Penny Bridge - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
+ -  - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
  - Fictional logo was designed on https://www.freelogodesign.org/
 
  - The favicons were generated at https://realfavicongenerator.net/
