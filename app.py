@@ -36,7 +36,7 @@ def all_recipes():
 
 @app.route('/course/<course_name>')
 def course_list(course_name):
-   return render_template("all-recipes.html", recipes=mongo.db.recipes.find({"course_name": "Main Course"}))
+   return render_template("all-recipes.html", recipes=mongo.db.recipes.find({"course_name": course_name}))
 
 
 @app.route('/single_recipe/<recipe_id>')
