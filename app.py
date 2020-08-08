@@ -17,6 +17,13 @@ app.secret_key = os.environ.get('SECRET_KEY')
 mongo = PyMongo(app)
 
 
+# error handling
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
+
 @app.route('/')
 def home_recipes():
    return render_template("index.html", recipes=mongo.db.recipes.find())
