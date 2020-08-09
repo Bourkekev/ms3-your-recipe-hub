@@ -11,7 +11,8 @@
                 <label for="query">Search Recipes</label>
             </div>
             <div class="col s12 m4">
-                <button type="submit" class="waves-effect waves-dark btn white"><i class="material-icons">search</i></button>
+                <a href="{{ url_for('all_recipes') }}" class="waves-effect waves-dark btn red">Reset search</a>
+                <button type="submit" class="waves-effect waves-dark btn"><i class="material-icons">search</i></button>
             </div>
         </div>
     </form>
