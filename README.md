@@ -138,7 +138,13 @@ Please see [Testing Document](TESTING.md) for all my testing
 
 To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/Bourkekev/ms3-your-recipe-hub.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.
 
+### Create the search index
 
+Best thing to do is to create the index using the python interpreter. 
+ - In your terminal type `python3` (or `python` depending on your system setup). This should open the python interpreter. 
+  - You then type `from app import mongo`. This imports the database variable.
+  - Create the text index with `mongo.db.recipes.create_index([("title", "text"), ("short_description", "text")])`. This creates the text search index on the 'title' and 'short_description' fields.
+  - Type `quit()` to exit Python interpreter.
 
 ## Issues I had to overcome
 
