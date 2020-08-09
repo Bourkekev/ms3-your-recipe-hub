@@ -36,7 +36,6 @@
             </div>
         </nav>
     </header>
-    <div class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class="flashes">
@@ -50,7 +49,6 @@
         {% block content %}
 
         {% endblock %}
-    </div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

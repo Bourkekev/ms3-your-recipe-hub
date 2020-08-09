@@ -9,6 +9,10 @@ img {
     max-width: 100%;
     height:auto;
 }
+/* Full width container */
+.container-outer-wrapper {
+    width: 100%;
+}
 /* Navbar */
 nav ul a {
     font-size: 1.4rem;
@@ -31,6 +35,10 @@ i.material-icons.small {
 }
 .mdi.medium {
     font-size:4rem;
+}
+/* Hero Image */
+.homepage.hero-image {
+    background: red;
 }
 /* Modal adjustments */
 .modal-footer.center-align {
