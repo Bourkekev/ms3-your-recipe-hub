@@ -32,7 +32,8 @@ def home_recipes():
 
 @app.route('/all_recipes')
 def all_recipes():
-   return render_template("all-recipes.html", recipes=mongo.db.recipes.find())
+   recipes = list(mongo.db.recipes.find())
+   return render_template("all-recipes.html", recipes=recipes)
 
 
 @app.route('/search', methods=["GET", "POST"])

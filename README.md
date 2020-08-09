@@ -160,6 +160,10 @@ So my first thought was to pass the category name into the modal id so like `<di
 
 So I knew I need something unique that users do not have control over, so the category id is what I used and it works for this modal with no duplications.
 
+### Cursor not found error on All Recipe page after putting 
+
+After putting the if-else on the all-recipes.html template which outputs "No recipes found" on a search query, when I went to All Recipes I was getting an error: `object of type 'cursor' has no len()`. Yet the page worked when I had results to show. I searched online to try to find out what that meant, but was not really getting or understanding answers I read. But I knew my view for the search worked, so I compared this with all_recipes view. My all recipes was simply sending the recipes to the template as a dicitonary : `recipes=mongo.db.recipes.find({"course_name": course_name})`, but my search was sending a list like: `recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))`. So I changed my all_recipes to use the list() method and that fixed the error.
+
 ## Credits and References
 
 ### Design and Research
