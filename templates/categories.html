@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container">
     <h1><span class="mdi prefix mdi-shape-outline"></span> Manage Categories</h1>
     <a class="waves-effect waves-light btn-large" href="{{url_for('add_category')}}">Add Category <i class="material-icons">library_add</i></a>
     <div class="row categories">
@@ -35,5 +36,5 @@
 
         {% endfor%}
     </div>
-    
+</div>
 {% endblock %}
