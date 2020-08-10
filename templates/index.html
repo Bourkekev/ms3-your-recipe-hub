@@ -10,7 +10,7 @@
                         <div class="input-field col">
                             <span class="mdi prefix mdi-food-drumstick"></span>
                             <select id="category_name" name="category_name" class="validate" required>
-                                <option value="" disabled>Choose the category</option>
+                                <option value="" disabled selected>Select category</option>
                                 {% for category in categories %}
                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                 {% endfor %}
@@ -19,12 +19,11 @@
                         </div>
                         <!-- submit button -->
                         <div class="col center-align">
-                            <button class="btn waves-effect waves-light btn-large" type="submit">Look for Recipe
-                                <i class="material-icons right">edit</i>
+                            <button class="btn waves-effect waves-light btn-large" type="submit">Search
+                                <i class="material-icons right">search</i>
                             </button>
                         </div>
                     </div>
-                    
                 </form>
             </div>
             <!-- index search -->

@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
     <header>
         <nav class="" role="navigation">
             <div class="nav-wrapper container">
@@ -36,6 +37,7 @@
             </div>
         </nav>
     </header>
+    <main id="maincontent">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class="flashes">
@@ -49,11 +51,25 @@
         {% block content %}
 
         {% endblock %}
-
+    </main><!-- /main -->
+    <footer class="container-outer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l4">
+                    COLUMN
+                </div>
+                <div class="col s12 l4">
+                    COLUMN
+                </div>
+                <div class="col s12 l4">
+                    COLUMN
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{url_for('static', filename='js/init.js')}}"></script>
 </body>
-
 </html>

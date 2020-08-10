@@ -22,6 +22,31 @@ nav ul a {
 .flex-justify-center {
     justify-content: center;
 }
+/* screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+.screen-reader-link:focus {
+    clip: auto !important;
+    height: auto;
+    width: auto;
+    display: block;
+    font-weight: bold;
+    padding: 15px 25px 15px;
+    color: #333;
+    background: #fff;
+    z-index: 100000;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+            box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+}
 /* Material Icons */
 .material-icons.orange600 { 
     color: #FB8C00; 
