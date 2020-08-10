@@ -49,6 +49,13 @@ def course_list(course_name):
    return render_template("all-recipes.html", recipes=recipes)
 
 
+@app.route('/category/<category_name>', methods=["GET", "POST"])
+def category_list(category_name):
+   
+   recipes = list(mongo.db.recipes.find({"category_name": category_name}))
+   return render_template("all-recipes.html", recipes=recipes)
+
+
 @app.route('/single_recipe/<recipe_id>')
 def single_recipe(recipe_id):
    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
