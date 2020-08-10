@@ -51,7 +51,12 @@ def course_list(course_name):
 
 @app.route('/category/<category_name>', methods=["GET", "POST"])
 def category_list(category_name):
-   
+   if request.method == "POST":
+      category = request.form.get("category_name")
+      #return(str(category))
+      recipes = list(mongo.db.recipes.find({"category_name": category}))
+      return render_template("all-recipes.html", recipes=recipes)
+
    recipes = list(mongo.db.recipes.find({"category_name": category_name}))
    return render_template("all-recipes.html", recipes=recipes)
 
