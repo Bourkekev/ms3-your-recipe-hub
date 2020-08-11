@@ -77,7 +77,7 @@ i.material-icons.small {
 .hero-image:before,
 .title-panel:before {
     content: "";
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -125,6 +125,45 @@ i.material-icons.small {
     white-space: pre-wrap;
 }
 /* Forms */
+/* home category select */
+.category-select .select-wrapper input.select-dropdown,
+.white-rounded input[type=text] {
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 5rem;
+}
+/* placeholder */
+.white-rounded ::-webkit-input-placeholder {
+    color:#fff;
+}
+.white-rounded ::-moz-placeholder {
+    color:#fff;
+}
+.white-rounded :-ms-input-placeholder {
+    color:#fff;
+}
+.white-rounded ::-ms-input-placeholder {
+    color:#fff;
+}
+.white-rounded ::placeholder {
+    color:#fff;
+}
+
+/* over write materialise style for valid/invalid input */
+.white-rounded input.invalid[type=text]:not(.browser-default) {
+    border-color: #F44336;
+}
+.white-rounded input.valid[type=text]:not(.browser-default),
+.white-rounded input.valid[type=text]:not(.browser-default):focus {
+    border-color: #4CAF50;
+}
+.category-select  .select-wrapper .caret {
+    fill: rgb(255,255,255);
+    right: 15px;
+}
 .input-field .prefix {
     font-size: 2.4rem;
 }
@@ -132,6 +171,22 @@ label,
 .input-field > label {
     font-size: 1.4rem;
 }
+.button-rounded {
+
+}
+/* attached button to right of field */
+.button-right,
+.col .button-right {
+    padding-right: 0;
+}
+.button-right input[type=text] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.field-left {
+
+}
+
 /* Flashes */
 .flashes li {
     padding: 15px;
