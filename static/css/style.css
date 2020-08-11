@@ -171,8 +171,9 @@ label,
 .input-field > label {
     font-size: 1.4rem;
 }
-.button-rounded {
-
+.button-rounded button {
+    border: 2px solid #fff;
+    border-radius: 30px;
 }
 /* attached button to right of field */
 .button-right,
@@ -183,8 +184,16 @@ label,
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.field-left {
-
+.field-left,
+.col .field-left {
+    padding-left: 0;
+}
+.field-left button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: -8px;
+    line-height: 50px;
+    height: 50px;
 }
 
 /* Flashes */
