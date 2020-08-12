@@ -3,19 +3,33 @@ html {
 }
 body {
     font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 /* Defaults */
 img {
     max-width: 100%;
     height:auto;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 700;
+}
 /* Full width container */
 .container-outer-wrapper {
     width: 100%;
 }
 /* Navbar */
+nav .brand-logo {
+    left: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
 nav ul a {
     font-size: 1.4rem;
+}
+.sidenav-overlay {
+    z-index: 996;
 }
 /* Helper classes */
 /* center content that uses flexbox */

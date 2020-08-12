@@ -49,7 +49,7 @@ def course_list(course_name):
    return render_template("all-recipes.html", recipes=recipes)
 
 
-@app.route('/category/', methods=["GET", "POST"])
+@app.route('/category', methods=["GET", "POST"])
 def category_list():
    """Returns the category from form select option"""
    

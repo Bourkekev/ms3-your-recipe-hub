@@ -66,6 +66,10 @@ Green stands for nature and growth, and . It is also a literal representation of
 https://99designs.ie/blog/tips/color-psychology/
 https://99designs.ie/blog/creative-inspiration/color-combinations/
 
+#### Fonts
+
+On all the recipe websites I researched, I liked the font used on [Napolina](https://www.napolina.com/recipes/30-minute/rigatoni-with-goats-cheese-and-spinach) as a heading, it really stood out as being slightly different with the narrow 's'. However this font is an Adobe Font called 'Mostra Nuova' and would require a licence (Adobe subscription). So I used Google font's filter options to find a narrow, sans-serif to look for a font with similar properties. The [Yanone Kaffeesatz](https://fonts.google.com/specimen/Yanone+Kaffeesatz) font was a more interesting font than most, as it has some slightly different shaped characters than most other fonts of similar type, the k, r and e being good examples. Google fonts has suggestions for font pairings that would work for each particular font, so I looked throught these for a nice body font. I wanted this font to be wider and easier to read at small sizes and had a bit of a constrast with the headings, so I decided [Montserrat](https://fonts.google.com/specimen/Montserrat) would work well.
+
 ### Database Schema
 
 Based on the functionality required and the data to be stored, I created my database structure. The Recipe and Categories documents (or tables) would have fields of the same name, so a recipe can be saved to a course type and a category.
