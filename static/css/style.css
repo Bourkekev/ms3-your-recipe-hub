@@ -24,8 +24,8 @@ header {
     position: absolute;
     z-index: 999;
     width: 100%;
-    top: -64px;
-    transform: translate(0, 64px);
+    top: -56px;
+    transform: translate(0, 56px);
     transition:top 0.2s ease-in;
 }
 header.sticky {
@@ -44,7 +44,8 @@ nav .brand-logo {
     left: 0;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    width: 230px;
+    padding: 5px 0;
+    width: 160px;
 }
 nav ul a {
     font-size: 1.4rem;
