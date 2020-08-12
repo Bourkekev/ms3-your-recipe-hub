@@ -68,11 +68,11 @@ I wanted the site to be clean and bright. The [Yummly](https://www.yummly.com/) 
 
 I researched colour combinations, particularly looking for green and another contrasting colour. I liked the number 17 "Teal, coral, turquoise and grey" palette on this [article](https://99designs.ie/blog/creative-inspiration/color-combinations/), but wanted to bring the green closer to a leafy green colour and also make the coral colour a bit more vibrant. I used [Coolors](https://coolors.co/) and picked a nice green #25b35f as my base green, and generated different colour palettes. It actually generated one that was quite similar to the palatte above, with oranges and greys. I felt the orange was a bit too pastel and light, so I just picked a different shade of that orange. I also lightened the shade of the lighter grey, as I imagined using it as a background colour where there might be text on it, so wanted to make sure dark text would be able to stand out on the grey.
 
-This was my final palatte
+This was my final palatte:
 
 ![Colour palette](README_resources/palette-your-recipe-hub.png)
 
-You can also see it completely in [PDF format here](README_resources/colour-palette-your-recipe-hub.pdf)
+You can also see it completely in [PDF format here](README_resources/colour-palette-your-recipe-hub.pdf).
 
 #### Fonts
 

@@ -19,11 +19,26 @@ h1, h2, h3, h4, h5, h6 {
 .container-outer-wrapper {
     width: 100%;
 }
+/* Fix header */
+header {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+header.sticky {
+    position: fixed;
+    width:100%;
+    z-index: 997;
+}
 /* Navbar */
+nav {
+    background-color: transparent;
+}
 nav .brand-logo {
     left: 0;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+    width: 230px;
 }
 nav ul a {
     font-size: 1.4rem;
