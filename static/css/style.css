@@ -61,6 +61,12 @@ nav ul a {
 i.material-icons.small {
     font-size: 3rem;
 }
+.btn i {
+    font-size: 2.1rem;
+}
+.btn-large i {
+    font-size: 2.6rem;
+}
 /* extended material icons */
 .mdi.small {
     font-size:3rem;
@@ -127,7 +133,7 @@ i.material-icons.small {
 /* Forms */
 /* home category select */
 .category-select .select-wrapper input.select-dropdown,
-.white-rounded input[type=text] {
+input[type=text].white-rounded {
     color: #fff;
     border: 2px solid #fff;
     border-radius: 30px;
@@ -136,28 +142,28 @@ i.material-icons.small {
     height: 5rem;
 }
 /* placeholder */
-.white-rounded ::-webkit-input-placeholder {
+.white-rounded::-webkit-input-placeholder {
     color:#fff;
 }
-.white-rounded ::-moz-placeholder {
+.white-rounded::-moz-placeholder {
     color:#fff;
 }
-.white-rounded :-ms-input-placeholder {
+.white-rounded:-ms-input-placeholder {
     color:#fff;
 }
-.white-rounded ::-ms-input-placeholder {
+.white-rounded::-ms-input-placeholder {
     color:#fff;
 }
-.white-rounded ::placeholder {
+.white-rounded::placeholder {
     color:#fff;
 }
 
 /* over write materialise style for valid/invalid input */
-.white-rounded input.invalid[type=text]:not(.browser-default) {
+input.white-rounded.invalid[type=text]:not(.browser-default) {
     border-color: #F44336;
 }
-.white-rounded input.valid[type=text]:not(.browser-default),
-.white-rounded input.valid[type=text]:not(.browser-default):focus {
+input.white-rounded.valid[type=text]:not(.browser-default),
+input.white-rounded.valid[type=text]:not(.browser-default):focus {
     border-color: #4CAF50;
 }
 .category-select  .select-wrapper .caret {
@@ -171,7 +177,7 @@ label,
 .input-field > label {
     font-size: 1.4rem;
 }
-.button-rounded button {
+.btn-rounded {
     border: 2px solid #fff;
     border-radius: 30px;
 }
@@ -194,6 +200,10 @@ label,
     margin-top: -8px;
     line-height: 50px;
     height: 50px;
+    width: 100%;
+}
+.field-left button .material-icons {
+    margin-left: -5px;
 }
 
 /* Flashes */
