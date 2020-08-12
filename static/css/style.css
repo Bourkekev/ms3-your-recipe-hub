@@ -24,11 +24,17 @@ header {
     position: absolute;
     z-index: 999;
     width: 100%;
+    top: -64px;
+    transform: translate(0, 64px);
+    transition:top 0.2s ease-in;
 }
 header.sticky {
+    background: rgba(0,0,0,.5);
     position: fixed;
     width:100%;
     z-index: 997;
+    transform: translate(0, 0);
+    top:0px;
 }
 /* Navbar */
 nav {

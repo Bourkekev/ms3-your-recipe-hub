@@ -7,7 +7,7 @@
 
         /** Make header sticky after scroll y amount */
         $(window).scroll(function() {
-             // Track scroll amount
+            // Track scroll amount
             let yPos = ( $(window).scrollTop() );
             console.log(yPos)
             // Get header height
