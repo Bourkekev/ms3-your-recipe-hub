@@ -5,6 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Recipe Hub</title>
+    <!-- Favicon and theme colour -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static', filename='images/site.webmanifest')}}">
+    <link rel="mask-icon" href="{{url_for('static', filename='images/safari-pinned-tab.svg')}}" color="#25b35f">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-config" content="{{url_for('static', filename='images/browserconfig.xml')}}">
+    <meta name="theme-color" content="#25b35f">
     <!-- fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Yanone+Kaffeesatz:wght@400;700&display=swap"
@@ -20,8 +30,8 @@
 
 <body>
     <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
-    <header class="">
-        <nav class="" role="navigation">
+    <header>
+        <nav role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="{{url_for('home_recipes')}}" class="brand-logo"><img
                         src="{{url_for('static', filename='images/your-recipe-hub-logo.svg')}}"
@@ -29,16 +39,22 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{url_for('home_recipes')}}">Home</a></li>
                     <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
-                    <li><a href="{{url_for('course_list', course_name='Starter')}}">Starter</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                     <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
-                    <li><a href="{{url_for('category_list_url', category_name='Beef')}}">Beef</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Dessert')}}">Dessert</a></li>
                     <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
                     <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
                     <li><a class="sidenav-close" href="#!">Close Menu <i class="material-icons">close</i></a></li>
-                    <li><a href="#">Navbar Link</a></li>
+                    <li><a href="{{url_for('home_recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Dessert')}}">Dessert</a></li>
+                    <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                    <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i
                         class="material-icons">menu</i></a>
@@ -67,7 +83,8 @@
                     COLUMN
                 </div>
                 <div class="col s12 l4">
-                    COLUMN
+                    Top catyegopries
+                    <li><a href="{{url_for('category_list_url', category_name='Beef')}}">Beef</a></li>
                 </div>
                 <div class="col s12 l4">
                     COLUMN

@@ -199,10 +199,10 @@ So I changed the form method to GET and got the category selected using request.
 
  
 ### Media
-- The photos and vectors (except logo) used in this site were obtained from:
+- The photos and vectors used in this site were obtained from:
 
- -  - [Shutterstock](https://www.shutterstock.com/g/madrugadaverde)
- - Fictional logo was designed on https://www.freelogodesign.org/
+ - Logo was purchased from [Shutterstock](https://www.shutterstock.com/image-vector/vector-logo-template-cookbook-ladle-recipe-620961650)
+ -
 
  - The favicons were generated at https://realfavicongenerator.net/
 
