@@ -7,8 +7,10 @@
                 <form class="col s12" method="GET" action="{{ url_for('category_list') }}">
                     <!-- title, category and course -->
                     <div class="row">
-                        <h1 class="text-center text-lg-left">Find a Recipe</h1>
-                        <div class="text-center text-lg-left">By Category <span class="mdi prefix mdi-food-drumstick"></span></div>
+                        <div class="col s12">
+                            <h1 class="text-center text-lg-left">Find a Recipe</h1>
+                            <div class="text-center text-lg-left">By Category <span class="mdi prefix mdi-food-drumstick"></span></div>
+                        </div>
                         <div class="input-field category-select col s12 m6">
                             <select id="category_name" name="category_name" class="validate" required>
                                 <option value="" disabled selected>Select category</option>

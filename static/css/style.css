@@ -259,6 +259,12 @@ label,
     font-size: 40px;
     font-weight: bold;
 }
+/* Material cards */
+.card .card-title {
+    font-size: 30px;
+    font-size: 3rem;
+}
+
 /*--------------------- Media Queries --------------------*/
 
 /* Small devices (landscape phones, 576px and up) */
@@ -273,6 +279,9 @@ label,
 }
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+    h2 {
+        font-size: 4.5rem;
+    }
     /* Logo */
     nav {
         height: 80px;
@@ -301,6 +310,12 @@ label,
 }
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+    h1 {
+        font-size: 8.2rem;
+    }
+    h2 {
+        font-size: 5.5rem;
+    }
     /* Text alignment */
     .text-lg-left {
         text-align: left;
