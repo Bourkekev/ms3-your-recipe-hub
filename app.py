@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from os import path
 if path.exists("env.py"):
@@ -29,6 +30,11 @@ def index():
     categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find().limit(3).sort("date", -1))
     return render_template("index.html", categories=categories, recipes=recipes)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 @app.route('/all_recipes')
