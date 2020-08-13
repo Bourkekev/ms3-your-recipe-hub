@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col s12 center-align">
-            <h1 class="center-align">Register</h1>
+            <h1 class="center-align">Log In</h1>
             <p>Please use between 5 and 15 letters or numbers</p>
         </div>
     </div>
     <div class="row">
-        <form class="col s12 m4 offset-m4 card-panel grey lighten-5" method="POST" action="{{ url_for('register') }}">
+        <form class="col s12 m4 offset-m4 card-panel grey lighten-5" method="POST" action="{{ url_for('login') }}">
             <!-- Username -->
             <div class="row">
                 <div class="input-field col s12">
@@ -28,8 +28,8 @@
             <!-- Register button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn waves-effect waves-light btn-large" type="submit">Register
-                        <span class="mdi prefix mdi-login-variant"></span>
+                    <button class="btn waves-effect waves-light btn-large" type="submit">Log In
+                        <span class="mdi prefix mdi-login"></span>
                     </button>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 </div>
 <div class="row">
     <div class="col s12">
-        <p class="center-align">Have an account already? <a href="{{ url_for('login') }}">Log in to account here <span class="mdi prefix mdi-arrow-right-bold"></span></a></p>
+        <p class="center-align">Not registered? <a href="{{ url_for('register') }}">Register account here <span class="mdi prefix mdi-arrow-right-bold"></span></a></p>
     </div>
 </div>
 {% endblock %}
