@@ -63,15 +63,18 @@
         </nav>
     </header>
     <main id="maincontent">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul class="flashes">
-            {% for message in messages %}
-            <li class="teal accent-2 z-depth-1 valign-wrapper">{{ message }}<i class="material-icons">check</i></li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+        <!-- Flashed messages -->
+        <section class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                <li class="teal accent-2 z-depth-1 valign-wrapper">{{ message }}<i class="material-icons">check</i></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </section>
 
         {% block content %}
 

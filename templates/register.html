@@ -2,13 +2,14 @@
 {% block content %}
 <div class="container">
     <h1 class="center-align">Register</h1>
+    <p>Please use between 5 and 15 letters or numbers</p>
     <div class="row">
         <form class="col s12 m4 offset-m4 card-panel grey lighten-5" method="POST" action="{{ url_for('register') }}">
             <!-- Username -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="user_name" name="user_name" type="text" class="validate">
+                    <input id="user_name" name="user_name" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="user_name">Username</label>
                 </div>
             </div>
@@ -16,7 +17,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
-                    <input id="password" name="password" type="password" class="validate">
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
