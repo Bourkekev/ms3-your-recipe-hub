@@ -26,7 +26,7 @@ def page_not_found(e):
 
 @app.route('/')
 def home_recipes():
-    recipes = list(mongo.db.recipes.find().sort("date", -1))
+    recipes = list(mongo.db.recipes.find().limit(3).sort("date", -1))
     return render_template("index.html", recipes=recipes)
 
 
