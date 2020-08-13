@@ -84,4 +84,47 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2>Latest Recipes</h2>
+        </div>
+    </div>
+    {% if recipes|length  > 0 %}
+        <div class="row">
+            {% for recipe in recipes %}
+                <div class="col m6 l4">
+                    <div class="card blue-grey lighten-5">
+                        <div class="card-image">
+                            {% if recipe.image_url %}
+                                <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+                            {% else %}
+                                <picture>
+                                <source media="(max-width: 480px)" 
+                                srcset="{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}">
+                                <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
+                                </picture>
+                            {% endif %}
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">{{recipe.title}}</h2>
+                            <div class="row">
+                                <div class="col s4"><span class="mdi small prefix mdi-pasta"></span>{{recipe.course_name}}</div>
+                                <div class="col s4"><i class="small material-icons">access_time</i>{{recipe.total_time}}</div>
+                                <div class="col s4"><i class="small material-icons">people</i>{{recipe.portions}}</div>
+                            </div>
+
+                            <p>{{recipe.short_description}}</p>
+                            <a class="waves-effect waves-light btn-large" href="{{url_for('single_recipe', recipe_id=recipe._id)}}"><i class="material-icons right">chevron_right</i>View recipe</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col s12"><p>No recipes found</p></div>
+        </div>
+    {% endif %}
+</div>
 {% endblock %}
