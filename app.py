@@ -25,9 +25,10 @@ def page_not_found(e):
 
 
 @app.route('/')
-def home_recipes():
+def index():
+    categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find().limit(3).sort("date", -1))
-    return render_template("index.html", recipes=recipes)
+    return render_template("index.html", categories=categories, recipes=recipes)
 
 
 @app.route('/all_recipes')

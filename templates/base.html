@@ -33,11 +33,11 @@
     <header>
         <nav role="navigation">
             <div class="nav-wrapper container">
-                <a id="logo-container" href="{{url_for('home_recipes')}}" class="brand-logo"><img
+                <a id="logo-container" href="{{url_for('index')}}" class="brand-logo"><img
                         src="{{url_for('static', filename='images/your-recipe-hub-logo.svg')}}"
                         alt="Your Recipe Hub logo"></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('home_recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
                     <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
                     <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                     <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
@@ -48,7 +48,7 @@
 
                 <ul id="nav-mobile" class="sidenav">
                     <li><a class="sidenav-close" href="#!">Close Menu <i class="material-icons">close</i></a></li>
-                    <li><a href="{{url_for('home_recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
                     <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
                     <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                     <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
