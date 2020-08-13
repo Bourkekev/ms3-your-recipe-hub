@@ -2,7 +2,11 @@
 
 {% block content %}
 <div class="container">
-    <h1>All {{ category }} Recipes</h1>
+    {% if query is defined %}
+        <h1>Results for '{{ query }}'</h1>
+    {% else %}
+        <h1>All {{ category }}{{ course_name }} Recipes</h1>
+    {% endif %}
     <!-- index search -->
         <div class="row">
             <div class="col s12">

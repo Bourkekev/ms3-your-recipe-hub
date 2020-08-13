@@ -46,7 +46,7 @@ def search():
 @app.route('/course/<course_name>')
 def course_list(course_name):
     recipes = list(mongo.db.recipes.find({"course_name": course_name}))
-    return render_template("all-recipes.html", recipes=recipes)
+    return render_template("all-recipes.html", recipes=recipes, course_name=course_name)
 
 
 @app.route('/category', methods=["GET", "POST"])
