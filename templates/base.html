@@ -46,6 +46,7 @@
                     <li><a href="{{url_for('register')}}">Register</a></li>
                     <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
                     <li><a href="{{url_for('login')}}">Login</a></li>
+                    <li><a href="{{url_for('profile', user_name=session['user'])}}">Your Profile</a></li>
                 </ul>
                 <!-- Mobile sidenav -->
                 <ul id="nav-mobile" class="sidenav">
@@ -66,7 +67,7 @@
     </header>
     <main id="maincontent">
         <!-- Flashed messages -->
-        <section class="container">
+        <div class="container">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <ul class="flashes">
@@ -76,7 +77,7 @@
             </ul>
             {% endif %}
             {% endwith %}
-        </section>
+        </div>
 
         {% block content %}
 
