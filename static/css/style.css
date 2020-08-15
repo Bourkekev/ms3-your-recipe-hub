@@ -48,7 +48,7 @@ nav .brand-logo {
     left: 0;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    padding: 5px 0;
+    padding: 5px 0 5px 5px;
     width: 160px;
 }
 nav ul a {
@@ -306,7 +306,7 @@ label,
     }
     nav .brand-logo {
         width: 200px;
-        padding: 10px 0;
+        padding: 10px 0 10px 10px;
     } 
     /* Text alignment */
     .text-md-left {
@@ -350,6 +350,7 @@ label,
     /* Logo */
     nav .brand-logo {
         width: 220px;
+        padding: 15px 0 15px 15px;
     } 
     /* Text alignment */
     .text-xl-left {
