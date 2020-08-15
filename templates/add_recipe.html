@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Add Recipe - {% endblock %}
+
 {% block content %}
+<div class="title-panel">
+    <div class="container">
+        <div class="row">
+            <h1 class="page-title">Add Recipe</h1>
+        </div>
+    </div>
+</div>
 <div class="container">
-    <h1>Add Recipe</h1>
     <div class="row card-panel grey lighten-5">
         <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <!-- title, category and course -->

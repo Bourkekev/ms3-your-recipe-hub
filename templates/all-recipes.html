@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}All {{ category }}{{ course_name }} Recipes - {% endblock %}
+
 {% block content %}
+
 <div class="container">
     {% if query is defined %}
         <h1>Results for '{{ query }}'</h1>
