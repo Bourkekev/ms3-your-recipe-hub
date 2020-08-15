@@ -43,6 +43,7 @@ header.sticky {
 nav {
     background-color: transparent;
     box-shadow: none;
+    text-shadow: 1px 1px 1px #000;
 }
 nav .brand-logo {
     left: 0;
@@ -125,19 +126,24 @@ i.material-icons.small {
 .btn-large {
     height: 56px;
 }
+.btn-small {
+    margin: 15px 15px 15px 0;
+}
 /* Page titles */
 .page-title {
     color:#fff;
 }
-/* Hero Image */
+/* Title panel image */
 .title-panel {
-    background-image: url(../images/homepage-hero-mobile-576x1024.jpg);
+    background-image: url(../images/title-panel-mobile-576x200.jpg);
     background-size: cover;
-    padding-top: 50px;
+    padding-top: 56px;
     position: relative;
+    min-height: 56px;
 }
+/* Search Hero Image */
 .search-hero.title-panel {
-    background-image: url(../images/homepage-hero-mobile-576x1024.jpg);
+    background-image: url(../images/search-hero-mobile-576x576.jpg);
     background-repeat: no-repeat;
     padding-top: 100px;
 }
@@ -293,9 +299,29 @@ label,
     .text-sm-center {
         text-align: center;
     }
+    /* Title panel image */
+    .title-panel {
+        background-image: url(../images/title-panel-large-mobile-768x200.jpg);
+    }
+    /* Search Hero Image */
+    .search-hero.title-panel {
+        background-image: url(../images/search-hero-large-mobile-768x576.jpg);
+    }
+    .search-hero.title-panel:before {
+        background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
+    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+    /* Title panel image */
+    .title-panel {
+        background-image: url(../images/title-panel-tablet-992x200.jpg);
+        min-height: 90px;
+    }
+    /* Search Hero Image */
+    .search-hero.title-panel {
+        background-image: url(../images/search-hero-tablet-992x576.jpg);
+    }
     h2 {
         font-size: 4.5rem;
     }
@@ -327,6 +353,14 @@ label,
 }
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+    /* Title panel image */
+    .title-panel {
+        background-image: url(../images/title-panel-large-tablet-1200x200.jpg);
+    }
+    /* Search Hero Image */
+    .search-hero.title-panel {
+        background-image: url(../images/search-hero-tablet-1200x576.jpg);
+    }
     h1 {
         font-size: 8.2rem;
     }
@@ -351,7 +385,15 @@ label,
     nav .brand-logo {
         width: 220px;
         padding: 15px 0 15px 15px;
-    } 
+    }
+    /* Title panel image */
+    .title-panel {
+        background-image: url(../images/title-panel-1920x200.jpg);
+    }
+    /* Search Hero Image */
+    .search-hero.title-panel {
+        background-image: url(../images/search-hero-1920x700.jpg);
+    }
     /* Text alignment */
     .text-xl-left {
         text-align: left;
