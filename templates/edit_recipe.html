@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Edit Recipe - {% endblock %}
 {% block content %}
 <div class="container">
     <a class="waves-effect waves-light btn-small orange darken-4" href="{{url_for('single_recipe',recipe_id=recipe._id)}}"><i class="material-icons left">chevron_left</i>Back to recipe</a>

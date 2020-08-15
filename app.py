@@ -74,7 +74,7 @@ def login():
                         "profile", user_name=session["user"]))
             else:
                 # wrong password
-                flash("Incorrect Username/Password combination!")
+                flash("Incorrect Username/Password combination!", "error")
                 return redirect(url_for('login'))
 
         else:
@@ -99,9 +99,13 @@ def profile(user_name):
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookie
-    flash("You have been logged out.")
-    session.pop("user")
+    if "user" in session:
+        # remove user from session cookie
+        flash("You have been logged out.")
+        session.pop("user")
+        return redirect(url_for("login"))
+
+    flash("Do you wish to log in?")
     return redirect(url_for("login"))
 
 
