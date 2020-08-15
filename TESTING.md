@@ -27,7 +27,8 @@ I validated the CSS with the [W3 CSS Validation Service](http://www.css-validato
 
 #### Javascript
 
-
+### Colour Constrast Checking
+I used [WebAIM's](https://webaim.org/resources/contrastchecker/) contrast checker to ensure that text on coloured backgrounds is readable and to WCAG AA Standard, especially white text on coloured backgrounds.
 
 ### Testing on Browsers, Screen sizes and Devices
 I tested the website on the following browsers and devices:

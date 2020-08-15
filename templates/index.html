@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'layout/flash-messages.html' %}
 <!-- Search title panel -->
 <div class="search-hero title-panel">
+    {% include 'layout/flash-messages.html' %}
     <div class="container white-text">
         <div class="row">
             <form class="col s12 m6" method="GET" action="{{ url_for('category_list') }}">
