@@ -274,6 +274,10 @@ label,
 }
 
 /* Flashes */
+.flashes .message {
+    background: #78E3A4;
+}
+
 .flashes li {
     padding: 15px;
     font-weight: 600;
