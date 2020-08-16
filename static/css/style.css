@@ -71,6 +71,16 @@ nav ul a:hover {
 .flex-justify-center {
     justify-content: center;
 }
+/* Make row flex */
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+/* fix margin flex items */
+.row.flex-grid .col {
+    margin: initial;
+}
 /* Text alignment */
 .text-left {
     text-align: left;
