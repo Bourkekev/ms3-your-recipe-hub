@@ -303,6 +303,9 @@ label,
 .flashes .message {
     background: #78E3A4;
 }
+.flashes .error {
+    background: #ffcdd2;
+}
 
 .flashes li {
     padding: 15px;

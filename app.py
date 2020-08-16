@@ -40,7 +40,7 @@ def register():
             {"user_name": request.form.get("user_name").lower()})
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists. Please try another.", "error")
             return redirect(url_for("register"))
 
         register = {
@@ -79,7 +79,7 @@ def login():
 
         else:
             # wrong username
-            flash("Incorrect Username/Password combination!")
+            flash("Incorrect Username/Password combination!", "error")
             return redirect(url_for('login'))
 
     return render_template("login.html")
@@ -194,7 +194,7 @@ def edit_recipe(recipe_id):
     if "user" in session:
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         recipe_user = the_recipe["user_name"]
-        
+
         if session["user"] == recipe_user:
             if request.method == "POST":
                 overall_time = int(request.form.get("prep_time")) + int(request.form.get("cook_time"))
@@ -223,7 +223,7 @@ def edit_recipe(recipe_id):
             courses = mongo.db.courses.find().sort("course_name", 1)
             return render_template("edit_recipe.html", recipe=the_recipe, categories=categories, courses=courses)
 
-        flash("You are not the author of this recipe and cannot edit it.")
+        flash("You are not the author of this recipe and cannot edit it.", "error")
         return render_template("single-recipe.html", recipe=the_recipe)
 
     flash("You must be logged in to edit a recipe. Do you wish to log in?")
