@@ -330,6 +330,12 @@ label,
     font-size: 30px;
     font-size: 3rem;
 }
+/* crop card image to max-height */
+.card-image.crop-image {
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+}
 /* Footer */
 footer {
     background-color: #156635;
@@ -337,8 +343,8 @@ footer {
 
 /*--------------------- Media Queries --------------------*/
 
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {
+/* Small devices (landscape phones, 600px and up) */
+@media screen and (min-width: 600px) {
     /* Text alignment */
     .text-sm-left {
         text-align: left;
@@ -356,6 +362,10 @@ footer {
     }
     .search-hero.title-panel:before {
         background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
+    }
+    /* crop card image to max-height */
+    .card-image.crop-image {
+        max-height: 207px;
     }
 }
 /* Medium devices (tablets, 768px and up) */
@@ -397,6 +407,10 @@ footer {
         border-top: none;
         padding: 24px;
     }
+    /* crop card image to max-height */
+    .card-image.crop-image {
+        max-height: 271px;
+    }
 }
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -420,6 +434,10 @@ footer {
     }
     .text-lg-center {
         text-align: center;
+    }
+    /* crop card image to max-height */
+    .card-image.crop-image {
+        max-height: 176px;
     }
 }
 /* Extra large devices (large desktops, 1200px and up) */
@@ -447,5 +465,9 @@ footer {
     }
     .text-xl-center {
         text-align: center;
+    }
+    /* crop card image to max-height */
+    .card-image.crop-image {
+        max-height: 275px;
     }
 }
