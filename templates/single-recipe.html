@@ -6,6 +6,11 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
+            {% include 'layout/flash-messages.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
             {% if session.user|lower == recipe.user_name|lower %}
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">
                     <i class="material-icons right">edit</i>Edit Recipe</a>
