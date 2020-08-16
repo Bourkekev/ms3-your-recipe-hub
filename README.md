@@ -120,6 +120,9 @@ Based on the functionality required and the data to be stored, I created my data
 ### Existing Features
 
 #### Users can only edit their own Recipes
+#### User can view their own recipes
+
+By navigating to their profile page a user can view all the recipes that they have submitted to the site.
 
 #### Minor Features
 Expand the sections below for more info on details

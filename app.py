@@ -92,7 +92,8 @@ def profile(user_name):
         {"user_name": session["user"]})["user_name"]
 
     if session["user"]:
-        return render_template("profile.html", user_name=username)
+        your_recipes = list(mongo.db.recipes.find({"user_name": username}))
+        return render_template("profile.html", user_name=username, recipes=your_recipes)
 
     return redirect(url_for("login"))
 
@@ -232,9 +233,20 @@ def edit_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Recipe successfully deleted.")
-    return redirect(url_for('all_recipes'))
+    if "user" in session:
+        the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        recipe_user = the_recipe["user_name"]
+
+        if session["user"] == recipe_user:
+            mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+            flash("Recipe successfully deleted.")
+            return redirect(url_for('all_recipes'))
+
+        flash("You are not the author of this recipe and cannot delete it.", "error")
+        return render_template("single-recipe.html", recipe=the_recipe)
+
+    flash("You must be logged in to edit a recipe. Do you wish to log in?")
+    return redirect(url_for("login"))
 
 
 @app.route('/get_categories')
