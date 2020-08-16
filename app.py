@@ -191,6 +191,10 @@ def add_recipe():
 @app.route('/edit_recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if "user" in session:
+        the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+        print(the_recipe["user_name"])
+        #recipe_user = the_recipe.user_name
+        #print(recipe_user)
         if request.method == "POST":
             overall_time = int(request.form.get("prep_time")) + int(request.form.get("cook_time"))
             submit_edit = {
