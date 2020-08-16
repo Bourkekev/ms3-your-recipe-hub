@@ -119,13 +119,13 @@ def all_recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("all-recipes.html", recipes=recipes, query=query)
+    return render_template("search-results.html", recipes=recipes, query=query)
 
 
 @app.route('/course/<course_name>')
 def course_list(course_name):
     recipes = list(mongo.db.recipes.find({"course_name": course_name}))
-    return render_template("all-recipes.html", recipes=recipes, course_name=course_name)
+    return render_template("search-results.html", recipes=recipes, course_name=course_name)
 
 
 @app.route('/category', methods=["GET", "POST"])
@@ -134,18 +134,18 @@ def category_list():
     if request.method == "POST":
         category = request.form.get("category_name")
         recipes = list(mongo.db.recipes.find({"category_name": category}))
-        return render_template("all-recipes.html", recipes=recipes)
+        return render_template("search-results.html", recipes=recipes)
 
     category = request.args.get("category_name")
     recipes = list(mongo.db.recipes.find({"category_name": category}))
-    return render_template("all-recipes.html", recipes=recipes, category=category)
+    return render_template("search-results.html", recipes=recipes, category=category)
 
 
 @app.route('/category/<category_name>')
 def category_list_url(category_name):
     """Returns the category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
-    return render_template("all-recipes.html", recipes=recipes)
+    return render_template("search-results.html", recipes=recipes)
 
 
 @app.route('/single_recipe/<recipe_id>')
