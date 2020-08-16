@@ -43,7 +43,21 @@ header.sticky {
 nav {
     background-color: transparent;
     box-shadow: none;
+}
+#desktop-nav {
     text-shadow: 1px 1px 1px #000;
+    /* height here needed for vertical separator*/
+    height: 100%;
+}
+#account-dropdown {
+    text-shadow: none;
+}
+/* vertical divider in nav */
+li.vert-divider {
+    width: 1px;
+    height: 100%;
+    display: block;
+    background: rgb(255 255 255 / 0.4);
 }
 nav .brand-logo {
     left: 0;
@@ -56,7 +70,7 @@ nav ul a {
     font-size: 1.4rem;
     font-weight: 700;
 }
-nav ul a:hover {
+nav ul a:hover:not(.btn) {
     color: #e78036;
     transition: color .3s;
 }

@@ -36,22 +36,29 @@
                 <a id="logo-container" href="{{url_for('index')}}" class="brand-logo"><img
                         src="{{url_for('static', filename='images/your-recipe-hub-logo.svg')}}"
                         alt="Your Recipe Hub logo"></a>
-                <ul class="right hide-on-med-and-down">
+                <ul id="desktop-nav" class="right hide-on-med-and-down">
                     <li><a href="{{url_for('index')}}">Home</a></li>
                     <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
                     <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                     <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
                     <li><a href="{{url_for('course_list', course_name='Dessert')}}">Dessert</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Other')}}">Other</a></li>
+                    <li class="vert-divider"></li>
                     {% if session.user %}
-                        <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
-                        <li><a href="{{url_for('profile', user_name=session['user'])}}">Your Profile</a></li>
-                        <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
-                        <li><a href="{{url_for('logout')}}">Log out</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="account-dropdown">Account Actions<i class="material-icons right">arrow_drop_down</i></a></li>
                     {% else %}
                         <li><a href="{{url_for('register')}}">Register</a></li>
                         <li><a href="{{url_for('login')}}">Log in</a></li>
                     {% endif %}
-                    <li><a href="{{url_for('add_recipe')}}" class="btn btn-large white-rounded">Add Recipe</a></li>
+                    <li><a href="{{url_for('add_recipe')}}" class="btn btn-large btn-rounded">Add Recipe</a></li>
+                </ul>
+                <!-- Dropdown Structure -->
+                <ul id="account-dropdown" class="dropdown-content">
+                    <li><a href="{{url_for('profile', user_name=session['user'])}}">Your Profile</a></li>
+                    <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+                    <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{url_for('logout')}}">Log out</a></li>
                 </ul>
                 <!-- Mobile sidenav -->
                 <ul id="nav-mobile" class="sidenav">
@@ -61,6 +68,8 @@
                     <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                     <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
                     <li><a href="{{url_for('course_list', course_name='Dessert')}}">Dessert</a></li>
+                    <li><a href="{{url_for('course_list', course_name='Other')}}">Other</a></li>
+                    <li class="divider"></li>
                     {% if session.user %}
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
                         <li><a href="{{url_for('profile', user_name=session['user'])}}">Your Profile</a></li>
