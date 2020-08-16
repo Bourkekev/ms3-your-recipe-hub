@@ -6,13 +6,15 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">
-                <i class="material-icons right">edit</i>Edit Recipe</a>
-            <!-- Trigger modal warning -->
-            <a href="#delete-recipe"
-                class="waves-effect waves-light btn-small red darken-4 modal-trigger">
-                <i class="material-icons right">delete</i>Delete
-                this Recipe</a>
+            {% if session.user|lower == recipe.user_name|lower %}
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">
+                    <i class="material-icons right">edit</i>Edit Recipe</a>
+                <!-- Trigger modal warning -->
+                <a href="#delete-recipe"
+                    class="waves-effect waves-light btn-small red darken-4 modal-trigger">
+                    <i class="material-icons right">delete</i>Delete
+                    this Recipe</a>
+            {% endif %}
         </div>
     </div>
     <div class="row">

@@ -173,7 +173,7 @@ def add_recipe():
             "chef_notes": request.form.get("chef_notes"),
             "nutrition": request.form.get("nutrition"),
             "date": datetime.utcnow(),
-            "user_name": "Kevin"
+            "user_name": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe successfully added.")
@@ -203,7 +203,7 @@ def edit_recipe(recipe_id):
             "total_time" : overall_time,
             "nutrition": request.form.get("nutrition"),
             "date": datetime.utcnow(),
-            "user_name": "Kevin"
+            "user_name": session["user"]
       }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit_edit)
         flash("Recipe successfully updated.")
