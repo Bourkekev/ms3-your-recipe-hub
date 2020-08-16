@@ -119,6 +119,7 @@ Based on the functionality required and the data to be stored, I created my data
  
 ### Existing Features
 
+#### Users can only edit their own Recipes
 
 #### Minor Features
 Expand the sections below for more info on details
