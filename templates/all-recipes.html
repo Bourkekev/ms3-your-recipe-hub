@@ -60,7 +60,7 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <h1>All Recipes</h1>
+            <h2>All Recipes</h2>
         </div>
     </div>    
     {% if recipes|length  > 0 %}
@@ -80,7 +80,7 @@
                             {% endif %}
                         </div>
                         <div class="card-content">
-                            <h2 class="card-title">{{recipe.title}}</h2>
+                            <h3 class="card-title">{{recipe.title}}</h3>
                             <div class="row">
                                 <div class="col s4"><span class="mdi small prefix mdi-pasta"></span>{{recipe.course_name}}</div>
                                 <div class="col s4"><i class="small material-icons">access_time</i>{{recipe.total_time}}</div>
