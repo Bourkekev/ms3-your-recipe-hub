@@ -111,8 +111,9 @@ def logout():
 
 @app.route('/all_recipes')
 def all_recipes():
+    categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find())
-    return render_template("all-recipes.html", recipes=recipes)
+    return render_template("all-recipes.html", categories=categories, recipes=recipes)
 
 
 @app.route('/search', methods=["GET", "POST"])
