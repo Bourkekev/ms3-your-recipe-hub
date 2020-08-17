@@ -48,6 +48,8 @@ I include this here to explain what I, as a developer, wanted to get out of this
 
  - To provide an easy to use, online recipe repository, which provides users with full CRUD functionality.
  - To improve my knowledge of Python, Flask and Jinja templating, with a practical project.
+ - To learn about basic user authentication.
+ - To learn about MongoDB indexing for text searches.
  - To learn to use the [Materialize Framework](https://materializecss.com/), to see how it compares to the likes of Bootstrap.
  - Connecting a web app to a database to create and store data, in this case in a non-relational database, MongoDB.
  - To learn to deploy the web app through Heroku.
@@ -71,7 +73,7 @@ This section determines what the users should be able to do on the website. User
 
 ### Structure
 
-To list the pages I needed and to visialise the site structure, I designed my visual sitemap in Gloomap. In the sitemap below, the pages marked in green represent site User (logged in) pages:
+To list the pages I needed and to visualise the site structure, I designed my visual sitemap in Gloomap. In the sitemap below, the pages marked in green represent site User (logged in) pages:
 
 ![Sitemap](README_resources/gloomap-sitemap.png)
 
