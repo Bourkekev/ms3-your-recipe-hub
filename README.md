@@ -1,31 +1,67 @@
 # Milestone 3 - Your Recipe Hub - by Kevin Bourke
 
-This project is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. There many sites in existence that have this kind of functionailty already, such as Kitchen Stories and Allrecipes.
+Your Recipe Hub is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. If they register, users can read, create, update and delete recipes. There many sites in existence that have this kind of functionality already, such as [Kitchen Stories](https://www.kitchenstories.com/en) and [Allrecipes](https://www.allrecipes.com/). Essentially the users would be building a database of recipes for public use.
 
 ## UX
 
-I wanted the site to have 2 main features.
- - [x] Users should be able to browse or search the site for recipes.
- - [x] If they would like, users should be able to upload their own recipes.
+I wanted the site to have 3 main overarching features.
+ - [x] Users should be able to browse by category or search the site for recipes.
+ - [x] If they like, users should be able to register and login to the site.
+ - [x] If logged in, users should be able to upload their own recipes.
 
 ### User Stories
 
-This section provides insight into the UX process, focusing on who this website is for, what it is that they want to achieve and how this project is the best way to help them achieve these things.  
+This section provides insight into the UX process, focusing on who this website is for, what it is that they want to achieve and how this project is the best way to help them achieve these things. It expands on the main features as were listed above.
 
-#### As a User
+#### As a User who is just using the site as a resource for recipe ideas I would like to:
 
- 
+- [x] Browse recipes by food course.
+- [x] Browse recipes by food category.
+- [x] Search the site by keyword for recipes easily.
+- [x] Easily see the time required for each recipe while browsing.
+- [x] Easily view latest Recipes.
+
+#### As a User who would like to contribute recipes to the site I would also like to:
+
+- [x] Register for an account.
+- [x] Login to my account.
+- [x] Submit my own recipes to be shown on the website.
+- [x] Use the site as a repository for my own recipes.
+- [x] Easily view recipes I have submitted.
+- [x] Edit my own recipes, but other users cannot edit or delete my recipes.
+- [x] Delete my own recipes.
+- [x] Add new categories.
+- [ ] Delete categories.
+- [x] Log out of my account.
+- [x] Get clear messages if something does not work, like a username is already taken.
+
+#### As admin or the site owner I would like to do all the above as well as:
+
+- [x] Edit or Remove all recipes.
+- [ ] Edit or remove all categories.
+- [ ] Manage Courses.
+- [ ] Remove Users if required.
 
 #### As a developer
 
+I include this here to explain what I, as a developer, wanted to get out of this project. 
 
+ - To provide an easy to use, online recipe repository, which provides users with full CRUD functionality.
+ - To improve my knowledge of Python, Flask and Jinja templating, with a practical project.
+ - To learn to use the [Materialize Framework](https://materializecss.com/), to see how it compares to the likes of Bootstrap.
+ - Connecting a web app to a database to create and store data, in this case in a non-relational database, MongoDB.
+ - To learn to deploy the web app through Heroku.
 
 
 ### Strategy
 
 The goals of this type of website are to:
 
-1. 
+1. Be a resource for users to get recipe ideas.
+2. Allow users to submit and manage their own recipe ideas.
+3. Be a repository of recipes for a registered user, i.e easily access their own submitted recipes.
+4. To give ratings or feedback on recipes.
+5. To give admins full control over all users recipes and categories, and also courses.
 
 ### Scope
 
@@ -144,7 +180,7 @@ The text area fields have a max number of characters allowed so I added a simple
 
 ### Features to consider implementing in the future
 
-1. 
+ - Additional Categorisation by Cuisine (Italian, Chinese etc...) and tags, like for specific ingredients like eggs or potatoes.
 
 ## Testing
 
