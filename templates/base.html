@@ -45,7 +45,7 @@
                     <li><a href="{{url_for('course_list', course_name='Other')}}">Other</a></li>
                     <li class="vert-divider"></li>
                     {% if session.user %}
-                    <li><a class="dropdown-trigger" href="#!" data-target="account-dropdown">Account Actions<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a class="nav-dropdown-trigger" href="#!" data-target="account-dropdown">Account Actions<i class="material-icons right">arrow_drop_down</i></a></li>
                     {% else %}
                         <li><a href="{{url_for('register')}}">Register</a></li>
                         <li><a href="{{url_for('login')}}">Log in</a></li>
