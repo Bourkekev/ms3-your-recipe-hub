@@ -259,7 +259,7 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name").lower()
         }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
@@ -272,7 +272,7 @@ def add_category():
 def edit_category(category_id):
     if request.method == "POST":
         submit_edit = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name").lower()
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit_edit)
         flash("Category successfully updated")

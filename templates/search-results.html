@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Results for {{ query }} {{ category }}{{ course_name }} Recipes - {% endblock %}
+{% block title %}Results for {{ query }} {{ category|capitalize }}{{ course_name }} Recipes - {% endblock %}
 
 {% block content %}
 <div class="title-panel">
@@ -9,7 +9,7 @@
                 {% if query is defined %}
                     Results for '{{ query }}'
                 {% else %}
-                    All {{ category }}{{ course_name }} Recipes
+                    All {{ category|capitalize }}{{ course_name }} Recipes
                 {% endif %}
             </h1>
         </div>
