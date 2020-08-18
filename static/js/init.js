@@ -4,7 +4,9 @@
         $(".parallax").parallax();
         $("select").formSelect();
         $(".modal").modal();
-        $(".nav-dropdown-trigger").dropdown();
+        $(".nav-dropdown-trigger").dropdown({
+            coverTrigger: false
+        });
 
         /** Make header sticky after scroll y amount */
         $(window).scroll(function() {
