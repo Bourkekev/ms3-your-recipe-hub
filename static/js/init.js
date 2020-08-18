@@ -9,7 +9,7 @@
         });
         $("textarea#short_description").characterCounter();
         
-        /* Validate Materilize select */
+        /* Validate Materilize select - script supplied by Code Institute */
         validateMaterializeselect();
         function validateMaterializeselect() {
             let classValid = { "border-bottom": "1px solid #4caf5e", "box-shadow": "0 1px 0 0 #4caf5e" };

@@ -248,7 +248,7 @@ So I had to change the class on the dropdown trigger in the navigation to be dif
  - For Python's datetime formatting I referenced https://www.programiz.com/python-programming/datetime/strftime
  - Form field character count - [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp).
  - Information on message flashing I referenced [Flask Flash docs](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
-
+ - Validation JavaScript for Materialize select - This script was supplied by Code Institute, because by default the materialize select provides no feedback on a required select field that is left blank.
  
 ### Content
 
