@@ -230,12 +230,14 @@ def edit_recipe(recipe_id):
                 mongo.db.recipes.update(
                     {"_id": ObjectId(recipe_id)}, submit_edit)
                 flash("Recipe successfully updated.")
+                return redirect(url_for('single_recipe', recipe_id=recipe_id))
 
             categories = mongo.db.categories.find().sort("category_name", 1)
             courses = mongo.db.courses.find().sort("course_name", 1)
             return render_template(
                 "edit_recipe.html",
                 recipe=the_recipe, categories=categories, courses=courses)
+            
 
         flash(
             "You are not the author of this recipe and cannot edit it.",
