@@ -1,51 +1,41 @@
-<!-- Search title panel -->
-<div class="search-hero title-panel">
-    <div class="container white-text">
+<div class="row">
+    <form class="col s12 m6" method="GET" action="{{ url_for('category_list') }}">
+        <!-- select by category -->
         <div class="row">
-            <form class="col s12" method="GET" action="{{ url_for('category_list') }}">
-                <!-- title, category and course -->
-                <div class="row">
-                    <div class="col s12">
-                        <h1 class="text-center text-lg-left">Find a Recipe</h1>
-                        <div class="text-center text-lg-left">By Category <span
-                                class="mdi prefix mdi-food-drumstick"></span></div>
-                    </div>
-                    <div class="input-field category-select col s12 m6">
-                        <select id="category_name" name="category_name" class="validate" required>
-                            <option value="" disabled selected>Select category</option>
-                            {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="category_name" class="sr-only">Food Category</label>
-                    </div>
-                    <!-- submit button -->
-                    <div class="col s12 m6 text-center text-sm-left">
-                        <button class="btn waves-effect waves-light btn-large btn-rounded" type="submit">Search
-                            <i class="material-icons right">search</i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <!-- index search -->
-        <div class="row">
-            <div class="col s12 m6">
-                <div class="text-center text-lg-left">Or Search Keyword</div>
-                <form action="{{ url_for('search') }}" method="post" class="">
-                    <div class="row valign-wrapper">
-                        <div class="input-field button-right col s9 m10">
-                            <input type="text" name="query" id="query" minlength="3" maxlength="30"
-                                placeholder="Search Recipes" class="validate white-rounded" required>
-                            <label for="query" class="sr-only">Search Recipes</label>
-                        </div>
-                        <div class="col s3 m2 field-left">
-                            <button type="submit" class="waves-effect waves-dark btn white btn-rounded"><i
-                                    class="material-icons grey-text darken-4">search</i></button>
-                        </div>
-                    </div>
-                </form>
+            <div class="input-field category-select button-right col s9 m10">
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Select category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name" class="sr-only">Food Category</label>
+            </div>
+            <!-- submit button -->
+            <div class="input-field col s3 m2 field-left">
+                <button class="btn waves-effect waves-light btn-large green btn-rounded" type="submit">
+                    <i class="material-icons">search</i>
+                </button>
             </div>
         </div>
+    </form>
+</div>
+<!-- index search -->
+<div class="row">
+    <div class="col s12 m6">
+        <div class="text-center text-sm-left">Or Search Keyword</div>
+        <form action="{{ url_for('search') }}" method="GET" class="">
+            <div class="row">
+                <div class="input-field button-right col s9 m10">
+                    <input type="text" name="query" id="query" minlength="3" maxlength="30"
+                        placeholder="Search Recipes" class="validate white-rounded" required>
+                    <label for="query" class="sr-only">Search Recipes</label>
+                </div>
+                <div class="input-field col s3 m2 field-left">
+                    <button type="submit" class="btn waves-effect waves-dark btn-large white btn-rounded"><i
+                            class="material-icons grey-text darken-4">search</i></button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
