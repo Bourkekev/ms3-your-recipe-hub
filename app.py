@@ -47,7 +47,7 @@ def register():
 
         register = {
             "user_name": request.form.get("user_name").lower(),
-            "password" : generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -69,11 +69,12 @@ def login():
         if existing_user:
             # check hashed password
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("user_name").lower()
-                    flash("Welcome, {}".format(request.form.get("user_name")))
-                    return redirect(url_for(
-                        "profile", user_name=session["user"]))
+                    existing_user["password"],
+                    request.form.get("password")):
+                session["user"] = request.form.get("user_name").lower()
+                flash("Welcome, {}".format(request.form.get("user_name")))
+                return redirect(url_for(
+                    "profile", user_name=session["user"]))
             else:
                 # wrong password
                 flash("Incorrect Username/Password combination!", "error")
@@ -167,7 +168,7 @@ def single_recipe(recipe_id):
 
 @app.route('/add_recipe', methods=["GET", "POST"])
 def add_recipe():
-    """Checks if user is logged in, and then allows to add new recipe"""
+    """Checks if user is logged in, and then allows user to add new recipe"""
     if "user" in session:
         if request.method == "POST":
             recipe = {
@@ -207,7 +208,8 @@ def edit_recipe(recipe_id):
 
         if session["user"] == recipe_user:
             if request.method == "POST":
-                overall_time = int(request.form.get("prep_time")) + int(request.form.get("cook_time"))
+                overall_time = int(request.form.get("prep_time"))
+                + int(request.form.get("cook_time"))
                 submit_edit = {
                     "title": request.form.get("title"),
                     "category_name": request.form.get("category_name"),
@@ -220,7 +222,7 @@ def edit_recipe(recipe_id):
                     "prep_time": int(request.form.get("prep_time")),
                     "cook_time": int(request.form.get("cook_time")),
                     "chef_notes": request.form.get("chef_notes"),
-                    "total_time" : overall_time,
+                    "total_time": overall_time,
                     "nutrition": request.form.get("nutrition"),
                     "date": datetime.utcnow(),
                     "user_name": session["user"]
@@ -229,12 +231,15 @@ def edit_recipe(recipe_id):
                     {"_id": ObjectId(recipe_id)}, submit_edit)
                 flash("Recipe successfully updated.")
 
-            #the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
             categories = mongo.db.categories.find().sort("category_name", 1)
             courses = mongo.db.courses.find().sort("course_name", 1)
-            return render_template("edit_recipe.html", recipe=the_recipe, categories=categories, courses=courses)
+            return render_template(
+                "edit_recipe.html",
+                recipe=the_recipe, categories=categories, courses=courses)
 
-        flash("You are not the author of this recipe and cannot edit it.", "error")
+        flash(
+            "You are not the author of this recipe and cannot edit it.",
+            "error")
         return render_template("single-recipe.html", recipe=the_recipe)
 
     flash("You must be logged in to edit a recipe. Do you wish to log in?")
@@ -252,7 +257,9 @@ def delete_recipe(recipe_id):
             flash("Recipe successfully deleted.")
             return redirect(url_for('all_recipes'))
 
-        flash("You are not the author of this recipe and cannot delete it.", "error")
+        flash(
+            "You are not the author of this recipe and cannot delete it.",
+            "error")
         return render_template("single-recipe.html", recipe=the_recipe)
 
     flash("You must be logged in to edit a recipe. Do you wish to log in?")
@@ -261,44 +268,65 @@ def delete_recipe(recipe_id):
 
 @app.route('/get_categories')
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
+    """Checks if user is logged in, and then allows user to view categories"""
+    if "user" in session:
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        return render_template("categories.html", categories=categories)
+
+    flash("You must be logged in to view categories. Do you wish to log in?")
+    return redirect(url_for("login"))
 
 
 @app.route('/add_category', methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name").lower()
-        }
-        mongo.db.categories.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for('get_categories'))
+    """Checks if user is logged in, and then allows user to add a category"""
+    if "user" in session:
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name").lower()
+            }
+            mongo.db.categories.insert_one(category)
+            flash("New Category Added")
+            return redirect(url_for('get_categories'))
 
-    return render_template("add_category.html")
+        return render_template("add_category.html")
+
+    flash("You must be logged in to add a category. Do you wish to log in?")
+    return redirect(url_for("login"))
 
 
 @app.route('/edit_category/<category_id>', methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        submit_edit = {
-            "category_name": request.form.get("category_name").lower()
-        }
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit_edit)
-        flash("Category successfully updated")
-        return redirect(url_for('get_categories'))
+    """Checks if user is logged in, and then allows user to edit a category"""
+    if "user" in session:
+        if request.method == "POST":
+            submit_edit = {
+                "category_name": request.form.get("category_name").lower()
+            }
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit_edit)
+            flash("Category successfully updated")
+            return redirect(url_for('get_categories'))
 
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("edit_category.html", category=category)
+        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+        return render_template("edit_category.html", category=category)
+
+    flash("You must be logged in to edit a category. Do you wish to log in?")
+    return redirect(url_for("login"))
 
 
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category successfully deleted")
-    return redirect(url_for('get_categories'))
+    """Checks if user is logged in, and then allows user to edit a category"""
+    if "user" in session:
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category successfully deleted")
+        return redirect(url_for('get_categories'))
+
+    flash("You must be logged in to delete a category. Do you wish to log in?")
+    return redirect(url_for("login"))
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-           port=os.environ.get('PORT'),
-           debug=True)
+    app.run(
+        host=os.environ.get('IP'),
+        port=os.environ.get('PORT'),
+        debug=True)
