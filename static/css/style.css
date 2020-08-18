@@ -184,6 +184,7 @@ i.material-icons.small {
 .title-panel {
     background-image: url(../images/title-panel-mobile-576x200.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     padding-top: 56px;
     position: relative;
     min-height: 56px;
@@ -191,7 +192,11 @@ i.material-icons.small {
 /* Search Hero Image */
 .search-hero.title-panel {
     background-image: url(../images/search-hero-mobile-576x576.jpg);
-    background-repeat: no-repeat;
+    padding-top: 100px;
+}
+/* All recipes Search Hero Image */
+.all-recipes-hero.title-panel {
+    background-image: url(../images/search-hero-all-recipes-mobile-576x576.jpg);
     padding-top: 100px;
 }
 
@@ -374,7 +379,12 @@ footer {
     .search-hero.title-panel {
         background-image: url(../images/search-hero-large-mobile-768x576.jpg);
     }
-    .search-hero.title-panel:before {
+    /* All recipes Search Hero Image */
+    .all-recipes-hero.title-panel {
+        background-image: url(../images/search-hero-all-recipes-large-mobile768x576.jpg);
+    }
+    .search-hero.title-panel:before,
+    .all-recipes-hero.title-panel:before {
         background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
     }
     /* crop card image to max-height */
@@ -392,6 +402,10 @@ footer {
     /* Search Hero Image */
     .search-hero.title-panel {
         background-image: url(../images/search-hero-tablet-992x576.jpg);
+    }
+    /* All recipes Search Hero Image */
+    .all-recipes-hero.title-panel {
+        background-image: url(../images/search-hero-all-recipes-tablet-992x576.jpg);
     }
     h2 {
         font-size: 4.5rem;
@@ -436,6 +450,10 @@ footer {
     .search-hero.title-panel {
         background-image: url(../images/search-hero-tablet-1200x576.jpg);
     }
+    /* All recipes Search Hero Image */
+    .all-recipes-hero.title-panel {
+        background-image: url(../images/search-hero-all-recipes-large-tablet-1200x576.jpg);
+    }
     h1 {
         font-size: 8.2rem;
     }
@@ -472,6 +490,10 @@ footer {
     /* Search Hero Image */
     .search-hero.title-panel {
         background-image: url(../images/search-hero-1920x700.jpg);
+    }
+    /* All recipes Search Hero Image */
+    .all-recipes-hero.title-panel {
+        background-image: url(../images/search-hero-all-recipes-1920x700.jpg);
     }
     /* Text alignment */
     .text-xl-left {
