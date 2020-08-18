@@ -7,7 +7,7 @@
         $(".nav-dropdown-trigger").dropdown({
             coverTrigger: false
         });
-        $("textarea#short_description").characterCounter();
+        $("textarea#short_description, textarea#ingredients, textarea#method, textarea#nutrition, textarea#chef_notes").characterCounter();
         
         /* Validate Materilize select - script supplied by Code Institute */
         validateMaterializeselect();

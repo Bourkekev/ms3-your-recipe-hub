@@ -64,8 +64,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_align_left</i>
                     <textarea id="short_description" name="short_description" minlength="5"
-                    maxlength="250" class="materialize-textarea" oninput="descLenOut.value = short_description.value.length">{{ recipe.short_description }}</textarea>
-                    <small>Characters used: </small><output name="descLenOut" id="descLenOut"></output>
+                    maxlength="250" data-length="250" class="materialize-textarea" required>{{ recipe.short_description }}</textarea>
                     <label for="short_description">Recipe Description (Max 250 characters)</label>
                 </div>
             </div>
@@ -74,8 +73,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_list_bulleted</i>
                     <textarea id="ingredients" name="ingredients" minlength="5"
-                    maxlength="1000" class="materialize-textarea" oninput="ingLenOut.value = ingredients.value.length">{{ recipe.ingredients }}</textarea>
-                    <small>Characters used: </small><output name="ingLenOut" id="ingLenOut"></output>
+                    maxlength="1000" data-length="1000" class="materialize-textarea" required>{{ recipe.ingredients }}</textarea>
                     <label for="ingredients">Ingredients (Put each ingredient on a separate line. Max 1000 characters)</label>
                 </div>
             </div>
@@ -84,8 +82,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">format_list_numbered</i>
                     <textarea id="method" name="method" minlength="5"
-                    maxlength="2000" class="materialize-textarea" oninput="methodLenOut.value = method.value.length">{{ recipe.method }}</textarea>
-                    <small>Characters used: </small><output name="methodLenOut" id="methodLenOut"></output>
+                    maxlength="2000" data-length="2000" class="materialize-textarea" required>{{ recipe.method }}</textarea>
                     <label for="method">Method (Put each step on a separate line. Max 2000 characters)</label>
                 </div>
             </div>
@@ -121,7 +118,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">speaker_notes</i>
                     <textarea id="chef_notes" name="chef_notes" minlength="5"
-                    maxlength="500" class="materialize-textarea">{{ recipe.chef_notes }}</textarea>
+                    maxlength="500" data-length="500" class="materialize-textarea">{{ recipe.chef_notes }}</textarea>
                     <label for="chef_notes">Chef's Notes</label>
                 </div>
             </div>
@@ -130,7 +127,7 @@
                 <div class="input-field col s12">
                     <span class="mdi prefix mdi-nutrition"></span>
                     <textarea id="nutrition" name="nutrition" minlength="5"
-                    maxlength="500" class="materialize-textarea">{{ recipe.nutrition }}</textarea>
+                    maxlength="500" data-length="500" class="materialize-textarea">{{ recipe.nutrition }}</textarea>
                     <label for="nutrition">Nutritional Information (If known)</label>
                 </div>
             </div>
