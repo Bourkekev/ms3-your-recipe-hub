@@ -327,6 +327,19 @@ label,
 .field-left button .material-icons {
     margin-left: -5px;
 }
+/* Force materialize range value to show always */
+input[type=range]+.thumb {
+    height: 30px!important;
+    width: 30px!important;
+    border-radius: 50% 50% 50% 0;
+    top: -30px!important;
+    margin-left: 22px!important;
+}
+input[type=range]+.thumb .value {
+    color: #fff;
+    font-size: 10px;
+    margin-top: 8px;
+}
 
 /* Flashes */
 .flashes .message {
