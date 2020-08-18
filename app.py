@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash, session
+from flask import Flask, render_template, redirect, request, url_for, \
+    flash, session
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
@@ -29,7 +30,8 @@ def page_not_found(e):
 def index():
     categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find().limit(3).sort("date", -1))
-    return render_template("index.html", categories=categories, recipes=recipes)
+    return render_template(
+        "index.html", categories=categories, recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -93,7 +95,8 @@ def profile(user_name):
 
     if session["user"]:
         your_recipes = list(mongo.db.recipes.find({"user_name": username}))
-        return render_template("profile.html", user_name=username, recipes=your_recipes)
+        return render_template(
+            "profile.html", user_name=username, recipes=your_recipes)
 
     return redirect(url_for("login"))
 
@@ -114,20 +117,23 @@ def logout():
 def all_recipes():
     categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find())
-    return render_template("all-recipes.html", categories=categories, recipes=recipes)
+    return render_template(
+        "all-recipes.html", categories=categories, recipes=recipes)
 
 
 @app.route('/search', methods=["GET", "POST"])
 def search():
     query = request.args.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("search-results.html", recipes=recipes, query=query)
+    return render_template(
+        "search-results.html", recipes=recipes, query=query)
 
 
 @app.route('/course/<course_name>')
 def course_list(course_name):
     recipes = list(mongo.db.recipes.find({"course_name": course_name}))
-    return render_template("search-results.html", recipes=recipes, course_name=course_name)
+    return render_template(
+        "search-results.html", recipes=recipes, course_name=course_name)
 
 
 @app.route('/category', methods=["GET", "POST"])
@@ -140,14 +146,16 @@ def category_list():
 
     category = request.args.get("category_name")
     recipes = list(mongo.db.recipes.find({"category_name": category}))
-    return render_template("search-results.html", recipes=recipes, category=category)
+    return render_template(
+        "search-results.html", recipes=recipes, category=category)
 
 
 @app.route('/category/<category_name>')
 def category_list_url(category_name):
     """Returns the category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
-    return render_template("search-results.html", recipes=recipes)
+    return render_template(
+        "search-results.html", recipes=recipes)
 
 
 @app.route('/single_recipe/<recipe_id>')
@@ -184,8 +192,9 @@ def add_recipe():
 
         categories = mongo.db.categories.find().sort("category_name", 1)
         courses = mongo.db.courses.find().sort("course_name", 1)
-        return render_template("add_recipe.html", categories=categories, courses=courses)
-    
+        return render_template(
+            "add_recipe.html", categories=categories, courses=courses)
+
     flash("You must be logged in to add a recipe. Do you wish to log in?")
     return redirect(url_for("login"))
 
@@ -216,7 +225,8 @@ def edit_recipe(recipe_id):
                     "date": datetime.utcnow(),
                     "user_name": session["user"]
                 }
-                mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit_edit)
+                mongo.db.recipes.update(
+                    {"_id": ObjectId(recipe_id)}, submit_edit)
                 flash("Recipe successfully updated.")
 
             #the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
