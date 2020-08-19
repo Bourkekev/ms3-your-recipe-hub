@@ -92,15 +92,69 @@
     </main><!-- /main -->
     <footer class="container-outer-wrapper">
         <div class="container">
-            <div class="row">
-                <div class="col s12 l4">
-                    COLUMN
+            <div class="row text-center text-sm-left">
+                <div class="col s12 m4">
+                    <div class="footer-brand-logo">
+                        <img src="{{url_for('static', filename='images/your-recipe-hub-logo.svg')}}"
+                        alt="Your Recipe Hub logo">
+                    </div>
+                    <h4>Follow us</h4>
+                        <ul class="social-icons-list">
+                            <li>
+                                <a target="_blank" href="https://twitter.com/">
+                                    <span class="mdi prefix mdi-twitter"></span>
+                                    <span class="sr-only">Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/">
+                                    <span class="mdi prefix mdi-instagram"></span>
+                                    <span class="sr-only">Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/">
+                                    <span class="mdi prefix mdi-facebook"></span>
+                                    <span class="sr-only">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.youtube.com/">
+                                    <span class="mdi prefix mdi-youtube"></span>
+                                    <span class="sr-only">Youtube</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.pinterest.com/">
+                                    <span class="mdi prefix mdi-pinterest"></span>
+                                    <span class="sr-only">Pinterest</span>
+                                </a>
+                            </li>
+                        </ul>
                 </div>
-                <div class="col s12 l4">
-                    Top categories
-                    <li><a href="{{url_for('category_list_url', category_name='Beef')}}">Beef</a></li>
+                <div class="col s12 m4">
+                    <div class="row text-center text-sm-left">
+                        <h4>Explore</h4>
+                        <div class="col s6">
+                            <ul>
+                                <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
+                                <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
+                                <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
+                                <li><a href="{{url_for('course_list', course_name='Dessert')}}">Dessert</a></li>
+                                <li><a href="{{url_for('course_list', course_name='Other')}}">Other</a></li>
+                            </ul>
+                        </div>
+                        <div class="col s6">
+                            <ul>
+                                <li><a href="{{url_for('category_list_url', category_name='Beef')}}">Beef</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='Chicken')}}">Chicken</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='Pork')}}">Pork</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='Vegan')}}">Vegan</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col s12 l4">
+                <div class="col s12 m4">
                     COLUMN
                 </div>
             </div>

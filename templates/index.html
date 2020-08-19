@@ -7,10 +7,10 @@
     <div class="container white-text">
         <!-- title -->
         <div class="row">
-            <div class="col s12">
-                <h1 class="text-center text-sm-left">Find a Recipe</h1>
-                <div class="text-center text-sm-left">By Category <span
-                        class="mdi prefix mdi-food-drumstick"></span>
+            <div class="col s12 text-center text-sm-left">
+                <h1>Find a Recipe</h1>
+                <div>By Category <span
+                    class="mdi prefix mdi-food-drumstick"></span>
                 </div>
             </div>
         </div>
@@ -24,16 +24,12 @@
             <h2>About Us</h2>
         </div>
         <div class="col s12 m8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis rutrum nisi vel aliquam. Donec
-                vehicula vel ligula eget posuere. Ut egestas scelerisque augue a ultrices. Vestibulum metus metus,
-                tristique eget tellus egestas, euismod blandit erat. Praesent tellus augue, aliquet a ultrices eu,
-                varius convallis ante. Nam sit amet nisl et urna maximus ornare. Nunc in molestie justo. Praesent
-                tincidunt ornare orci, vitae interdum lorem lacinia placerat. Aliquam eleifend facilisis accumsan.</p>
+            <p>Are you always looking at new recipes online, and trying to figure out ways to save those precious family recipes that are on notecards slowly deteriorating from overuse? Do you have a wonderful recipe that you’d like to share? Your Recipe Hub allows you to submit your recipes so they are saved and easy to access. We would love for you to upload it for the Your Recipe Hub Community! To submit your tasty recipe, please register and login to upload your recipes.</p>
         </div>
     </div>
 </div>
 <!-- courses grid -->
-<div class="container-outer-wrapper grey lighten-4">
+<div class="container-outer-wrapper bg-secondary">
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -75,7 +71,7 @@
                             {% endif %}
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title">{{recipe.title}}</h3>
+                            <h3 class="card-title"><a href="{{url_for('single_recipe', recipe_id=recipe._id)}}">{{recipe.title}}</a></h3>
                             <div class="row">
                                 <div class="col s4"><span class="mdi small prefix mdi-pasta"></span>{{recipe.course_name}}</div>
                                 <div class="col s4"><i class="small material-icons">access_time</i>{{recipe.total_time}}</div>

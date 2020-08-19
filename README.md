@@ -252,7 +252,8 @@ So I had to change the class on the dropdown trigger in the navigation to be dif
  
 ### Content
 
-
+ - Some text content adapted from (thekitchn.com)[https://www.thekitchn.com/] and (allrecipes.com)[http://dish.allrecipes.com/customer-service/submit-your-recipes/].
+ - Actual example recipes were take from (allrecipes)[https://www.allrecipes.com/] and (eatingwell.com)[http://www.eatingwell.com/]
  
 ### Media
 - The photos and vectors used in this site were obtained from:

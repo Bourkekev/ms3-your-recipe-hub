@@ -18,8 +18,18 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: 6.2rem;
 }
+h4 {
+    font-size: 3rem;
+}
+a {
+    color: #e78036;
+}
+a:hover {
+    color: #4E5166;
+}
 /* Full width container */
 .container-outer-wrapper {
+    padding: 25px 0;
     width: 100%;
 }
 /* Fix header */
@@ -126,6 +136,10 @@ nav ul a:hover:not(.btn) {
     text-decoration: none;
     -webkit-box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
             box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+}
+/* background colours */
+.bg-secondary {
+    background-color: #A0AFBA;
 }
 /* Material Icons */
 .material-icons.orange600 { 
@@ -368,15 +382,45 @@ input[type=range]+.thumb .value {
     max-height: 300px;
     overflow: hidden;
 }
+.card-content .btn-large {
+    margin-top: 15px;
+}
 /* Footer */
 footer {
     background-color: #156635;
 }
+footer h4,
+footer a {
+    color: #fff;
+}
+footer a:hover {
+    color: #e78036;
+}
+.footer-brand-logo {
+    max-width: 200px;
+    margin: 0 auto 15px;
+}
+.social-icons-list {
+    margin-top: 5px;
+}
+.social-icons-list li {
+    display: inline-block;
+    font-size: 3.5rem;
+    margin: 5px 5px 0 0;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.social-icons-list li a {
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
 
 /*--------------------- Media Queries --------------------*/
 
-/* Small devices (landscape phones, 600px and up) */
-@media screen and (min-width: 600px) {
+/* Small devices (landscape phones, 601px and up) */
+@media screen and (min-width: 601px) {
     /* Text alignment */
     .text-sm-left {
         text-align: left;
@@ -403,6 +447,9 @@ footer {
     /* crop card image to max-height */
     .card-image.crop-image {
         max-height: 207px;
+    }
+    .footer-brand-logo {
+        margin: 15px 15px 15px 0;
     }
 }
 /* Medium devices (tablets, 768px and up) */
