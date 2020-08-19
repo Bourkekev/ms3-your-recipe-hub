@@ -20,6 +20,8 @@ h1 {
 }
 h4 {
     font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 a {
     color: #e78036;
@@ -142,11 +144,17 @@ nav ul a:hover:not(.btn) {
     background-color: #A0AFBA;
 }
 /* Material Icons */
-.material-icons.orange600 { 
+.material-icons.orange { 
     color: #FB8C00; 
 }
 i.material-icons.small {
     font-size: 3rem;
+}
+.input-field .prefix.active {
+    color: #25b35f;
+}
+footer .input-field .prefix.active {
+    color: #fff;
 }
 .btn i {
     font-size: 2.1rem;
@@ -164,6 +172,9 @@ i.material-icons.small {
 /* Materialize colours */
 .green {
     background-color: #25B35F!important;
+}
+.orange {
+    background-color: #e78036!important;
 }
 /* button colors */
 .btn,
@@ -293,7 +304,43 @@ input[type=text].white-rounded {
 .dropdown-content li > span {
     color: #e78036;
 }
-/* over write materialise style for valid/invalid input */
+/* over write materialise style for input */
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #25b35f;
+    -webkit-box-shadow: 0 1px 0 0 #25b35f;
+    box-shadow: 0 1px 0 0 #25b35f;
+}
+
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: #25b35f;
+}
+/* inputs in footer */
+footer input:not([type]), 
+footer input[type=text]:not(.browser-default), 
+footer input[type=password]:not(.browser-default), 
+footer input[type=email]:not(.browser-default), 
+footer textarea.materialize-textarea {
+    border-bottom: 1px solid #fff;
+}
+footer input:not([type]):focus:not([readonly]),
+footer input[type=text]:not(.browser-default):focus:not([readonly]),
+footer input[type=password]:not(.browser-default):focus:not([readonly]),
+footer input[type=email]:not(.browser-default):focus:not([readonly]),
+footer textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #45d982;
+    -webkit-box-shadow: 0 1px 0 0 #45d982;
+    box-shadow: 0 1px 0 0 #45d982;
+}
+
+/* over write materialise style for valid/invalid input on white-rounded */
 input.white-rounded.invalid[type=text]:not(.browser-default) {
     border-color: #F44336;
 }
@@ -311,6 +358,8 @@ input.white-rounded.valid[type=text]:not(.browser-default):focus {
 label,
 .input-field > label {
     font-size: 1.4rem;
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
 }
 .btn-rounded {
     border: 2px solid #fff;
@@ -416,6 +465,9 @@ footer a:hover {
     -o-transition: all .3s ease;
     transition: all .3s ease;
 }
+.copyright {
+    font-size: 1.2rem;
+}
 
 /*--------------------- Media Queries --------------------*/
 
@@ -427,6 +479,9 @@ footer a:hover {
     }
     .text-sm-center {
         text-align: center;
+    }
+    .text-sm-right {
+        text-align: right;
     }
     /* Title panel image */
     .title-panel {

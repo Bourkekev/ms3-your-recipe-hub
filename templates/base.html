@@ -134,8 +134,10 @@
                 </div>
                 <div class="col s12 m4">
                     <div class="row text-center text-sm-left">
-                        <h4>Explore</h4>
-                        <div class="col s6">
+                        <div class="col s12">
+                            <h4>Explore</h4>
+                        </div>
+                        <div class="col s6 m12 l6">
                             <ul>
                                 <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
                                 <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
@@ -144,18 +146,47 @@
                                 <li><a href="{{url_for('course_list', course_name='Other')}}">Other</a></li>
                             </ul>
                         </div>
-                        <div class="col s6">
+                        <div class="col s6 m12 l6">
                             <ul>
-                                <li><a href="{{url_for('category_list_url', category_name='Beef')}}">Beef</a></li>
-                                <li><a href="{{url_for('category_list_url', category_name='Chicken')}}">Chicken</a></li>
-                                <li><a href="{{url_for('category_list_url', category_name='Pork')}}">Pork</a></li>
-                                <li><a href="{{url_for('category_list_url', category_name='Vegan')}}">Vegan</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='beef')}}">Beef</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='chicken')}}">Chicken</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='pork')}}">Pork</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='fish')}}">Fish</a></li>
+                                <li><a href="{{url_for('category_list_url', category_name='vegan')}}">Vegan</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 m4">
-                    COLUMN
+                    <div class="row text-center text-sm-left">
+                        <div class="col s12">
+                            <h4>Subscribe to our newsletter</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12 xl6">
+                                    <i class="material-icons prefix white-text">email</i>
+                                    <input id="email" name="email" type="email" class="validate">
+                                    <label class="white-text" for="email">Email</label>
+                                </div>
+                                <div class="input-field col s12 xl6">
+                                    <button class="btn waves-effect waves-light orange" type="submit" name="action">Subscribe
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyright white-text">
+                <div class="col s12 m6 text-center text-sm-left">
+                    <p>&copy; 2020 Your Recipe Hub</p>
+                </div>
+                <div class="col s12 m6 text-center text-sm-right">
+                    <p>Privacy Policy</p>
                 </div>
             </div>
         </div>
