@@ -79,6 +79,7 @@
                         <li><a href="{{url_for('register')}}">Register</a></li>
                         <li><a href="{{url_for('login')}}">Log in</a></li>
                     {% endif %}
+                    <li><a href="{{url_for('add_recipe')}}" class="btn btn-large btn-rounded">Add Recipe</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i
                         class="material-icons">menu</i></a>
@@ -165,11 +166,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" method="POST" action="{{ url_for('subscribe') }}">
                             <div class="row">
                                 <div class="input-field col s12 xl6">
                                     <i class="material-icons prefix white-text">email</i>
-                                    <input id="email" name="email" type="email" class="validate">
+                                    <input id="email" name="email" type="email" class="validate" required>
                                     <label class="white-text" for="email">Email</label>
                                 </div>
                                 <div class="input-field col s12 xl6">

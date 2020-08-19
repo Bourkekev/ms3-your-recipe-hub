@@ -333,6 +333,7 @@ footer input[type=password]:not(.browser-default),
 footer input[type=email]:not(.browser-default), 
 footer textarea.materialize-textarea {
     border-bottom: 1px solid #fff;
+    color:#fff;
 }
 footer input:not([type]):focus:not([readonly]),
 footer input[type=text]:not(.browser-default):focus:not([readonly]),

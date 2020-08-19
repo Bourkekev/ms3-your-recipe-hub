@@ -327,6 +327,29 @@ def delete_category(category_id):
     flash("You must be logged in to delete a category. Do you wish to log in?")
     return redirect(url_for("login"))
 
+
+@app.route('/subscribe', methods=["GET", "POST"])
+def subscribe():
+    if request.method == "POST":
+        #check if subscriber exists
+        existing_sub = mongo.db.subscribers.find_one(
+            {"email": request.form.get("email").lower()}
+        )
+
+        if existing_sub:
+            flash("Email is already subscribed!", "error")
+            return redirect(request.referrer)
+
+        subscribe = {
+            "email": request.form.get("email").lower()
+        }
+        mongo.db.subscribers.insert_one(subscribe)
+        flash("Subscription successful. Thank you.")
+        return redirect(request.referrer)
+
+    return redirect(url_for('index'))
+
+
 if __name__ == '__main__':
     app.run(
         host=os.environ.get('IP'),
