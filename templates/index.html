@@ -30,18 +30,50 @@
 </div>
 <!-- courses grid -->
 <div class="container-outer-wrapper bg-secondary">
-    <div class="container">
+    <div class="container courses">
         <div class="row">
             <div class="col s12">
                 <h2>What are you looking for?</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col s12 m6 l3">
+            <div class="col s6 m6 l3">
                 <div class="card">
                     <div class="card-image">
-                        <img src="static/images/recipe-no-image-480x320.jpg">
-                        <span class="card-title"><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></span>
+                            <a href="{{url_for('course_list', course_name='Starter')}}">
+                            <img src="static/images/starter-courses.jpg">
+                            <span class="card-title">Starters</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{url_for('course_list', course_name='Main Course')}}">
+                            <img src="static/images/main-courses.jpg">
+                            <span class="card-title">Mains</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6 l3">
+                <div class="card">
+                    <div class="card-image">
+                            <a href="{{url_for('course_list', course_name='Dessert')}}">
+                            <img src="static/images/dessert-courses.jpg">
+                            <span class="card-title">Dessert</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m6 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <a href="{{url_for('course_list', course_name='Other')}}">
+                            <img src="static/images/other-courses.jpg">
+                            <span class="card-title">Other</span>
+                        </a>
                     </div>
                 </div>
             </div>

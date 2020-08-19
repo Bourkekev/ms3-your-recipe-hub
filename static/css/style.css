@@ -153,7 +153,7 @@ nav ul a:hover:not(.btn) {
 }
 /* background colours */
 .bg-secondary {
-    background-color: #A0AFBA;
+    background-color: #c4cdd4;
 }
 /* Material Icons */
 .material-icons.orange { 
@@ -438,6 +438,24 @@ input[type=range]+.thumb .value {
     font-size: 30px;
     font-size: 3rem;
 }
+/* center absolute text */
+.courses .card .card-title {
+    font-weight: 700;
+    left: 50%;
+    padding: 1rem;
+    transform: translateX(-50%);
+}
+.courses .card a {
+    color:#fff;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.courses .card a img {
+    transition: transform .2s ease-in;
+    
+}
+.courses .card a:hover img {
+    transform: scale(1.03);
+}
 /* crop card image to max-height */
 .card-image.crop-image {
     position: relative;
@@ -519,6 +537,10 @@ footer a:hover {
     .footer-brand-logo {
         margin: 15px 15px 15px 0;
     }
+    .courses .card .card-title {
+        font-size: 60px;
+        font-size: 6rem;
+    }
 }
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
@@ -568,8 +590,8 @@ footer a:hover {
         max-height: 271px;
     }
 }
-/* Large devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
+/* Large devices (desktops, 993px and up) */
+@media screen and (min-width: 993px) {
     /* Title panel image */
     .title-panel {
         background-image: url(../images/title-panel-large-tablet-1200x200.jpg);
@@ -599,9 +621,13 @@ footer a:hover {
     .card-image.crop-image {
         max-height: 176px;
     }
+    .courses .card .card-title {
+        font-size: 40px;
+        font-size: 4rem;
+    }
 }
-/* Extra large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
+/* Extra large devices (large desktops, 1201px and up) */
+@media screen and (min-width: 1201px) {
     nav {
         height: 90px;
         line-height: 90px;
@@ -638,5 +664,9 @@ footer a:hover {
     /* crop card image to max-height */
     .card-image.crop-image {
         max-height: 275px;
+    }
+    .courses .card .card-title {
+        font-size: 50px;
+        font-size: 5rem;
     }
 }
