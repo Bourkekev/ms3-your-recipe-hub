@@ -347,7 +347,7 @@ def subscribe():
         flash("Subscription successful. Thank you.")
         return redirect(request.referrer)
 
-    return redirect(url_for('index'))
+    return render_template("404.html")
 
 
 if __name__ == '__main__':

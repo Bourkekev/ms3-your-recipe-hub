@@ -29,6 +29,14 @@ a {
 a:hover {
     color: #4E5166;
 }
+a.btn:hover,
+a.btn-large:hover {
+    color: #fff;
+}
+a.btn.orange:hover,
+a.btn-large.orange:hover {
+    background-color: #A45013!important;
+}
 /* Full width container */
 .container-outer-wrapper {
     padding: 25px 0;
