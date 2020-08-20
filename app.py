@@ -120,7 +120,7 @@ def logout():
 def all_recipes():
     """Displays All Recipes"""
     categories = mongo.db.categories.find().sort("category_name", 1)
-    recipes = list(mongo.db.recipes.find())
+    recipes = list(mongo.db.recipes.find().sort("date", -1))
     return render_template(
         "all-recipes.html", categories=categories, recipes=recipes)
 
