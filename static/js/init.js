@@ -9,7 +9,7 @@
         });
         $("textarea#short_description, textarea#ingredients, textarea#method, textarea#nutrition, textarea#chef_notes").characterCounter();
         
-        /* Validate Materilize select - script supplied by Code Institute */
+        /* Validate Materialize select - script supplied by Code Institute */
         validateMaterializeselect();
         function validateMaterializeselect() {
             let classValid = { "border-bottom": "1px solid #4caf5e", "box-shadow": "0 1px 0 0 #4caf5e" };
@@ -48,7 +48,7 @@
             let headerHeight = ( $('header').outerHeight() );
 
             //When scroll is greater than header
-            if(yPos > headerHeight ) { 
+            if(yPos > (headerHeight + 25) ) { 
                 $('header').addClass('sticky');       
             }
             else {

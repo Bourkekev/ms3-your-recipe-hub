@@ -40,7 +40,7 @@ a.btn-large.orange:hover {
 }
 /* Full width container */
 .container-outer-wrapper {
-    padding: 25px 0;
+    padding: 2.5rem 0;
     width: 100%;
 }
 /* Fix header */
@@ -48,7 +48,7 @@ header {
     position: absolute;
     z-index: 999;
     width: 100%;
-    top: -56px;
+    top: -5.6rem;
     transform: translate(0, 56px);
     transition:top 0.2s ease-in;
 }
