@@ -447,19 +447,27 @@ input[type=range]+.thumb .value {
     font-weight: bold;
 }
 /* Material cards */
-.card .card-title {
+.card .card-content .card-title {
     font-size: 30px;
     font-size: 3rem;
+    line-height: 1.1;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 /* Recipe Cards */
 .recipe-image-wrap {
     width: 100%;
     padding-bottom: 66%;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     overflow: hidden;
 }
-
+.recipe-card-meta {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 /* center absolute text */
 .courses .card .card-title {
     font-weight: 700;
@@ -473,13 +481,17 @@ input[type=range]+.thumb .value {
 }
 .courses .card a img {
     transition: transform .2s ease-in;
-    
 }
 .courses .card a:hover img {
     transform: scale(1.03);
 }
+/* align button center */
+.card-content .btn,
 .card-content .btn-large {
-    margin-top: 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* Footer */
 footer {
@@ -664,6 +676,10 @@ footer a:hover {
     }
     .text-xl-center {
         text-align: center;
+    }
+    .card .card-content .card-title {
+        font-size: 40px;
+        font-size: 4rem;
     }
     .courses .card .card-title {
         font-size: 50px;
