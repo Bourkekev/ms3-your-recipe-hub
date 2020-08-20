@@ -109,7 +109,10 @@
                         <span class="mdi prefix medium mdi-stove"></span>
                         <label for="cook_time">Cooking Time (in minutes)</label>
                         <input id="cook_time" name="cook_time" type="range" 
-                        min="0" max="150" step="5" value="{{ recipe.cook_time }}" required />
+                        min="0" max="150" step="5" oninput="cookValOut.value = this.value" onchange="cookValOut.value = this.value" value="{{ recipe.cook_time }}" required />
+                        <small>Set time: </small>
+                        <output name="cookValOut" id="cookValOut"></output>
+                        <small> minutes</small>
                     </p>
                 </div>
             </div>

@@ -216,7 +216,8 @@ footer .input-field .prefix.active {
     background-color: #b71c1c!important;
 }
 .btn.orange:hover,
-.btn:hover.amber.darken-3 {
+.btn:hover.amber.darken-3,
+.back-to-top:hover {
     background-color: #ff6f00 !important;
 }
 /* Materialize buttons */
@@ -226,6 +227,10 @@ footer .input-field .prefix.active {
 .btn-small,
 .btn-large {
     margin: 1.5rem 1.5rem 1.5rem 0;
+}
+nav a.btn-small,
+nav a.btn-large {
+    margin-bottom: 0;
 }
 /* Page titles */
 .page-title {
