@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}{{recipe.title}} - {% endblock %}
+{% block printcss %}<link href="{{url_for('static', filename='css/print.css')}}" rel="stylesheet" media="print">{% endblock %}
 {% block content %}
-<div class="title-panel">
+<div class="title-panel single-recipe">
 </div>
 {% include 'layout/flash-messages.html' %}
 <div class="container">
@@ -18,10 +19,11 @@
             {% endif %}
         </div>
     </div>
+    <!-- Course and Category -->
     <div class="row text-center text-lg-left">
-        <div class="col s12">
+        <div class="col s12 recipe-taxonomies valign-wrapper flex-justify-center flex-justify-left-lg">
             <i class="material-icons prefix">restaurant_menu</i>
-            {{recipe.course_name|capitalize}} | {{recipe.category_name|capitalize}}
+            <div>{{recipe.course_name|capitalize}} | <a href="{{url_for('category_list_url', category_name=recipe.category_name)}}">{{recipe.category_name|capitalize}}</a></div>
         </div>
     </div>
     <div class="row recipe-details">
@@ -30,6 +32,7 @@
             <div class="recipe-meta">
                 By {{recipe.user_name}} - {{recipe.date.strftime('%d %b, %Y')}}
             </div>
+            <!-- Portions and times -->
             <div class="row recipe-summary-wrapper">
                 <div class="col s4 recipe-summary-item center-align">
                     <div class="portion-header valign-wrapper flex-justify-center">
@@ -60,12 +63,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col">PRINT</div>
+                <div class="col s12 text-center text-lg-left">
+                    <button class="btn btn-small waves-effect waves-light orange" onclick="window.print()">
+                        Print This Recipe
+                        <i class="material-icons prefix left">print</i>
+                    </button>
+                </div>
             </div>
         </div>
+        <!-- Recipe image -->
         <div class="col s12 l6">
             {% if recipe.image_url %}
-            <img src="{{recipe.image_url}}" alt="{{recipe.title}}" />
+            <img src="{{recipe.image_url}}" alt="{{recipe.title}}" class="recipe-img"/>
             {% else %}
             <picture>
                 <source media="(max-width: 480px)"
@@ -75,30 +84,34 @@
             {% endif %}
         </div>
     </div>
+    <!-- Description -->
     <div class="row recipe-description">
         <div class="col">
             <h2>Description</h2>
             <p>{{recipe.short_description}}</p>
         </div>
     </div>
-    <div class="row ingredients-method">
-        <div class="col l5">
+    <!-- Ingredients and Method-->
+    <div class="row">
+        <div class="col l5 ingredients-list">
             <h2>Ingredients</h2>
             <p>{{recipe.ingredients}}</p>
         </div>
-        <div class="col l7">
+        <div class="col l7 method">
             <h2>Method</h2>
             <p>{{recipe.method}}</p>
         </div>
     </div>
-    <div class="row chef-notes">
-        <div class="col">
+    <!-- Chefs notes-->
+    <div class="row">
+        <div class="col chef-notes">
             <h2>Chef's Notes</h2>
             <p>{{recipe.chef_notes}}</p>
         </div>
     </div>
-    <div class="row nutrition">
-        <div class="col">
+    <!-- Nutrition -->
+    <div class="row">
+        <div class="col nutrition">
             <h2>Nutritional Information</h2>
             <p>{{recipe.nutrition}}</p>
         </div>

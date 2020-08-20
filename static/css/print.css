@@ -1,0 +1,18 @@
+/* Print recipe style */
+header,
+footer,
+.title-panel.single-recipe,
+.btn,
+.btn-small,
+.recipe-img {
+    display: none;
+}
+.recipe-summary-item .value,
+.recipe-summary-item i.material-icons,
+.recipe-summary-item .mdi.medium {
+    font-size: 3rem;
+}
+.recipe-details {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}

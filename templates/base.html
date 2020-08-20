@@ -26,6 +26,7 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    {% block printcss %}{% endblock %}
 </head>
 
 <body>
@@ -139,7 +140,7 @@
                             <h4>Explore</h4>
                         </div>
                         <div class="col s6 m12 l6">
-                            <ul>
+                            <ul class="explore-list">
                                 <li><a href="{{url_for('all_recipes')}}">All Recipes</a></li>
                                 <li><a href="{{url_for('course_list', course_name='Starter')}}">Starters</a></li>
                                 <li><a href="{{url_for('course_list', course_name='Main Course')}}">Main Courses</a></li>
@@ -148,7 +149,7 @@
                             </ul>
                         </div>
                         <div class="col s6 m12 l6">
-                            <ul>
+                            <ul class="explore-list">
                                 <li><a href="{{url_for('category_list_url', category_name='beef')}}">Beef</a></li>
                                 <li><a href="{{url_for('category_list_url', category_name='chicken')}}">Chicken</a></li>
                                 <li><a href="{{url_for('category_list_url', category_name='pork')}}">Pork</a></li>

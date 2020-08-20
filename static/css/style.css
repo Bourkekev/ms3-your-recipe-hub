@@ -49,7 +49,7 @@ header {
     z-index: 999;
     width: 100%;
     top: -5.6rem;
-    transform: translate(0, 56px);
+    transform: translate(0, 5.6rem);
     transition:top 0.2s ease-in;
 }
 header.sticky {
@@ -58,7 +58,7 @@ header.sticky {
     width:100%;
     z-index: 997;
     transform: translate(0, 0);
-    top:0px;
+    top:0;
 }
 /* Navbar */
 nav {
@@ -87,13 +87,13 @@ nav .brand-logo {
     left: 0;
     -webkit-transform: translateX(0);
     transform: translateX(0);
-    padding: 5px 0 5px 5px;
-    width: 160px;
+    padding: .5rem 0 .5rem .5rem;
+    width: 16rem;
 }
 nav ul a {
     font-size: 1.3rem;
     font-weight: 700;
-    padding: 0px 8px;
+    padding: 0px .8rem;
 }
 nav ul a:hover:not(.btn) {
     color: #e78036;
@@ -130,8 +130,8 @@ nav ul a:hover:not(.btn) {
 /* screen reader only */
 .sr-only {
     position: absolute;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     padding: 0;
     overflow: hidden;
     clip: rect(0,0,0,0);
@@ -144,7 +144,7 @@ nav ul a:hover:not(.btn) {
     width: auto;
     display: block;
     font-weight: bold;
-    padding: 15px 25px 15px;
+    padding: 1.5rem 2.5rem 1.5rem;
     color: #333;
     background: #fff;
     z-index: 100000;
@@ -221,10 +221,11 @@ footer .input-field .prefix.active {
 }
 /* Materialize buttons */
 .btn-large {
-    height: 56px;
+    height: 5.6rem;
 }
-.btn-small {
-    margin: 15px 15px 15px 0;
+.btn-small,
+.btn-large {
+    margin: 1.5rem 1.5rem 1.5rem 0;
 }
 /* Page titles */
 .page-title {
@@ -275,28 +276,107 @@ footer .input-field .prefix.active {
 .modal .modal-footer {
     height: auto;
 }
+/* Material cards */
+.card .card-content .card-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+/* Recipe Cards */
+.recipe-image-wrap {
+    width: 100%;
+    padding-bottom: 66%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+.recipe-meta,
+.recipe-card-meta {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.recipe-meta {
+    color: #25b35f;
+    font-size: 1.6rem;
+    margin: 2rem 0 3.68rem 0;
+}
+/* center absolute text */
+.courses .card .card-title {
+    font-weight: 700;
+    left: 50%;
+    padding: 1rem;
+    transform: translateX(-50%);
+}
+.courses .card a {
+    color:#fff;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.courses .card a img {
+    transition: transform .2s ease-in;
+}
+.courses .card a:hover img {
+    transform: scale(1.03);
+}
+/* align button center */
+.card-content .btn,
+.card-content .btn-large {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 /* Recipe Single page */
+.recipe-taxonomies {
+    font-size: 2rem;
+}
+.recipe-taxonomies .material-icons {
+    margin: 0 1rem 0 -4rem;
+    font-size: 3rem;
+}
 .recipe-details {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
-.nutrition, .chef-notes {
-    border-top: 1px solid #ccc;
-    padding-top: 30px;
-    margin-top: 30px;
+.recipe-details h1,
+.recipe-img {
+    margin-top: 1.5rem;
+}
+.portion-header,
+.portion .unit {
+    font-size: 1.4rem;
+}
+.portion-header {
+    height: 5rem;
+}
+.portion {
+    margin-top: 1rem;
 }
 .recipe-summary-item:not(:last-child) {
     border-right: 1px solid #bababa;
 }
 .recipe-summary-item .value {
     font-size: 5rem;
+    font-weight: 700;
+}
+.col.nutrition,
+.col.chef-notes {
+    border-top: 1px solid #ccc;
+    padding-top: 2rem;
+    margin-top: 1rem;
 }
 /* show line breaks */
-.ingredients-method,
-.chef-notes,
-.nutrition {
+.ingredients-list p,
+.method p,
+.chef-notes p,
+.nutrition p {
     white-space: pre-wrap;
+}
+.ingredients-list {
+    line-height: 2;
 }
 /* Forms */
 /* home category select */
@@ -446,56 +526,7 @@ input[type=range]+.thumb .value {
     font-size: 4rem;
     font-weight: bold;
 }
-/* Material cards */
-.card .card-content .card-title {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-/* Recipe Cards */
-.recipe-image-wrap {
-    width: 100%;
-    padding-bottom: 66%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    overflow: hidden;
-}
-.recipe-meta,
-.recipe-card-meta {
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.recipe-meta {
-    font-size: 1.6rem;
-}
-/* center absolute text */
-.courses .card .card-title {
-    font-weight: 700;
-    left: 50%;
-    padding: 1rem;
-    transform: translateX(-50%);
-}
-.courses .card a {
-    color:#fff;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-}
-.courses .card a img {
-    transition: transform .2s ease-in;
-}
-.courses .card a:hover img {
-    transform: scale(1.03);
-}
-/* align button center */
-.card-content .btn,
-.card-content .btn-large {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 /* Footer */
 footer {
     background-color: #156635;
@@ -526,6 +557,9 @@ footer a:hover {
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
+}
+.explore-list li {
+    margin-bottom: 10px;
 }
 .copyright {
     font-size: 1.2rem;
@@ -641,6 +675,17 @@ footer a:hover {
     }
     .courses .card .card-title {
         font-size: 4rem;
+    }
+    /* Helper classes */
+    /* left align flex items */
+    .flex-justify-left-lg {
+        justify-content: left;
+    }
+    .recipe-taxonomies .material-icons {
+        margin: 0 1rem 0 0;
+    }
+    .row .col.ingredients-list {
+        padding-right: 25px;
     }
 }
 /* Extra large devices (large desktops, 1201px and up) */
