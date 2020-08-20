@@ -200,12 +200,22 @@ footer .input-field .prefix.active {
 .btn-small:hover {
     background-color: #e78036;
 }
+/* important needed to overwrite materialize */
 .btn.green:hover,
 .btn.white:hover {
     background: #e78036!important;
 }
+.btn.red:hover {
+    background: #b71c1c!important;
+}
 .btn:hover .material-icons.grey-text.darken-4 {
     color: #fff!important;
+}
+a.btn:hover.red.darken-2 {
+    background-color: #b71c1c!important;
+}
+a.btn:hover.amber.darken-3 {
+    background-color: #ff6f00 !important;
 }
 /* Materialize buttons */
 .btn-large {

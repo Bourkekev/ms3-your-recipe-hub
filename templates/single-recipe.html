@@ -16,7 +16,7 @@
                     <i class="material-icons right">edit</i>Edit Recipe</a>
                 <!-- Trigger modal warning -->
                 <a href="#delete-recipe"
-                    class="waves-effect waves-light btn-small red darken-4 modal-trigger">
+                    class="waves-effect waves-light btn-small red darken-2 modal-trigger">
                     <i class="material-icons right">delete</i>Delete
                     this Recipe</a>
             {% endif %}
@@ -115,7 +115,7 @@
         <div class="modal-footer center-align">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">No, do not delete</a>
             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
-                class="waves-effect waves-light btn-small red darken-4"><i class="material-icons right">delete</i>Yes, Delete
+                class="waves-effect waves-light btn-small red darken-2"><i class="material-icons right">delete</i>Yes, Delete
                 this Recipe</a>
         </div>
     </div>

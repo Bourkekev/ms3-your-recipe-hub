@@ -21,7 +21,7 @@
                     <div class="card-action">
                         <a href="{{ url_for('edit_category', category_id=category._id) }}" class="waves-effect waves-light amber darken-3 btn">Edit Category</a>
                         <a href="#delete-{{category._id}}"
-                            class="waves-effect waves-light btn red darken-4 modal-trigger">
+                            class="waves-effect waves-light btn red darken-2 modal-trigger">
                             <i class="material-icons right">delete</i>Delete
                             this category</a>
                     </div>
@@ -37,7 +37,7 @@
                 <div class="modal-footer center-align">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">No, do not delete</a>
                     <a href="{{ url_for('delete_category', category_id=category._id) }}"
-                        class="waves-effect waves-light btn-small red darken-4"><i class="material-icons right">delete</i>Yes, Delete
+                        class="btn waves-effect waves-light btn-small red darken-2"><i class="material-icons right">delete</i>Yes, Delete
                         this category</a>
                 </div>
             </div>
