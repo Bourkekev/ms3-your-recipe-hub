@@ -22,12 +22,13 @@ mongo = PyMongo(app)
 # 404 error handling
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
+    """Handles a 404 and returns the 404 template"""
     return render_template('404.html'), 404
 
 
 @app.route('/')
 def index():
+    """Renders homepage template and passes in categories and recipes"""
     categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find().limit(3).sort("date", -1))
     return render_template(
@@ -36,8 +37,8 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """Registers a user, checks if user exists already"""
     if request.method == "POST":
-        # check if user exists in db
         existing_user = mongo.db.users.find_one(
             {"user_name": request.form.get("user_name").lower()})
 
@@ -61,8 +62,8 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """Logs user in with correct password if they exist"""
     if request.method == "POST":
-        # check if username exists
         existing_user = mongo.db.users.find_one(
             {"user_name": request.form.get("user_name").lower()})
 
@@ -90,7 +91,7 @@ def login():
 
 @app.route("/profile/<user_name>", methods=["GET", "POST"])
 def profile(user_name):
-    # get the session user's username from db
+    """Renders profile page when logged in"""
     username = mongo.db.users.find_one(
         {"user_name": session["user"]})["user_name"]
 
@@ -104,6 +105,7 @@ def profile(user_name):
 
 @app.route("/logout")
 def logout():
+    """Logs user out of session"""
     if "user" in session:
         # remove user from session cookie
         flash("You have been logged out.")
@@ -116,6 +118,7 @@ def logout():
 
 @app.route('/all_recipes')
 def all_recipes():
+    """Displays All Recipes"""
     categories = mongo.db.categories.find().sort("category_name", 1)
     recipes = list(mongo.db.recipes.find())
     return render_template(
@@ -124,6 +127,7 @@ def all_recipes():
 
 @app.route('/search', methods=["GET", "POST"])
 def search():
+    """Searches for text from search form"""
     query = request.args.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template(
@@ -132,6 +136,7 @@ def search():
 
 @app.route('/course/<course_name>')
 def course_list(course_name):
+    """Displays recipes by Course"""
     recipes = list(mongo.db.recipes.find({"course_name": course_name}))
     return render_template(
         "search-results.html", recipes=recipes, course_name=course_name)
@@ -139,7 +144,7 @@ def course_list(course_name):
 
 @app.route('/category', methods=["GET", "POST"])
 def category_list():
-    """Returns the category from form select option"""
+    """Returns recipes by category from form select option"""
     if request.method == "POST":
         category = request.form.get("category_name")
         recipes = list(mongo.db.recipes.find({"category_name": category}))
@@ -153,7 +158,7 @@ def category_list():
 
 @app.route('/category/<category_name>')
 def category_list_url(category_name):
-    """Returns the category from a link or url"""
+    """Returns recipes by category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
     return render_template(
         "search-results.html", recipes=recipes)
@@ -168,7 +173,7 @@ def single_recipe(recipe_id):
 
 @app.route('/add_recipe', methods=["GET", "POST"])
 def add_recipe():
-    """Checks if user is logged in, and then allows user to add new recipe"""
+    """Checks if user is logged in, and allows user to add new recipe"""
     if "user" in session:
         if request.method == "POST":
             recipe = {
@@ -202,6 +207,7 @@ def add_recipe():
 
 @app.route('/edit_recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """Checks if user is author of recipe, and allows user to edit this recipe"""
     if "user" in session:
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         recipe_user = the_recipe["user_name"]
@@ -250,6 +256,7 @@ def edit_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    """Checks if user is author of recipe, and allows user to delete this recipe"""
     if "user" in session:
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         recipe_user = the_recipe["user_name"]
@@ -270,7 +277,7 @@ def delete_recipe(recipe_id):
 
 @app.route('/get_categories')
 def get_categories():
-    """Checks if user is logged in, and then allows user to view categories"""
+    """Checks if user is logged in, and allows user to view categories"""
     if "user" in session:
         categories = list(mongo.db.categories.find().sort("category_name", 1))
         return render_template("categories.html", categories=categories)
@@ -281,12 +288,18 @@ def get_categories():
 
 @app.route('/add_category', methods=["GET", "POST"])
 def add_category():
-    """Checks if user is logged in, and then allows user to add a category"""
+    """Checks if user is logged in, and allows user to add a category"""
     if "user" in session:
         if request.method == "POST":
             category = {
                 "category_name": request.form.get("category_name").lower()
             }
+            existing_cat = mongo.db.categories.find_one(category)
+
+            if existing_cat:
+                flash("This category already exists! Try another?", "error")
+                return redirect(url_for("add_category"))
+
             mongo.db.categories.insert_one(category)
             flash("New Category Added")
             return redirect(url_for('get_categories'))
@@ -299,7 +312,7 @@ def add_category():
 
 @app.route('/edit_category/<category_id>', methods=["GET", "POST"])
 def edit_category(category_id):
-    """Checks if user is logged in, and then allows user to edit a category"""
+    """Checks if user is logged in, and allows user to edit a category"""
     if "user" in session:
         if request.method == "POST":
             submit_edit = {
@@ -318,7 +331,7 @@ def edit_category(category_id):
 
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
-    """Checks if user is logged in, and then allows user to edit a category"""
+    """Checks if user is logged in, and allows user to edit a category"""
     if "user" in session:
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category successfully deleted")
@@ -330,6 +343,7 @@ def delete_category(category_id):
 
 @app.route('/subscribe', methods=["GET", "POST"])
 def subscribe():
+    """Subscribes users email, checks if already subscribed"""
     if request.method == "POST":
         #check if subscriber exists
         existing_sub = mongo.db.subscribers.find_one(

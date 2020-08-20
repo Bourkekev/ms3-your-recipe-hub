@@ -32,7 +32,7 @@
             <div id="delete-{{category._id}}" class="modal">
                 <div class="modal-content card-panel orange darken-3 white-text">
                     <h4>Warning</h4>
-                    <p>This action will delete this category - {{category.category_name}}. Are you sure you want to delete it?</p>
+                    <p>This action will delete this category - <strong>{{category.category_name|capitalize}}</strong>. Are you sure you want to delete it?</p>
                 </div>
                 <div class="modal-footer center-align">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">No, do not delete</a>

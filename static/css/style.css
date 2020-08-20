@@ -30,6 +30,7 @@ a:hover {
     color: #4E5166;
 }
 a.btn:hover,
+a.btn-small:hover,
 a.btn-large:hover {
     color: #fff;
 }
