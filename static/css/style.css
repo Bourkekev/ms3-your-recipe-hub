@@ -564,6 +564,16 @@ footer a:hover {
 .copyright {
     font-size: 1.2rem;
 }
+/* Back to top */
+.back-to-top {
+    background: #e78036;
+    height: 4rem;
+    width: 4rem;
+    display: inline-block;
+    position: fixed;
+    z-index: 2000;
+    bottom: 6rem;
+}
 
 /*--------------------- Media Queries --------------------*/
 
