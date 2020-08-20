@@ -572,8 +572,13 @@ footer a:hover {
     display: inline-block;
     position: fixed;
     z-index: 2000;
-    bottom: 3rem;
-    right: 3rem;
+    bottom: 2rem;
+    right: 2rem;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+.back-to-top.visible {
+    opacity: 1;
 }
 
 /*--------------------- Media Queries --------------------*/
