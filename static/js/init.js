@@ -71,3 +71,14 @@
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
+
+/** Display values from range */
+let cookInput = document.getElementById('cook_time');
+let cookOutput = document.getElementById('cookValOut');
+displayRangeValue();
+
+cookInput.oninput = displayRangeValue;
+
+function displayRangeValue() {
+    cookOutput.value = cookInput.value;
+}
