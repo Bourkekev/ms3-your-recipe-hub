@@ -56,5 +56,14 @@
             }
         });
 
+        /** Scroll to top */
+        $('.back-to-top').on('click', function(event){
+            event.preventDefault();
+            $('html').animate({
+                scrollTop: 0
+                }, 700
+            );
+        });
+
     }); // end of document ready
 })(jQuery); // end of jQuery name space
