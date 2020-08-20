@@ -3,13 +3,9 @@
 {% block content %}
 <div class="title-panel">
 </div>
+{% include 'layout/flash-messages.html' %}
 <div class="container">
-    <div class="row">
-        <div class="col s12">
-            {% include 'layout/flash-messages.html' %}
-        </div>
-    </div>
-    <div class="row">
+    <div class="row text-center text-lg-left">
         <div class="col s12">
             {% if session.user|lower == recipe.user_name|lower %}
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="waves-effect waves-light btn-small">
@@ -22,13 +18,14 @@
             {% endif %}
         </div>
     </div>
-    <div class="row">
+    <div class="row text-center text-lg-left">
         <div class="col s12">
-            {{recipe.course_name}} - {{recipe.category_name}}
+            <i class="material-icons prefix">restaurant_menu</i>
+            {{recipe.course_name|capitalize}} | {{recipe.category_name|capitalize}}
         </div>
     </div>
     <div class="row recipe-details">
-        <div class="col s12 l6">
+        <div class="col s12 l6 text-center text-lg-left">
             <h1>{{recipe.title}}</h1>
             <div class="recipe-meta">
                 By {{recipe.user_name}} - {{recipe.date.strftime('%d %b, %Y')}}
