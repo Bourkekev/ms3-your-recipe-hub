@@ -114,6 +114,8 @@ This was my final palatte:
 
 You can also see it completely in [PDF format here](README_resources/colour-palette-your-recipe-hub.pdf).
 
+Colours for buttons, like edit and delete were based on different shades of materialize colours.
+
 #### Fonts
 
 On all the recipe websites I researched, I liked the font used on [Napolina](https://www.napolina.com/recipes/30-minute/rigatoni-with-goats-cheese-and-spinach) as a heading, it really stood out as being slightly different with the narrow 's'. However this font is an Adobe Font called 'Mostra Nuova' and would require a licence (Adobe subscription). So I used Google font's filter options to find a narrow, sans-serif to look for a font with similar properties. The [Yanone Kaffeesatz](https://fonts.google.com/specimen/Yanone+Kaffeesatz) font was a more interesting font than most, as it has some slightly different shaped characters than most other fonts of similar type, the k, r and e being good examples. Google fonts has suggestions for font pairings that would work for each particular font, so I looked throught these for a nice body font. I wanted this font to be wider and easier to read at small sizes and had a bit of a constrast with the headings, so I decided [Montserrat](https://fonts.google.com/specimen/Montserrat) would work well.

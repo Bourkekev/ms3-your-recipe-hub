@@ -24,15 +24,16 @@
             {% for recipe in recipes %}
                 <div class="col m6 l4">
                     <div class="card blue-grey lighten-5">
-                        <div class="card-image crop-image">
+                        <div class="card-image">
                             {% if recipe.image_url %}
-                                <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
+                                <div class="recipe-image-wrap" style="background-image: url('{{recipe.image_url}}');">
+                                    <img src="{{recipe.image_url}}" alt="{{recipe.title}}" class="sr-only"/>
+                                </div>
+                                
                             {% else %}
-                                <picture>
-                                <source media="(max-width: 480px)" 
-                                srcset="{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}">
-                                <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available"/>
-                                </picture>
+                                <div class="recipe-image-wrap no-img" style="background-image: url('{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}')">
+                                    <img src="{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}" alt="no image available for {{recipe.title}}" class="sr-only"/>
+                                </div>
                             {% endif %}
                         </div>
                         <div class="card-content">

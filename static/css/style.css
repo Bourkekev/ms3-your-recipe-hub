@@ -130,8 +130,8 @@ nav ul a:hover:not(.btn) {
 /* screen reader only */
 .sr-only {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: 0px;
+    height: 0px;
     padding: 0;
     overflow: hidden;
     clip: rect(0,0,0,0);
@@ -208,13 +208,15 @@ footer .input-field .prefix.active {
 .btn.red:hover {
     background: #b71c1c!important;
 }
+
 .btn:hover .material-icons.grey-text.darken-4 {
     color: #fff!important;
 }
-a.btn:hover.red.darken-2 {
+.btn:hover.red.darken-2 {
     background-color: #b71c1c!important;
 }
-a.btn:hover.amber.darken-3 {
+.btn.orange:hover,
+.btn:hover.amber.darken-3 {
     background-color: #ff6f00 !important;
 }
 /* Materialize buttons */
@@ -449,6 +451,15 @@ input[type=range]+.thumb .value {
     font-size: 30px;
     font-size: 3rem;
 }
+/* Recipe Cards */
+.recipe-image-wrap {
+    width: 100%;
+    padding-bottom: 66%;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+
 /* center absolute text */
 .courses .card .card-title {
     font-weight: 700;
@@ -466,12 +477,6 @@ input[type=range]+.thumb .value {
 }
 .courses .card a:hover img {
     transform: scale(1.03);
-}
-/* crop card image to max-height */
-.card-image.crop-image {
-    position: relative;
-    max-height: 300px;
-    overflow: hidden;
 }
 .card-content .btn-large {
     margin-top: 15px;
@@ -541,10 +546,6 @@ footer a:hover {
     .all-recipes-hero.title-panel:before {
         background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
     }
-    /* crop card image to max-height */
-    .card-image.crop-image {
-        max-height: 207px;
-    }
     .footer-brand-logo {
         margin: 15px 15px 15px 0;
     }
@@ -596,10 +597,6 @@ footer a:hover {
         border-top: none;
         padding: 24px;
     }
-    /* crop card image to max-height */
-    .card-image.crop-image {
-        max-height: 271px;
-    }
 }
 /* Large devices (desktops, 993px and up) */
 @media screen and (min-width: 993px) {
@@ -627,10 +624,6 @@ footer a:hover {
     }
     .text-lg-center {
         text-align: center;
-    }
-    /* crop card image to max-height */
-    .card-image.crop-image {
-        max-height: 176px;
     }
     .courses .card .card-title {
         font-size: 40px;
@@ -671,10 +664,6 @@ footer a:hover {
     }
     .text-xl-center {
         text-align: center;
-    }
-    /* crop card image to max-height */
-    .card-image.crop-image {
-        max-height: 275px;
     }
     .courses .card .card-title {
         font-size: 50px;
