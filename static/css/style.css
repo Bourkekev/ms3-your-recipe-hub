@@ -572,7 +572,8 @@ footer a:hover {
     display: inline-block;
     position: fixed;
     z-index: 2000;
-    bottom: 6rem;
+    bottom: 3rem;
+    right: 3rem;
 }
 
 /*--------------------- Media Queries --------------------*/
