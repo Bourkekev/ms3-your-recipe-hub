@@ -147,9 +147,9 @@ def category_list():
     """Returns recipes by category from form select option"""
     category = request.args.get("category_name")
     recipes = list(mongo.db.recipes.find({"category_name": category}))
-    
     return render_template(
-        "search-results.html", recipes=recipes, category=category)
+        "search-results.html", recipes=recipes, 
+        category=category)
 
 
 @app.route('/category/<category_name>')
@@ -157,7 +157,8 @@ def category_list_url(category_name):
     """Returns recipes by category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
     return render_template(
-        "search-results.html", recipes=recipes, category=category_name)
+        "search-results.html", recipes=recipes, 
+        category=category_name)
 
 
 @app.route('/single_recipe/<recipe_id>')

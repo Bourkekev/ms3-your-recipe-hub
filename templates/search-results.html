@@ -1,16 +1,22 @@
 {% extends 'base.html' %}
-{% block title %}Results for {{ query }} {{ category|capitalize }}{{ course_name }} Recipes - {% endblock %}
+
+{# What are we searching for #}
+{% if query is defined %}
+    {% set term = query %}
+{% elif category is defined %}
+    {% set term = category|capitalize %}
+{% else %}
+    {% set term = course_name %}
+{% endif %}
+
+{% block title %}Results for {{ term }} Recipes - {% endblock %}
 
 {% block content %}
 <div class="title-panel">
     <div class="container">
         <div class="row">
             <h1 class="page-title text-center text-sm-left page-title">
-                {% if query is defined %}
-                    Results for '{{ query }}'
-                {% else %}
-                    All {{ category|capitalize }}{{ course_name }} Recipes
-                {% endif %}
+                    All {{ term }} Recipes
             </h1>
         </div>
     </div>
@@ -18,12 +24,17 @@
 {% include 'layout/flash-messages.html' %}
 <div class="container">
     <!-- back to search -->
-        <div class="row">
-            <div class="col s12">
-                <a href="{{ url_for('all_recipes') }}" class="waves-effect waves-dark btn orange">Back to All Recipes</a>
-            </div>
+    <div class="row">
+        <div class="col s12">
+            <a href="{{ url_for('all_recipes') }}" class="waves-effect waves-dark btn orange">Back to All Recipes</a>
         </div>
-    
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <p>We have found: {{recipes|length}} recipe{% if recipes|length  > 1 %}s{% endif %} for {{term}}</p>
+        </div>
+    </div>
+    <!-- if we have recipes -->
     {% if recipes|length  > 0 %}
         <div class="row flex-grid">
             {% for recipe in recipes %}
