@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
-{# What are we searching for #}
 {% if query is defined %}
     {% set term = query %}
 {% elif category is defined %}
-    {% set term = category|capitalize %}
+    {% set term = category %}
 {% else %}
     {% set term = course_name %}
 {% endif %}
@@ -16,7 +15,7 @@
     <div class="container">
         <div class="row">
             <h1 class="page-title text-center text-sm-left page-title">
-                    All {{ term }} Recipes
+                    All {{ term|capitalize }} Recipes
             </h1>
         </div>
     </div>
