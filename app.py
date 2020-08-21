@@ -103,6 +103,35 @@ def profile(user_name):
     return redirect(url_for("login"))
 
 
+@app.route("/pass_change/<user_name>", methods=["GET", "POST"])
+def pass_change(user_name):
+    """Changes the users password"""
+    if "user" in session:
+        userid = mongo.db.users.find_one(
+        {"user_name": session["user"]})["_id"]
+
+        if session["user"] == user_name:
+            if request.method == "POST":
+                change_pass = {
+                    "user_name": user_name,
+                    "password": generate_password_hash(request.form.get("password"))
+                }
+                mongo.db.users.update(
+                    {"_id": ObjectId(userid)}, change_pass)
+                flash("Your password has been changed.")
+                return redirect(url_for("profile", user_name=session["user"]))
+
+            return render_template("profile.html")
+
+        flash(
+            "That is not your username and cannot edit them.",
+            "error")
+        return redirect(url_for("profile", user_name=user_name))
+    
+    flash("You are not logged in. Do you wish to log in?")
+    return redirect(url_for("login"))
+
+
 @app.route("/logout")
 def logout():
     """Logs user out of session"""
@@ -173,6 +202,8 @@ def add_recipe():
     """Checks if user is logged in, and allows user to add new recipe"""
     if "user" in session:
         if request.method == "POST":
+            overall_time = int(request.form.get("prep_time"))
+            + int(request.form.get("cook_time"))
             recipe = {
                 "title": request.form.get("title"),
                 "category_name": request.form.get("category_name"),
@@ -185,6 +216,7 @@ def add_recipe():
                 "prep_time": request.form.get("prep_time"),
                 "cook_time": request.form.get("cook_time"),
                 "chef_notes": request.form.get("chef_notes"),
+                "total_time": overall_time,
                 "nutrition": request.form.get("nutrition"),
                 "date": datetime.utcnow(),
                 "user_name": session["user"]
