@@ -103,17 +103,19 @@ def profile(user_name):
     return redirect(url_for("login"))
 
 
-@app.route("/pass_change/<user_name>", methods=["GET", "POST"])
-def pass_change(user_name):
+@app.route("/pass_change", methods=["GET", "POST"])
+def pass_change():
     """Changes the users password"""
     if "user" in session:
         userid = mongo.db.users.find_one(
         {"user_name": session["user"]})["_id"]
+        username = mongo.db.users.find_one(
+        {"user_name": session["user"]})["user_name"]
 
-        if session["user"] == user_name:
+        if session["user"] == username:
             if request.method == "POST":
                 change_pass = {
-                    "user_name": user_name,
+                    "user_name": username,
                     "password": generate_password_hash(request.form.get("password"))
                 }
                 mongo.db.users.update(
@@ -121,7 +123,7 @@ def pass_change(user_name):
                 flash("Your password has been changed.")
                 return redirect(url_for("profile", user_name=session["user"]))
 
-            return render_template("profile.html")
+            return render_template("change_password.html", user_name=session["user"])
 
         flash(
             "That is not your username and cannot edit them.",

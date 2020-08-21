@@ -518,6 +518,16 @@ input[type=range]+.thumb .value {
 form.col.card-panel {
     padding-top: 30px;
 }
+/* change password */
+.pass-change {
+    font-size: 85%;
+}
+.pass-change > .material-icons {
+    margin-top: 2rem;
+}
+.pass-change .btn {
+    margin-left: 2.5rem;
+}
 
 /* Flashes */
 .flashes .message {
@@ -711,6 +721,9 @@ footer a:hover {
     }
     .row .col.ingredients-list {
         padding-right: 25px;
+    }
+    .pass-change > .material-icons {
+        margin-top: 1rem;
     }
 }
 /* Extra large devices (large desktops, 1201px and up) */
