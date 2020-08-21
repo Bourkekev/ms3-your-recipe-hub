@@ -32,7 +32,7 @@
 <body>
     <a href="#maincontent" class="screen-reader-link sr-only">Skip to main content</a>
     <header>
-        <nav role="navigation">
+        <nav>
             <div class="nav-wrapper">
                 <a id="logo-container" href="{{url_for('index')}}" class="brand-logo"><img
                         src="{{url_for('static', filename='images/your-recipe-hub-logo.svg')}}"
@@ -76,6 +76,7 @@
                         <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
                         <li><a href="{{url_for('profile', user_name=session['user'])}}">Your Profile</a></li>
                         <li><a href="{{url_for('get_categories')}}">Manage Categories</a></li>
+                        <li><a href="{{ url_for('pass_change')}}">Change password</a></li>
                         <li><a href="{{url_for('logout')}}">Log out</a></li>
                     {% else %}
                         <li><a href="{{url_for('register')}}">Register</a></li>

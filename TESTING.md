@@ -46,11 +46,14 @@ Ribeye Steak - https://res.cloudinary.com/dxrm1evvk/image/upload/c_scale,w_640/v
 ### Validation
 
 #### HTML
-I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). It picked up a couple of stray closing tags I missed like `</i>`, and warned I need not use the type="text" attribute for javascripts.
+I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). 
+It told me that the following points that i corrected:
+ -  `<nav role="navigation">` is unnecessary for element nav, so I removed that from the nav.
+ - The 'required' attribute is not valid on an input of type range.
 
 #### CSS
-
-I validated the CSS with the [W3 CSS Validation Service](http://www.css-validator.org/) for CSS Level 3 and no errors were found.
+I used the [Autoprefixer Tool](https://autoprefixer.github.io/) to apply browser prefixes.
+I validated the CSS with the [W3 CSS Validation Service](https://jigsaw.w3.org/css-validator/) for CSS Level 3 and no errors were found, though it warned me about the vendor prefixes that the Autoprefixer had added.
 
 #### Javascript
 

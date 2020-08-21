@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 html {
     font-size: 62.5%;
 }
@@ -46,10 +53,14 @@ a.btn-large.orange:hover {
 /* Fix header */
 header {
     position: absolute;
-    z-index: 999;
+    z-index: 997;
     width: 100%;
     top: -5.6rem;
-    transform: translate(0, 5.6rem);
+    -webkit-transform: translate(0, 5.6rem);
+        -ms-transform: translate(0, 5.6rem);
+            transform: translate(0, 5.6rem);
+    -webkit-transition:top 0.2s ease-in;
+    -o-transition:top 0.2s ease-in;
     transition:top 0.2s ease-in;
 }
 header.sticky {
@@ -57,13 +68,16 @@ header.sticky {
     position: fixed;
     width:100%;
     z-index: 997;
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     top:0;
 }
 /* Navbar */
 nav {
     background-color: transparent;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 #desktop-nav {
     text-shadow: 1px 1px 1px #000;
@@ -81,22 +95,28 @@ li.vert-divider {
     background: rgb(255 255 255 / 0.4);
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 nav .brand-logo {
     left: 0;
+    line-height: 2rem;
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -ms-transform: translateX(0);
+        transform: translateX(0);
     padding: .5rem 0 .5rem .5rem;
     width: 16rem;
 }
 nav ul a {
     font-size: 1.3rem;
     font-weight: 700;
-    padding: 0px .8rem;
+    padding: 0 .8rem;
 }
 nav ul a:hover:not(.btn) {
     color: #e78036;
+    -webkit-transition: color .3s;
+    -o-transition: color .3s;
     transition: color .3s;
 }
 .sidenav {
@@ -108,13 +128,20 @@ nav ul a:hover:not(.btn) {
 /* Helper classes */
 /* center content that uses flexbox */
 .flex-justify-center {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 /* Make row flex */
 .flex-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
 }
 /* fix margin flex items */
 .row.flex-grid .col {
@@ -241,19 +268,19 @@ nav a.btn-large {
     background-image: url(../images/title-panel-mobile-576x200.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 56px;
+    padding-top: 5.6rem;
     position: relative;
-    min-height: 56px;
+    min-height: 5.6rem;
 }
 /* Search Hero Image */
 .search-hero.title-panel {
     background-image: url(../images/search-hero-mobile-576x576.jpg);
-    padding-top: 100px;
+    padding-top: 10rem;
 }
 /* All recipes Search Hero Image */
 .all-recipes-hero.title-panel {
     background-image: url(../images/search-hero-all-recipes-mobile-576x576.jpg);
-    padding-top: 100px;
+    padding-top: 10rem;
 }
 
 .title-panel:before {
@@ -313,25 +340,35 @@ nav a.btn-large {
     font-weight: 700;
     left: 50%;
     padding: 1rem;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 .courses .card a {
     color:#fff;
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 .courses .card a img {
+    -webkit-transition: -webkit-transform .2s ease-in;
+    transition: -webkit-transform .2s ease-in;
+    -o-transition: transform .2s ease-in;
     transition: transform .2s ease-in;
+    transition: transform .2s ease-in, -webkit-transform .2s ease-in;
 }
 .courses .card a:hover img {
-    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+            transform: scale(1.03);
 }
 /* align button center */
 .card-content .btn,
 .card-content .btn-large {
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 /* Recipe Single page */
 .recipe-taxonomies {
@@ -389,9 +426,10 @@ nav a.btn-large {
 input[type=text].white-rounded {
     color: #fff;
     border: 2px solid #fff;
-    border-radius: 30px;
-    padding: 20px;
-    box-sizing: border-box;
+    border-radius: 3rem;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     height: 5rem;
 }
 /* placeholder */
@@ -410,9 +448,13 @@ input[type=text].white-rounded {
 .white-rounded::placeholder {
     color:#fff;
 }
+.dropdown-content li {
+    min-height: 44px;
+}
 .dropdown-content li > a,
 .dropdown-content li > span {
     color: #e78036;
+    padding: 11px 16px;
 }
 /* over write materialise style for input */
 input:not([type]):focus:not([readonly]),
@@ -461,7 +503,7 @@ input.white-rounded.valid[type=text]:not(.browser-default):focus {
 }
 .category-select  .select-wrapper .caret {
     fill: rgb(255,255,255);
-    right: 15px;
+    right: 1.5rem;
 }
 .input-field .prefix {
     font-size: 2.4rem;
@@ -470,11 +512,12 @@ label,
 .input-field > label {
     font-size: 1.4rem;
     -webkit-transform: translateY(8px);
-    transform: translateY(8px);
+    -ms-transform: translateY(8px);
+        transform: translateY(8px);
 }
 .btn-rounded {
     border: 2px solid #fff;
-    border-radius: 30px;
+    border-radius: 3rem;
 }
 /* attached button to right of field */
 .button-right,
@@ -494,29 +537,15 @@ label,
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -2px;
-    line-height: 50px;
-    height: 50px;
+    line-height: 5rem;
+    height: 5rem;
     width: 100%;
 }
 .field-left button .material-icons {
     margin-left: -5px;
 }
-/* Force materialize range value to show always */
-/* input[type=range]+.thumb {
-    height: 30px!important;
-    width: 30px!important;
-    border-radius: 50% 50% 50% 0;
-    top: -30px!important;
-    margin-left: 22px!important;
-}
-input[type=range]+.thumb .value {
-    color: #fff;
-    font-size: 10px;
-    margin-top: 8px;
-} */
-
 form.col.card-panel {
-    padding-top: 30px;
+    padding-top: 3rem;
 }
 /* change password */
 .pass-change {
@@ -538,7 +567,7 @@ form.col.card-panel {
 }
 
 .flashes li {
-    padding: 15px;
+    padding: 1.5rem;
     font-weight: 600;
 }
 .flashes .material-icons {
@@ -558,16 +587,16 @@ footer a:hover {
     color: #e78036;
 }
 .footer-brand-logo {
-    max-width: 200px;
-    margin: 0 auto 15px;
+    max-width: 20rem;
+    margin: 0 auto 1.5rem;
 }
 .social-icons-list {
-    margin-top: 5px;
+    margin-top: .5rem;
 }
 .social-icons-list li {
     display: inline-block;
     font-size: 3.5rem;
-    margin: 5px 5px 0 0;
+    margin: .5rem .5rem 0 0;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
@@ -578,7 +607,7 @@ footer a:hover {
     transition: all .3s ease;
 }
 .explore-list li {
-    margin-bottom: 10px;
+    margin-bottom: 1.0rem;
 }
 .copyright {
     font-size: 1.2rem;
@@ -594,6 +623,8 @@ footer a:hover {
     bottom: 2rem;
     right: 2rem;
     opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
 }
 .back-to-top.visible {
@@ -628,10 +659,12 @@ footer a:hover {
     }
     .search-hero.title-panel:before,
     .all-recipes-hero.title-panel:before {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.85)), color-stop(40%, rgba(0,0,0,0.7)), to(rgba(0,0,0,0.2)));
+        background: -o-linear-gradient(left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
         background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
     }
     .footer-brand-logo {
-        margin: 15px 15px 15px 0;
+        margin: 1.5rem 1.5rem 1.5rem 0;
     }
     .courses .card .card-title {
         font-size: 6rem;
@@ -642,7 +675,7 @@ footer a:hover {
     /* Title panel image */
     .title-panel {
         background-image: url(../images/title-panel-tablet-992x200.jpg);
-        min-height: 90px;
+        min-height: 9rem;
     }
     /* Search Hero Image */
     .search-hero.title-panel {
@@ -657,12 +690,13 @@ footer a:hover {
     }
     /* Logo */
     nav {
-        height: 80px;
-        line-height: 80px;
+        height: 8rem;
+        line-height: 8rem;
     }
     nav .brand-logo {
-        width: 200px;
-        padding: 10px 0 10px 10px;
+        width: 20rem;
+        padding: 1rem 0 0 1rem;
+        line-height: 2rem;
     } 
     /* Text alignment */
     .text-md-left {
@@ -673,12 +707,16 @@ footer a:hover {
     }
     /* Manage Category cards */
     .categories .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     .categories .card .card-action {
         border-top: none;
-        padding: 24px;
+        padding: 2.4rem;
     }
 }
 /* Large devices (desktops, 993px and up) */
@@ -714,13 +752,15 @@ footer a:hover {
     /* Helper classes */
     /* left align flex items */
     .flex-justify-left-lg {
-        justify-content: left;
+        -webkit-box-pack: left;
+            -ms-flex-pack: left;
+                justify-content: left;
     }
     .recipe-taxonomies .material-icons {
         margin: 0 1rem 0 0;
     }
     .row .col.ingredients-list {
-        padding-right: 25px;
+        padding-right: 2.5rem;
     }
     .pass-change > .material-icons {
         margin-top: 1rem;
@@ -729,18 +769,18 @@ footer a:hover {
 /* Extra large devices (large desktops, 1201px and up) */
 @media screen and (min-width: 1201px) {
     nav {
-        height: 90px;
-        line-height: 90px;
+        height: 9rem;
+        line-height: 9rem;
     }
     nav ul a {
         font-size: 1.4rem;
         font-weight: 700;
-        padding: 0px 15px;
+        padding: 0 1.5rem;
     }
     /* Logo */
     nav .brand-logo {
-        width: 220px;
-        padding: 15px 0 15px 15px;
+        width: 22rem;
+        padding: 1.5rem 0 0 1.5rem;
     }
     /* Title panel image */
     .title-panel {
@@ -766,5 +806,12 @@ footer a:hover {
     }
     .courses .card .card-title {
         font-size: 5rem;
+    }
+}
+@media screen and (max-height: 672px) and (orientation: landscape) {
+    .category-select .dropdown-content {
+        max-height: 290px;
+        bottom: 0;
+        top:auto!important;
     }
 }
