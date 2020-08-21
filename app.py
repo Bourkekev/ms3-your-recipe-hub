@@ -157,7 +157,7 @@ def category_list_url(category_name):
     """Returns recipes by category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
     return render_template(
-        "search-results.html", recipes=recipes)
+        "search-results.html", recipes=recipes, category=category_name)
 
 
 @app.route('/single_recipe/<recipe_id>')
