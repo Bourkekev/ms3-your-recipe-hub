@@ -515,6 +515,10 @@ input[type=range]+.thumb .value {
     margin-top: 8px;
 } */
 
+form.col.card-panel {
+    padding-top: 30px;
+}
+
 /* Flashes */
 .flashes .message {
     background: #78E3A4;

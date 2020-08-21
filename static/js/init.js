@@ -72,6 +72,13 @@
     }); // end of document ready
 })(jQuery); // end of jQuery name space
 
+// polyfill for RegExp.escape - used when matching passwords
+if (!RegExp.escape) {
+    RegExp.escape = function (s) {
+        return String(s).replace(/[\\^$*+?.()|[\]{}]/g, "\\$&");
+    };
+}
+
 /** Display values from range */
 let cookInput = document.getElementById('cook_time');
 let cookOutput = document.getElementById('cookValOut');
@@ -79,9 +86,9 @@ let prepInput = document.getElementById('prep_time');
 let prepOutput = document.getElementById('prepValOut');
 let portionInput = document.getElementById('portions');
 let portionOutput = document.getElementById('portionValOut');
-displayRangeValue(cookInput, cookOutput);
-displayRangeValue(prepInput, prepOutput);
-displayRangeValue(portionInput, portionOutput);
+// displayRangeValue(cookInput, cookOutput);
+// displayRangeValue(prepInput, prepOutput);
+// displayRangeValue(portionInput, portionOutput);
 
 //cookInput.oninput = displayRangeValue(cookInput, cookOutput);
 
