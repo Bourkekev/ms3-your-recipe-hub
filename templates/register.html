@@ -30,7 +30,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
                     <input id="password" name="password" type="password" minlength="5" maxlength="15" 
-                    pattern="^[a-zA-Z0-9]{5,15}$" onchange="confirmpass.pattern = RegExp.escape(this.value);" class="validate" required>
+                    pattern="^[a-zA-Z0-9]{5,15}$" onchange="confirmpass.pattern = this.value;" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
-                    <input id="confirmpass" name="confirmpass" type="password" minlength="5" maxlength="15" class="validate" required>
+                    <input title="Please enter the same Password as above" id="confirmpass" name="confirmpass" type="password" minlength="5" maxlength="15" class="validate" required>
                     <label for="confirmpass">Confirm Password</label>
                 </div>
             </div>

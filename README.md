@@ -174,9 +174,16 @@ To allow me to use a different image for the 'no recipe image' for mobile I used
 </details>
 
 <details>
+  <summary><strong>Password matching on Register</strong></summary>
+There is a 'Confirm Password' field on the register form which compares the 2 password fields, basically by setting the pattern attribute of the 'Confirm password' field to the first using simple JavaScript onchange function. The basics of this are very simple, the onchange function on the first password field sets the pattern attribute on the second field to be the value of the first field.
+If they do not match, on submission the browser notifies the user "Please match the format requested", which means the password comparing is working but the notification is not clear in what it is asking for. This is the browser default for a pattern not matching, but ideally it should says something like "Passwords do not match". I thought I was going to have to find some javascript to change this and was looking on [this article](https://www.the-art-of-web.com/javascript/validate-password/#section_5) and found that the simplest thing to do is to use a title attribute, and most browsers will automatically display that text in case of a missing value or pattern mismatch. So I did not include any additional Javascript for this for the moment.
+I was also going to include a [RegEx polyfill](https://www.the-art-of-web.com/javascript/validate-password/#section_7) because if your password1 contains a '*' or other special regular expression characters, the pattern for password2 can become invalid. But at the moment my password1 field pattern attribute is actually set to just characters from a-z or numbers so this is not required.
+</details>
+
+<details>
   <summary><strong>Skip to main content</strong></summary>
 
- There is a 'Skip to main content' link just inside the body tag for accessibility for screenreaders. The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is then hidden from view with the bootstrap class 'sr-only', however when it receives focus from keyboard it becomes visible, by basically reversing the Bootstrap CSS properties on focus. This is based on accessibility recommendations from https://webaim.org/techniques/skipnav/. This can be checked by pressing tab when a pages loads.
+ There is a 'Skip to main content' link just inside the body tag for accessibility for screen readers. The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is then hidden from view with the bootstrap class 'sr-only', however when it receives focus from keyboard it becomes visible, by basically reversing the Bootstrap CSS properties on focus. This is based on accessibility recommendations from https://webaim.org/techniques/skipnav/. This can be checked by pressing tab when a pages loads.
  </details>
 
 ##### Form input count
@@ -251,11 +258,12 @@ So I had to change the class on the dropdown trigger in the navigation to be dif
  - Form field character count - [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp). And also [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) for oninput reference.
  - Information on message flashing I referenced [Flask Flash docs](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
  - Validation JavaScript for Materialize select - This script was supplied by Code Institute, because by default the materialize select provides no feedback on a required select field that is left blank.
+ - Compare registration passwords - I reference [this article](https://www.the-art-of-web.com/javascript/validate-password/#section_5) when looking for a Javascript way to change the 'Confirm Password' field notification of wrong pattern.
  
 ### Content
 
- - Some text content adapted from (thekitchn.com)[https://www.thekitchn.com/] and (allrecipes.com)[http://dish.allrecipes.com/customer-service/submit-your-recipes/].
- - Actual example recipes were take from (allrecipes)[https://www.allrecipes.com/] and (eatingwell.com)[http://www.eatingwell.com/]
+ - Some text content adapted from [thekitchn.com](https://www.thekitchn.com/) and [allrecipes.com](http://dish.allrecipes.com/customer-service/submit-your-recipes/).
+ - Actual example recipes were take from [allrecipes](https://www.allrecipes.com/) and [eatingwell.com](http://www.eatingwell.com/)
  
 ### Media
 - The photos and vectors used in this site were obtained from:
