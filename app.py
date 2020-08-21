@@ -142,16 +142,12 @@ def course_list(course_name):
         "search-results.html", recipes=recipes, course_name=course_name)
 
 
-@app.route('/category', methods=["GET", "POST"])
+@app.route('/category')
 def category_list():
     """Returns recipes by category from form select option"""
-    if request.method == "POST":
-        category = request.form.get("category_name")
-        recipes = list(mongo.db.recipes.find({"category_name": category}))
-        return render_template("search-results.html", recipes=recipes)
-
     category = request.args.get("category_name")
     recipes = list(mongo.db.recipes.find({"category_name": category}))
+    
     return render_template(
         "search-results.html", recipes=recipes, category=category)
 
