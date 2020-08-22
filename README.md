@@ -1,6 +1,6 @@
 # Milestone 3 - Your Recipe Hub - by Kevin Bourke
 
-![Sitemap](README_resources/your-recipe-hub-logo.png)
+![Your Recipe Hub Logo](README_resources/your-recipe-hub-logo.png)
 
 Your Recipe Hub is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. If they register, users can read, create, update and delete recipes. There many sites in existence that have this kind of functionality already, such as [Kitchen Stories](https://www.kitchenstories.com/en) and [Allrecipes](https://www.allrecipes.com/). Essentially the users would be building a database of recipes for public use.
 
@@ -174,7 +174,7 @@ The subscribers collection would for now only store an email. This is not actual
 An important part of UX is making sure users cannot cause errors, and that they get positive useful feedback if they try to perform an action that they are not allowed to. This includes things like:
  - A user cannot break the site (or cause an error appear on screen), by pressing buttons out of expected order, or using browser forward and back buttons.
  - Required Form inputs give warnings or feedback if not filled, or filled correctly.
- - A user is given feedback if they are not allowed to do something.
+ - A user is given feedback if they are not allowed to do something, like register an already existing username.
  - A custom '404 page not found' page.
 
 ## Technologies Used
@@ -213,22 +213,98 @@ An important part of UX is making sure users cannot cause errors, and that they 
 
 #### The ability to browse/search by recipe categories that are on the website.
 
+![Search](README_resources/search.png)
+
 #### The ability to search recipes by text keyword. 
 
 This search only searches the recipes title and short description fields. I decided against including the ingredients field as there may be too many minor ingredients that cause too many recipes to appear in the results. For example, nearly every recipe could conceivably contain pepper, but if someone was searching for say a bell pepper recipe, they would have all recipes returned. Plus usually people are searching for a dish title or the main ingredient around which the dish is based.
 
+If their search yields no results, this will be displayed to them:
+
+![No results](README_resources/no-results.png)
+
+This is the same whether they browse by category or course.
+
 #### The ability to browse by recipe course.
+
+#### The most recent recipes are shown on the homepage.
+
+#### The recipe cards display some useful information
+
+When the recipes are listed in a grid the recipe cards displays some useful information that would be useful to a user trying to decide on a recipe, such as the type of course it is, how long in total to make and portion size:
+
+![recipe cards](README_resources/recipe-cards.png)
+
+#### A single recipe page is easy to read
+
+A recipe page displays all recipe information and it is easy to find the key points of information:
+
+![single-recipe](README_resources/single-recipe.png)
+
+#### On a single recipe page the category links to a list of recipes from that category
+
+![category-link](README_resources/category-link.png)
 
 #### The ability to easily print a recipe in a printer friendly format.
 
 On each recipe page there is a print button, which just easily allows the user to print a recipe. There is a print stylesheet that removes elements you would not need/want printed like the navigation, and it only loads on the individual recipe page.
 
-#### Users can only edit their own Recipes
-#### User can view their own recipes
+#### Users can register a profile on the site.
+
+The register form asks a user to confirm their password to make sure they typed it correctly. It verifies that they are the same.
+
+![register](README_resources/register.png)
+
+#### Users can login and logout of the site.
+
+#### When logged in users get addition options in the navigation.
+
+As they can do more when logged in users can see these options in the navigation bar.
+
+*When logged out*:
+
+![nav-logged-out](README_resources/nav-logged-out.png)
+
+*When logged in*
+
+![nav-logged-in](README_resources/nav-logged-in.png)
+
+#### Logged in users can add their own recipes to the site.
+
+#### Logged in users can delete only their own recipes.
+
+#### Logged in users can edit only their own recipes.
+
+The edit and delete buttons do not appear if the user has not submitted this recipe.
+
+![edit buttons](README_resources/edit-buttons.png)
+
+#### Logged in users can view their own submitted recipes via their profile.
 
 By navigating to their profile page a user can view all the recipes that they have submitted to the site.
 
+![profile page](README_resources/profile-page.png)
+
+When they first create an account and they have no recipes, they are told they have no recipes and there is a button to encourage them to submit a recipes.
+
+![profile page new user](README_resources/profile-page-new.png)
+
+#### Logged in users can change their password.
+
+#### Logged in users can manage categories (but not courses).
+
+Users can add and remove categories if they wish. But they cannot edit the courses, because courses really stay the same, there is no need for a user to be changing them.
+
+![manage categories](README_resources/manage-categories.png)
+
+#### Any user can subscribe to the newsletter.
+
+Currently this just saves the user's email in the database, and is not signing them up to any mailing service.
+
 #### Minor Features
+
+##### Back to top (of page) button
+
 Expand the sections below for more info on details:
 
 <details>
