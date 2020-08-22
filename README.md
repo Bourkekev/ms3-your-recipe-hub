@@ -1,5 +1,7 @@
 # Milestone 3 - Your Recipe Hub - by Kevin Bourke
 
+![Sitemap](README_resources/your-recipe-hub-logo.png)
+
 Your Recipe Hub is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. If they register, users can read, create, update and delete recipes. There many sites in existence that have this kind of functionality already, such as [Kitchen Stories](https://www.kitchenstories.com/en) and [Allrecipes](https://www.allrecipes.com/). Essentially the users would be building a database of recipes for public use.
 
 ## UX
@@ -20,6 +22,7 @@ This section provides insight into the UX process, focusing on who this website 
 - [x] Search the site by keyword for recipes easily.
 - [x] Easily see the time required for each recipe while browsing.
 - [x] Easily view latest Recipes.
+- [x] Sign up to a newsletter.
 
 #### As a User who would like to contribute recipes to the site I would also like to:
 
@@ -31,16 +34,18 @@ This section provides insight into the UX process, focusing on who this website 
 - [x] Edit my own recipes, but other users cannot edit or delete my recipes.
 - [x] Delete my own recipes.
 - [x] Add new categories.
-- [ ] Delete categories.
+- [x] Delete categories.
 - [x] Log out of my account.
 - [x] Get clear messages if something does not work, like a username is already taken.
 
 #### As admin or the site owner I would like to do all the above as well as:
 
-- [x] Edit or Remove all recipes.
+- [ ] Edit or Remove all recipes.
 - [ ] Edit or remove all categories.
 - [ ] Manage Courses.
 - [ ] Remove Users if required.
+
+These admin features are not currently developed, but are certainly something a site admin would want to have
 
 #### As a developer
 
@@ -69,7 +74,22 @@ The goals of this type of website are to:
 
 This section determines what the users should be able to do on the website. Users should be able to:
 
-1. 
+- [x] Browse recipes by food course.
+- [x] Browse recipes by food category.
+- [x] Search the site by keyword for recipes easily.
+- [x] Easily see the time required for each recipe while browsing.
+- [x] Easily view latest Recipes.
+- [x] Sign up to a newsletter.
+- [x] Register for an account.
+- [x] Login to their account.
+- [x] Submit their own recipes to be shown on the website.
+- [x] Use the site as a repository for their own recipes.
+- [x] Easily view recipes they have submitted.
+- [x] Edit their own recipes, but other users cannot edit or delete their recipes.
+- [x] Delete their own recipes.
+- [x] Add new categories.
+- [x] Delete categories.
+- [x] Log out of their account.
 
 ### Structure
 
@@ -77,7 +97,19 @@ To list the pages I needed and to visualise the site structure, I designed my vi
 
 ![Sitemap](README_resources/gloomap-sitemap.png)
 
-I also listed out the features I wanted on the homepage.
+I also listed out the features I wanted on the homepage:
+
+#### A Large Search Feature
+
+The whole site is about finding recipes so I wanted to have this ability right up front and not have users having to go looking for how they browse or search. The [Food Network](https://foodnetwork.co.uk/) and [Epicurious](https://www.epicurious.com/) are examples of sites with a big search as the first thing on the page, and a large cover image. I also did not want it too cluttered. A lot of recipe sites have a lot going on and the user needs to think too much about what they want to do.
+
+#### Obvious signposts to recipes by Course
+
+I wanted clear and obvious entry points to recipes by course. It should have quality images, icons or graphics. I did not plan a section like this for the categories as they are editable by the user and could change or be edited or deleted.
+
+#### Recent Recipes
+
+I wanted to show just some of the latest recipes, so users would have something different to see each time they arrived on the site and if they submit a new recipe it would appear here.
 
 ### Skeleton
 
@@ -100,13 +132,15 @@ There is also a login page which is very similar to the sign up page except with
 
 Also note, my wireframes and sitemap did change slightly during development as I learned more about how best to display certain pages, like recipe categories or the search results page. The knowledge I gained throughout the project would allow me a much better understanding of what was possible or what might work best for future projects.
 
+I also thought my original idea for the navigation below the logo, like [EatingWell](http://www.eatingwell.com/), made the header take up far too much vertical space and really just left a large space at the top. So I decided to move the navigation up in line with the logo and 'Add Recipe' button.
+
 ### Surface
 
 An obvious colour choice for representing healthy food is green. Green stands for nature and growth according to this [99designs article](https://99designs.ie/blog/tips/color-psychology/), and it is also a literal representation of healthy foods, like vegetables and salads.
 
 I wanted the site to be clean and bright. The [Yummly](https://www.yummly.com/) is a good example of this, it is mostly white with green and orange contrasting colours for buttons and other icons.
 
-I researched colour combinations, particularly looking for green and another contrasting colour. I liked the number 17 "Teal, coral, turquoise and grey" palette on this [article](https://99designs.ie/blog/creative-inspiration/color-combinations/), but wanted to bring the green closer to a leafy green colour and also make the coral colour a bit more vibrant. I used [Coolors](https://coolors.co/) and picked a nice green #25b35f as my base green, and generated different colour palettes. It actually generated one that was quite similar to the palatte above, with oranges and greys. I felt the orange was a bit too pastel and light, so I just picked a different shade of that orange. I also lightened the shade of the lighter grey, as I imagined using it as a background colour where there might be text on it, so wanted to make sure dark text would be able to stand out on the grey.
+I researched colour combinations, particularly looking for green and another contrasting colour. I liked the number 17 "Teal, coral, turquoise and grey" palette on this [article](https://99designs.ie/blog/creative-inspiration/color-combinations/), but wanted to bring the green closer to a leafy green colour and also make the coral colour a bit more vibrant. I used [Coolors](https://coolors.co/) and picked a nice green #25b35f as my base green, and generated different colour palettes. It actually generated one that was quite similar to the palette above, with oranges and greys. I felt the orange was a bit too pastel and light, so I just picked a different shade of that orange. I also lightened the shade of the lighter grey, as I imagined using it as a background colour where there might be text on it, so wanted to make sure dark text would be able to stand out on the grey.
 
 This was my final palatte:
 
@@ -114,7 +148,7 @@ This was my final palatte:
 
 You can also see it completely in [PDF format here](README_resources/colour-palette-your-recipe-hub.pdf).
 
-Colours for buttons, like edit and delete were based on different shades of materialize colours.
+Colours for some buttons, like edit and delete were based on different shades of materialize colours.
 
 #### Fonts
 
@@ -275,6 +309,7 @@ So I thought a better solution would be to set a max-height on the select dropdo
 
 The photos and vectors used in this site were obtained from:
 
+ - Database Diagram designed on [QuickDBD](https://www.quickdatabasediagrams.com/).
  - Logo was purchased from [Shutterstock](https://www.shutterstock.com/image-vector/vector-logo-template-cookbook-ladle-recipe-620961650) and I edited the colours and added the logo text.
  - Home Search and page title panels purchased from Shutterstock. [Home search](https://www.shutterstock.com/image-photo/traditional-russian-pelmeni-ravioli-dumplings-meat-597536570) and other pages [title panel](https://www.shutterstock.com/image-photo/cooking-utensils-spices-on-stone-kitchen-1513515293).
  - All recipes page search panel image from [Ella Olsson](https://www.pexels.com/@ella-olsson-572949?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) on [Pexels](https://www.pexels.com/photo/photo-of-vegetable-salad-in-bowls-1640770/).
