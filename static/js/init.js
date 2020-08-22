@@ -25,7 +25,7 @@
                 });
             }).on("click", function(){
                 if ($(this).parent(".select-wrapper").children("ul").children("li.selected:not(.disabled)").css("background-color") === "rgba(0, 0, 0, 0.03)") {
-                        $(this).parent(".select-wrapper").children("input").css(classvalid);
+                        $(this).parent(".select-wrapper").children("input").css(classValid);
                 } else {
                     $(".select-wrapper input.select-dropdown").on("focusout", function () {
                         if ($(this).parent(".select-wrapper").children("select").prop("required")) {
@@ -52,11 +52,11 @@
              * also add class to back-to-top */
             if(yPos > (headerHeight + 25)) {
                 $('header').addClass('sticky');
-                $('.back-to-top').addClass('visible')
+                $('.back-to-top').addClass('visible');
             }
             else {
                 $('header').removeClass('sticky');
-                $('.back-to-top').removeClass('visible')
+                $('.back-to-top').removeClass('visible');
             }
         });
 
@@ -71,20 +71,3 @@
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
-
-/** Display values from range */
-let cookInput = document.getElementById('cook_time');
-let cookOutput = document.getElementById('cookValOut');
-let prepInput = document.getElementById('prep_time');
-let prepOutput = document.getElementById('prepValOut');
-let portionInput = document.getElementById('portions');
-let portionOutput = document.getElementById('portionValOut');
-// displayRangeValue(cookInput, cookOutput);
-// displayRangeValue(prepInput, prepOutput);
-// displayRangeValue(portionInput, portionOutput);
-
-//cookInput.oninput = displayRangeValue(cookInput, cookOutput);
-
-function displayRangeValue(i,o) {
-    o.value = i.value;
-}

@@ -630,6 +630,10 @@ footer a:hover {
 .back-to-top.visible {
     opacity: 1;
 }
+/* Manage Category cards */
+.categories .card-action .btn {
+    margin: 1rem;
+}
 
 /*--------------------- Media Queries --------------------*/
 

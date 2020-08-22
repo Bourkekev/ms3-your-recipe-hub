@@ -148,6 +148,11 @@ I validated the CSS with the [W3 CSS Validation Service](https://jigsaw.w3.org/c
 
 ### Javascript
 
+I ran my javascript files through [JSHint](jshint.com)
+There were 10 warnings about the use of 'let', missing semicolons, and 2 undefined variables, 'classvalid' and 'jQuery'. JQuery comes from jquery so that is fine and 'classvalid' was a typo. It should have been 'classValid'.
+
+So I fixed that and added the semicolons.
+
 ## Colour Constrast Checking
 I used [WebAIM's](https://webaim.org/resources/contrastchecker/) contrast checker to ensure that text on coloured backgrounds is readable and to WCAG AA Standard, especially white text on coloured backgrounds.
 
