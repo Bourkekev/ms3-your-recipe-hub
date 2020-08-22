@@ -74,9 +74,9 @@
         <!-- Recipe image -->
         <div class="col s12 l6">
             {% if recipe.image_url %}
-            <img src="{{recipe.image_url}}" alt="{{recipe.title}}" class="recipe-img"/>
+                <img src="{{recipe.image_url}}" alt="{{recipe.title}}" class="recipe-img"/>
             {% else %}
-            <picture>
+            <picture class="recipe-img">
                 <source media="(max-width: 480px)"
                     srcset="{{url_for('static', filename='images/recipe-no-image-480x320.jpg')}}">
                 <img src="{{url_for('static', filename='images/recipe-no-image-843x562.jpg')}}" alt="no image available" />
