@@ -53,7 +53,7 @@ I include this here to explain what I, as a developer, wanted to get out of this
 
  - To provide an easy to use, online recipe repository, which provides users with full CRUD functionality.
  - To improve my knowledge of Python, Flask and Jinja templating, with a practical project.
- - To learn about basic user authentication.
+ - To learn about basic user authentication, without using a prebuilt add-on module.
  - To learn about MongoDB indexing for text searches.
  - To learn to use the [Materialize Framework](https://materializecss.com/), to see how it compares to the likes of Bootstrap.
  - Connecting a web app to a database to create and store data, in this case in a non-relational database, MongoDB.
@@ -136,13 +136,17 @@ I also thought my original idea for the navigation below the logo, like [EatingW
 
 ### Surface
 
+This is the sensory design section of a website, or how it looks, feels and sounds. I wanted the design to be clean and the colour scheme to be light and refreshing. I created a moodboard with Adobe Spark from research of colours, styles and components to visually illustrate the style I wished to pursue. You can see that [moodboard here.](README_resources/mood-board.png) 
+
+Some of those sites also served as inspiration for the recipe layout and recipe cards.
+
 An obvious colour choice for representing healthy food is green. Green stands for nature and growth according to this [99designs article](https://99designs.ie/blog/tips/color-psychology/), and it is also a literal representation of healthy foods, like vegetables and salads.
 
 I wanted the site to be clean and bright. The [Yummly](https://www.yummly.com/) is a good example of this, it is mostly white with green and orange contrasting colours for buttons and other icons.
 
 I researched colour combinations, particularly looking for green and another contrasting colour. I liked the number 17 "Teal, coral, turquoise and grey" palette on this [article](https://99designs.ie/blog/creative-inspiration/color-combinations/), but wanted to bring the green closer to a leafy green colour and also make the coral colour a bit more vibrant. I used [Coolors](https://coolors.co/) and picked a nice green #25b35f as my base green, and generated different colour palettes. It actually generated one that was quite similar to the palette above, with oranges and greys. I felt the orange was a bit too pastel and light, so I just picked a different shade of that orange. I also lightened the shade of the lighter grey, as I imagined using it as a background colour where there might be text on it, so wanted to make sure dark text would be able to stand out on the grey.
 
-This was my final palatte:
+This was my final palette:
 
 ![Colour palette](README_resources/palette-your-recipe-hub.png)
 
@@ -290,10 +294,22 @@ So I thought a better solution would be to set a max-height on the select dropdo
 
 ### Design and Research
  I took inspiration for this site from the following places:
- - 
+ - [Kitchen Stories](https://www.kitchenstories.com/en/stories/new-on-kitchen-stories-upload-your-own-recipes)
+ - [AllRecipes](http://dish.allrecipes.com/customer-service/submit-your-recipes/)
+ - [Food Network](https://foodnetwork.co.uk/)
+ - [Epicurious](https://www.epicurious.com/)
+ - [EatingWell](http://www.eatingwell.com/)
+ - [Food.com](https://www.food.com/)
+ - [Yummly](https://www.yummly.co.uk/)
+ - [Pinch of Yum](https://pinchofyum.com/)
+ - [Flavor & The Menu](https://www.getflavor.com/recipes-home/)
+ - [The Kitchn](https://www.thekitchn.com/pesto-chicken-22925256)
+ - [Healthy Fitness Meals](https://healthyfitnessmeals.com/recipe-index/)
+ - [Napolina](https://www.napolina.com/recipes/30-minute/rigatoni-with-goats-cheese-and-spinach)
 
 ### Technical
  - For general references for Python and Flask I used my Code Institute notes, [MDN web docs](https://developer.mozilla.org/en-US/), [w3schools](https://www.w3schools.com/js/default.asp), [Python Offical Docs](https://www.python.org/doc/), and [Flask documentation](https://flask.palletsprojects.com/en/1.1.x/).
+ - MongoDB Text Search - https://docs.mongodb.com/manual/text-search/ and https://docs.mongodb.com/manual/core/index-text/
  - For Python's datetime formatting I referenced https://www.programiz.com/python-programming/datetime/strftime
  - Form field character count - [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp). And also [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput) for oninput reference.
  - Information on message flashing I referenced [Flask Flash docs](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
