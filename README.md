@@ -272,10 +272,16 @@ So I thought a better solution would be to set a max-height on the select dropdo
  - Actual example recipes were take from [allrecipes](https://www.allrecipes.com/) and [eatingwell.com](http://www.eatingwell.com/)
  
 ### Media
-- The photos and vectors used in this site were obtained from:
 
- - Logo was purchased from [Shutterstock](https://www.shutterstock.com/image-vector/vector-logo-template-cookbook-ladle-recipe-620961650)
- -
+The photos and vectors used in this site were obtained from:
+
+ - Logo was purchased from [Shutterstock](https://www.shutterstock.com/image-vector/vector-logo-template-cookbook-ladle-recipe-620961650) and I edited the colours and added the logo text.
+ - Home Search and page title panels purchased from Shutterstock. [Home search](https://www.shutterstock.com/image-photo/traditional-russian-pelmeni-ravioli-dumplings-meat-597536570) and other pages [title panel](https://www.shutterstock.com/image-photo/cooking-utensils-spices-on-stone-kitchen-1513515293).
+ - All recipes page search panel image from [Ella Olsson](https://www.pexels.com/@ella-olsson-572949?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) on [Pexels](https://www.pexels.com/photo/photo-of-vegetable-salad-in-bowls-1640770/).
+ - Image for No Recipe Image by [Daria Yakovleva](https://pixabay.com/users/daria-yakovleva-3938704/) on [Pixabay](https://pixabay.com/photos/food-products-rustic-vegetables-1898194/).
+ - 404 image by [laurentvalentinjospi0](https://pixabay.com/users/laurentvalentinjospi0-986947/) on [Pixabay](https://pixabay.com/photos/dishes-white-plate-stemware-938747/).
+ - Courses illustrations were purchased on [shutterstock](https://www.shutterstock.com/image-vector/menu-icons-172235042) and the [other course here](https://www.shutterstock.com/image-vector/vector-hand-drawn-food-meal-on-201739760).
+ - Extended Material Design icons from [Material Design Icons](https://materialdesignicons.com/) and are packaged under the [SIL Open Font License 1.1.](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)
 
  - The favicons were generated at https://realfavicongenerator.net/
 
