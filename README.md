@@ -4,6 +4,8 @@
 
 Your Recipe Hub is a recipe website where users can search for recipes via text search or categories. If they wish they can also submit their own recipes to the site. If they register, users can read, create, update and delete recipes. There many sites in existence that have this kind of functionality already, such as [Kitchen Stories](https://www.kitchenstories.com/en) and [Allrecipes](https://www.allrecipes.com/). Essentially the users would be building a database of recipes for public use.
 
+The live deployed site can be found here - https://your-recipe-hub.herokuapp.com/
+
 ## UX
 
 I wanted the site to have 3 main overarching features.
@@ -332,24 +334,37 @@ I was also going to include a [RegEx polyfill](https://www.the-art-of-web.com/ja
 
  </details>
 
-##### 
-
-
-
 ### Features to consider implementing in the future
 
+ - Pagination on recipe listings.
+ - Allow an Admin User to manage all users, manage all recipes, manage courses.
+ - When logged in, view some basic statistics like, how many recipes, how many categories, how many recipes in each category, and how many registered users.
+ - Have some core categories users cannot edit.
  - Additional Categorisation by Cuisine (Italian, Chinese etc...) and tags, like for specific ingredients like eggs or potatoes.
+ - Allow users upload photos rather than just using a url
+ - Better fields for ingredients so that each ingredient can be submitted in it's own field rather than a textarea field for all. This would allow for much better styling and presentation on the front-end.
+ - Allow users to rate/review recipes, and favourite other peoples recipes.
   
 
 ## Testing
 
-Please see [Testing Document](TESTING.md) for all my testing.
+For the purposes of testing, you can use the image urls provided in the [Testing Document](TESTING.md), which also has the information on all my testing.
 
 ## Deployment
 
+### 1. Clone from github 
+To run locally, you can clone this repository directly into the editor of your choice. Open a folder where you want to save the project to and then in the terminal paste `git clone https://github.com/Bourkekev/ms3-your-recipe-hub.git`. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal. The project will be now cloned into your folder.
 
+### 2. Create database on MongoDB
+Create an account on [MongoDb](https://www.mongodb.com/), create a database called 'your_recipe_hub' and construct the 4 collections as shown in my database [diagram](#Database-Schema).
 
-To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/Bourkekev/ms3-your-recipe-hub.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.
+### 3. Install requirements
+
+In terminal type:
+
+```
+$ pip3 install -r requirements.txt
+```
 
 ### Create the search index
 
@@ -358,6 +373,7 @@ Best thing to do is to create the index using the python interpreter.
   - You then type `from app import mongo`. This imports the database variable.
   - Create the text index with `mongo.db.recipes.create_index([("title", "text"), ("short_description", "text")])`. This creates the text search index on the 'title' and 'short_description' fields.
   - Type `quit()` to exit Python interpreter.
+
 
 ## Issues I had to overcome
 
@@ -375,7 +391,7 @@ So I knew I need something unique that users do not have control over, so the ca
 
 ### Cursor not found error on All Recipe page after putting 
 
-After putting the if-else on the all-recipes.html template which outputs "No recipes found" on a search query, when I went to All Recipes I was getting an error: `object of type 'cursor' has no len()`. Yet the page worked when I had results to show. I searched online to try to find out what that meant, but was not really getting or understanding answers I read. But I knew my view for the search worked, so I compared this with all_recipes view. My all recipes was simply sending the recipes to the template as a dicitonary : `recipes=mongo.db.recipes.find({"course_name": course_name})`, but my search was sending a list like: `recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))`. So I changed my all_recipes to use the list() method and that fixed the error.
+After putting the if-else on the all-recipes.html template which outputs "No recipes found" on a search query, when I went to All Recipes I was getting an error: `object of type 'cursor' has no len()`. Yet the page worked when I had results to show. I searched online to try to find out what that meant, but was not really getting or understanding answers I read. But I knew my view for the search worked, so I compared this with all_recipes view. My all recipes was simply sending the recipes to the template as a dictionary : `recipes=mongo.db.recipes.find({"course_name": course_name})`, but my search was sending a list like: `recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))`. So I changed my all_recipes to use the list() method and that fixed the error.
 
 ### Using the select category dropdown with POST allowed for error
 
@@ -389,7 +405,7 @@ Similarly I then changed the text search form and view to use the GET method, ot
 
 The Materialize select for selecting a category on the search by category was not working on a mobile device. The options would flash up for a fraction of a second and then disappear and would not show again. This was tricky to figure out as it did not happen in the developer tools responsive mode on a desktop. Also the html for the select element is generated by materialize from my html in the template and materialize's javascript so is not technically something I developed.
 
-I could not figure it out from my site, so I decided I would create a pen on [codepen](https://codepen.io/bourkekev/pen/poybvQd) with just the basic html and required js css for materialize and test it there. So when I checked this pen on mobile the issue did not happen and it worked fine. So there was a problem somehow with my site. When I looked at the materialize input (that simultates a select) it has a class `dropdown-trigger`. But also the dropdown in the navigation had a link with a class `dropdown-trigger`. So I removed the jQuery [materialize's docs](https://materializecss.com/navbar.html#navbar-dropdown) say to include from their example, and tested the select again on mobile. This time it worked as expected.
+I could not figure it out from my site, so I decided I would create a pen on [codepen](https://codepen.io/bourkekev/pen/poybvQd) with just the basic html and required js css for materialize and test it there. So when I checked this pen on mobile the issue did not happen and it worked fine. So there was a problem somehow with my site. When I looked at the materialize input (that simulates a select) it has a class `dropdown-trigger`. But also the dropdown in the navigation had a link with a class `dropdown-trigger`. So I removed the jQuery [materialize's docs](https://materializecss.com/navbar.html#navbar-dropdown) say to include from their example, and tested the select again on mobile. This time it worked as expected.
 
 So I had to change the class on the dropdown trigger in the navigation to be different than the select dropdown trigger, and that fixed the conflict.
 
@@ -424,7 +440,7 @@ So I thought a better solution would be to set a max-height on the select dropdo
  - Information on message flashing I referenced [Flask Flash docs](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
  - Validation JavaScript for Materialize select - This script was supplied by Code Institute, because by default the materialize select provides no feedback on a required select field that is left blank.
  - Compare registration passwords - I reference [this article](https://www.the-art-of-web.com/javascript/validate-password/#section_5) when looking for a Javascript way to change the 'Confirm Password' field notification of wrong pattern.
- - Form input count - The text area fields have a max number of characters allowed so I added a simple JavaScript character count on input to give the user an idea of how many characters they have used. This was based on references from [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp).
+ - Form input count - The text area fields have a max number of characters allowed so I added a simple JavaScript character count on input to give the user an idea of how many characters they have used. This was based on references from [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp). (P.S. I changed how this worked, and used the materialize option for character count which I was not aware of at the time.)
  
 ### Content
 
