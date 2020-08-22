@@ -657,11 +657,10 @@ footer a:hover {
     .all-recipes-hero.title-panel {
         background-image: url(../images/search-hero-all-recipes-large-mobile768x576.jpg);
     }
-    .search-hero.title-panel:before,
-    .all-recipes-hero.title-panel:before {
-        background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.85)), color-stop(40%, rgba(0,0,0,0.7)), to(rgba(0,0,0,0.2)));
-        background: -o-linear-gradient(left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
-        background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.2) 100%);
+    .search-hero.title-panel:before, .all-recipes-hero.title-panel:before {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.85)), color-stop(40%, rgba(0,0,0,0.5)), color-stop(60%, rgba(0,0,0,0)));
+        background: -o-linear-gradient(left, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 60%);
+        background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 60%);
     }
     .footer-brand-logo {
         margin: 1.5rem 1.5rem 1.5rem 0;
@@ -789,10 +788,16 @@ footer a:hover {
     /* Search Hero Image */
     .search-hero.title-panel {
         background-image: url(../images/search-hero-1920x700.jpg);
+        background-position: top right;
     }
     /* All recipes Search Hero Image */
     .all-recipes-hero.title-panel {
         background-image: url(../images/search-hero-all-recipes-1920x700.jpg);
+    }
+    .search-hero.title-panel:before, .all-recipes-hero.title-panel:before {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.5)), color-stop(40%, rgba(0,0,0,0)), color-stop(60%, rgba(0,0,0,0)));
+        background: -o-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%);
+        background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%);
     }
     /* Text alignment */
     .text-xl-left {
