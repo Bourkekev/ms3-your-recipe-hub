@@ -87,6 +87,36 @@ If you are not logged in and click the Add Recipe button you will be brought to 
 
 ![must login](README_resources/testing/must-log-in.png)
 
+When you add a new recipe, you are brought to the All Recipes page, notified of succesfull submission.
+
+![recipe success](README_resources/testing/recipe-success.png)
+
+### You can easily view recipes you have submitted
+
+Go to Profile in the nav menu and all the recipes you added will be listed there.
+
+![profile page new user](README_resources/profile-page-new.png)
+
+### Edit or delete only your own Recipes
+
+You can easily edit or delete your own recipes. If you are viewing a recipe that is yours, there are 2 buttons, to edit and delete. The edit and delete buttons do not appear if you have not submitted this recipe.
+
+![edit buttons](README_resources/edit-buttons.png)
+
+If you click the delete button, you are given a warning and asked to confirm deletion of the recipe:
+
+![delete warning](README_resources/testing/delete-warning.png)
+
+### Managing Categories
+
+Currently all users can add, adit and delete categories. You cannot add a category that already exists in the database.
+
+![cat exists](README_resources/testing/cat-exists.png)
+
+Like delete recipe, if you click the delete button, you are given a warning and asked to confirm deletion of the category.
+
+
+
 ## Python Testing
 
 I am aware of unit testing in Python but was unable to incorporate automated testing into the project, so all my testing was done manually.
