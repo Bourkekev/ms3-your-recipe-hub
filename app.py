@@ -108,28 +108,30 @@ def pass_change():
     """Changes the users password"""
     if "user" in session:
         userid = mongo.db.users.find_one(
-        {"user_name": session["user"]})["_id"]
+            {"user_name": session["user"]})["_id"]
         username = mongo.db.users.find_one(
-        {"user_name": session["user"]})["user_name"]
+            {"user_name": session["user"]})["user_name"]
 
         if session["user"] == username:
             if request.method == "POST":
                 change_pass = {
                     "user_name": username,
-                    "password": generate_password_hash(request.form.get("password"))
+                    "password": generate_password_hash(
+                        request.form.get("password"))
                 }
                 mongo.db.users.update(
                     {"_id": ObjectId(userid)}, change_pass)
                 flash("Your password has been changed.")
                 return redirect(url_for("profile", user_name=session["user"]))
 
-            return render_template("change_password.html", user_name=session["user"])
+            return render_template(
+                "change_password.html", user_name=session["user"])
 
         flash(
             "That is not your username and cannot edit them.",
             "error")
         return redirect(url_for("profile", user_name=user_name))
-    
+
     flash("You are not logged in. Do you wish to log in?")
     return redirect(url_for("login"))
 
@@ -179,7 +181,7 @@ def category_list():
     category = request.args.get("category_name")
     recipes = list(mongo.db.recipes.find({"category_name": category}))
     return render_template(
-        "search-results.html", recipes=recipes, 
+        "search-results.html", recipes=recipes,
         category=category)
 
 
@@ -188,7 +190,7 @@ def category_list_url(category_name):
     """Returns recipes by category from a link or url"""
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
     return render_template(
-        "search-results.html", recipes=recipes, 
+        "search-results.html", recipes=recipes,
         category=category_name)
 
 
@@ -238,7 +240,7 @@ def add_recipe():
 
 @app.route('/edit_recipe/<recipe_id>', methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    """Checks if user is author of recipe, and allows user to edit this recipe"""
+    """Checks if user is author of recipe, and allows user edit this recipe"""
     if "user" in session:
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         recipe_user = the_recipe["user_name"]
@@ -274,7 +276,6 @@ def edit_recipe(recipe_id):
             return render_template(
                 "edit_recipe.html",
                 recipe=the_recipe, categories=categories, courses=courses)
-            
 
         flash(
             "You are not the author of this recipe and cannot edit it.",
@@ -287,7 +288,7 @@ def edit_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    """Checks if user is author of recipe, and allows user to delete this recipe"""
+    """Checks if user is author of recipe and allows user delete this recipe"""
     if "user" in session:
         the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
         recipe_user = the_recipe["user_name"]
@@ -349,7 +350,8 @@ def edit_category(category_id):
             submit_edit = {
                 "category_name": request.form.get("category_name").lower()
             }
-            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit_edit)
+            mongo.db.categories.update(
+                {"_id": ObjectId(category_id)}, submit_edit)
             flash("Category successfully updated")
             return redirect(url_for('get_categories'))
 
@@ -376,7 +378,7 @@ def delete_category(category_id):
 def subscribe():
     """Subscribes users email, checks if already subscribed"""
     if request.method == "POST":
-        #check if subscriber exists
+        # check if subscriber exists
         existing_sub = mongo.db.subscribers.find_one(
             {"email": request.form.get("email").lower()}
         )
