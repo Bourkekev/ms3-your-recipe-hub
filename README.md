@@ -428,7 +428,7 @@ In Heroku go to Settings tab. You will find the Heroku git url here. Then in ter
 $ git remote add heroku <your heroku git url>
 ```
 
-Heroku is now set a remote.  
+Heroku is now set as a remote.  
 
 ### 4. Push to Heroku
 You can just push the code to Heroku with the command: 
@@ -445,7 +445,13 @@ In the Settings tab, under Config Vars, add the env variables (SECRET_KEY, MONGO
 
 ![env variables](README_resources/conf-vars.png)
 
-### 6.
+### 6. Open the App
+
+Back in terminal type:
+
+```
+$ heroku ps:scale web=1
+```
 
 You should be able to open the app now, or you might need to Restart all Dynos under the 'More' button on the top right in Heroku.
 
