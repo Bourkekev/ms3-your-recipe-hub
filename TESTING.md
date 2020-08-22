@@ -138,9 +138,11 @@ So first I made sure the user is logged in, and only then allowed the action. Th
 
 ### HTML
 I validated the HTML with the [W3 Validation Service](https://validator.w3.org/). 
-It told me that the following points that i corrected:
+It told me that the following points that I corrected:
  -  `<nav role="navigation">` is unnecessary for element nav, so I removed that from the nav.
  - The 'required' attribute is not valid on an input of type range.
+ - I was missing some image 'Alt' tags.
+ - I had multiple options set as 'selected' in the recipe select Food category. This is not allowed unless it is a multi -select.
 
 ### CSS
 I used the [Autoprefixer Tool](https://autoprefixer.github.io/) to apply browser prefixes.
