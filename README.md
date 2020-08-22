@@ -282,10 +282,22 @@ The photos and vectors used in this site were obtained from:
  - 404 image by [laurentvalentinjospi0](https://pixabay.com/users/laurentvalentinjospi0-986947/) on [Pixabay](https://pixabay.com/photos/dishes-white-plate-stemware-938747/).
  - Courses illustrations were purchased on [shutterstock](https://www.shutterstock.com/image-vector/menu-icons-172235042) and the [other course here](https://www.shutterstock.com/image-vector/vector-hand-drawn-food-meal-on-201739760).
  - Extended Material Design icons from [Material Design Icons](https://materialdesignicons.com/) and are packaged under the [SIL Open Font License 1.1.](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)
-
  - The favicons were generated at https://realfavicongenerator.net/
 
+The recipes images I uploaded to Cloudinary and for testing purposes came from the following sources (mostly Pixabay):
 
+ - [Salmon Teriaki](https://pixabay.com/photos/food-salmon-teriyaki-fish-eat-712665/)
+ - [Vegetable Skewer](https://pixabay.com/photos/vegetable-skewer-paprika-tomato-3317060/)
+ - [Cheesecake](https://pixabay.com/photos/blur-cake-cheesecake-cinnamon-1869227/)
+ - [Asparagus Steak](https://pixabay.com/photos/asparagus-steak-veal-steak-veal-2169305/)
+ - [Pork Spare Ribs](https://pixabay.com/photos/spare-ribs-grill-bbq-sauce-2225208/)
+ - [Smoked Salmon Canapes](https://pixabay.com/photos/appetizer-salmon-canape-cheese-2802/)
+ - [Pancakes](https://pixabay.com/photos/pancakes-maple-syrup-sweet-food-2291908/)
+ - [Potato and Broccoli Bake](https://pixabay.com/photos/broccoli-potato-casserole-cheese-1804446/)
+ - [Tomato and Basil Pizza](https://pixabay.com/photos/pizza-basil-garlic-crust-sauce-1209748/)
+ - [Grilled Chicken](https://pixabay.com/photos/grilled-chicken-quinoa-salad-1334632/)
+ - [Chocolate Cupcakes](https://pixabay.com/photos/cupcakes-dessert-frosting-food-690040/)
+ - [Ribeye Steak](https://www.freepik.com/free-photo/fine-cooked-ribeye-tenderloin-piece-paper_5447680.htm#page=1&query=ribeye&position=15)
 
 ### Acknowledgements
 
