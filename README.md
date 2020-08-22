@@ -356,17 +356,37 @@ For the purposes of testing, you can use the image urls provided in the [Testing
 To run locally, you can clone this repository directly into the editor of your choice. Open a folder where you want to save the project to and then in the terminal paste `git clone https://github.com/Bourkekev/ms3-your-recipe-hub.git`. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal. The project will be now cloned into your folder.
 
 ### 2. Create database on MongoDB
-Create an account on [MongoDb](https://www.mongodb.com/), create a database called 'your_recipe_hub' and construct the 4 collections as shown in my database [diagram](#Database-Schema).
+Create an account on [MongoDb](https://www.mongodb.com/), create a cluster and a database (keeping a note of all passwords) and construct the 5 collections as shown in my database [diagram](#Database-Schema).
 
 ### 3. Install requirements
 
-In terminal type:
+In terminal type (you might need 'sudo' before the following on some environments):
 
 ```
 $ pip3 install -r requirements.txt
 ```
 
-### Create the search index
+### 4. Create `env.py` file
+
+Create a file named `env.py` in the root directory of your project. This is the file you will use to define your environment variables. We need the following data in the env file:
+
+```
+import os
+
+os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY_HERE")
+os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
+os.environ["MONGO_URI"] = ""
+```
+Replace YOUR_SECRET_KEY_HERE with a random string.
+Replace YOUR_DATABASE_NAME with your database name.
+
+You need to get your mongo uri from mongodb. In MongoDB, go to your cluster and click 'connect' button. Select 'Connect your application' from the options. Then select the version of Python you are using, and click the copy button in step 2 to copy the connection string:
+
+![mongodb connect](README_resources/mongo-connect.png)
+
+Paste it into the right side of the MONGO_URI variable in the env file, and replace `<password>` with the password for your username. Replace `<dbname>` with the name of the database.
+
+### 5. Create the search index on MongoDB
 
 Best thing to do is to create the index using the python interpreter. 
  - In your terminal type `python3` (or `python` depending on your system setup). This should open the python interpreter. 
@@ -374,6 +394,60 @@ Best thing to do is to create the index using the python interpreter.
   - Create the text index with `mongo.db.recipes.create_index([("title", "text"), ("short_description", "text")])`. This creates the text search index on the 'title' and 'short_description' fields.
   - Type `quit()` to exit Python interpreter.
 
+### 6. If you want to turn on debug
+
+In the last line of app.py file change from `debug=False` to `debug=True`
+
+### 7. Run the app
+
+You will then be able to run the app locally by typing `python app.py` or  `flask run`. 
+
+## Deployment to Heroku
+
+The web app is hosted on Heroku. The steps to deploy the local app to Heroku are as follows:
+
+### 1. Sign up and log in to Heroku
+
+In Heroku, create an app.  
+
+### 2. Install the Heroku CLI and login
+If you do not have it already, download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+In terminal, login with:
+
+```
+$ heroku login
+```
+
+and login through the browser/preview window. If you’d prefer to stay in the CLI to enter your credentials, you may run `heroku login -i`
+
+### 3. Connect repo to Heroku
+
+In Heroku go to Settings tab. You will find the Heroku git url here. Then in terminal type:
+
+```
+$ git remote add heroku <your heroku git url>
+```
+
+Heroku is now set a remote.  
+
+### 4. Push to Heroku
+You can just push the code to Heroku with the command: 
+```
+$ git push -u heroku master
+```
+
+Alternatively, you can also link a Github repository to Heroku to deploy automatically from GitHub, under the Deploy tab. 
+
+
+### 5. Set environment variables
+
+In the Settings tab, under Config Vars, add the env variables (SECRET_KEY, MONGO_DBNAME, MONGO_URI) we set in the local development, as well as IP to 0.0.0.0 ansd PORT to 5000. Like so:
+
+![env variables](README_resources/conf-vars.png)
+
+### 6.
+
+You should be able to open the app now, or you might need to Restart all Dynos under the 'More' button on the top right in Heroku.
 
 ## Issues I had to overcome
 
