@@ -115,13 +115,24 @@ Currently all users can add, adit and delete categories. You cannot add a catego
 
 Like delete recipe, if you click the delete button, you are given a warning and asked to confirm deletion of the category.
 
-
+### 404 page
+If a user goes to a page that does not exist, they get a custom 404 page, with a redirect back to home.
 
 ## Python Testing
 
 I am aware of unit testing in Python but was unable to incorporate automated testing into the project, so all my testing was done manually.
 
-These tests show what happens if you try to access a view directly, when you do not have access or are not passing a parameter.
+These tests show what happens if you try to access a view directly, when you do not have access or are not passing a parameter. Typically these are not something a normal user would do but there are enough people who might try it.
+
+### Logout
+
+When the user logged out they were redirected to the login page, which was fine. But you can see the logout link when you hover over the logout button and if they were logged out and tried to go to the logout url (/logout) there was an error as the view is expecting a user to pop out of the session. So I added a check to see if there is a user in the session, and if not redirect to login and flash a message asking do they want to login.
+
+### Edit and Delete recipes
+
+It was possible to edit or delete recipes, even with the edit and delete buttons hidden or if you were not logged in, via the url. So you could go to a recipe and change in the url single_recipe/{recipe _id} to edit_recipe/{recipe_id}.
+So first I made sure the user is logged in, and only then allowed the action. The same principle applied for deleting recipes and editing and deleting categories.
+
 
 ## Validation
 
