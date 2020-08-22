@@ -156,14 +156,26 @@ Colours for some buttons, like edit and delete were based on different shades of
 
 #### Fonts
 
-On all the recipe websites I researched, I liked the font used on [Napolina](https://www.napolina.com/recipes/30-minute/rigatoni-with-goats-cheese-and-spinach) as a heading, it really stood out as being slightly different with the narrow 's'. However this font is an Adobe Font called 'Mostra Nuova' and would require a licence (Adobe subscription). So I used Google font's filter options to find a narrow, sans-serif to look for a font with similar properties. The [Yanone Kaffeesatz](https://fonts.google.com/specimen/Yanone+Kaffeesatz) font was a more interesting font than most, as it has some slightly different shaped characters than most other fonts of similar type, the k, r and e being good examples. Google fonts has suggestions for font pairings that would work for each particular font, so I looked throught these for a nice body font. I wanted this font to be wider and easier to read at small sizes and had a bit of a constrast with the headings, so I decided [Montserrat](https://fonts.google.com/specimen/Montserrat) would work well.
+On all the recipe websites I researched, I liked the font used on [Napolina](https://www.napolina.com/recipes/30-minute/rigatoni-with-goats-cheese-and-spinach) as a heading, it really stood out as being slightly different with the narrow 's'. However this font is an Adobe Font called 'Mostra Nuova' and would require a licence (Adobe subscription). So I used Google font's filter options to find a narrow, sans-serif to look for a font with similar properties. The [Yanone Kaffeesatz](https://fonts.google.com/specimen/Yanone+Kaffeesatz) font was a more interesting font than most, as it has some slightly different shaped characters than most other fonts of similar type, the k, r and e being good examples. Google fonts has suggestions for font pairings that would work for each particular font, so I looked through these for a nice body font. I wanted this font to be wider and easier to read at small sizes and had a bit of a contrast with the headings, so I decided [Montserrat](https://fonts.google.com/specimen/Montserrat) would work well.
 This [canva article](https://www.canva.com/learn/the-ultimate-guide-to-font-pairing/) also shows Montserrat working well with Narrower heading fonts.
 
 ### Database Schema
 
-Based on the functionality required and the data to be stored, I created my database structure. The Recipe and Categories documents (or tables) would have fields of the same name, so a recipe can be saved to a course type and a category.
+Based on the functionality required and the data to be stored, I created my database structure. The Recipe and Categories documents (or tables) would have fields of the same name, so a recipe can be saved to a course type and a category. A recipe would also need a user, if users are to log in and have the recipes they create connected to their profile.
+
+For now the users do not need to supply an email, but if this project was to advance, this would most probably be require, for things like forgotten password resets.
+
+The subscribers collection would for now only store an email. This is not actually connected to any newsletter service. In the future, this subscriber email could be connected to the users.
 
 ![Schema](README_resources/recipe-app-DB-diagram.png)
+
+### Defensive Design
+
+An important part of UX is making sure users cannot cause errors, and that they get positive useful feedback if they try to perform an action that they are not allowed to. This includes things like:
+ - A user cannot break the site (or cause an error appear on screen), by pressing buttons out of expected order, or using browser forward and back buttons.
+ - Required Form inputs give warnings or feedback if not filled, or filled correctly.
+ - A user is given feedback if they are not allowed to do something.
+ - A custom '404 page not found' page.
 
 ## Technologies Used
 
@@ -180,6 +192,7 @@ Based on the functionality required and the data to be stored, I created my data
 10. [Font Awesome](https://fontawesome.com/)
 11. Google Fonts
 12. [JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation, and animation of certain elements.
+13. Extended Material Design icons from [Material Design Icons](https://materialdesignicons.com/)
 
 ### Tools Used
 1. [VS Code](https://code.visualstudio.com/) and [Brackets](http://brackets.io/) code editors.
@@ -191,11 +204,24 @@ Based on the functionality required and the data to be stored, I created my data
 7. [Coolor](https://coolors.co/) - Used top help determine the colour scheme.
 8. [The Padwan Project](https://github.com/Eventyret/Padawan) - While I did not use this tool to generate my project's starting point as I started with [Code Institute's Full template](https://github.com/Code-Institute-Org/gitpod-full-template), I did use it as a reference.
 9. [Gloomaps](https://www.gloomaps.com/) - For creating my sitemap.
+10. [Cloudinary](https://cloudinary.com/) for storing recipe images and images for testing with.
 
 
 ## Features
  
 ### Existing Features
+
+#### The ability to browse/search by recipe categories that are on the website.
+
+#### The ability to search recipes by text keyword. 
+
+This search only searches the recipes title and short description fields. I decided against including the ingredients field as there may be too many minor ingredients that cause too many recipes to appear in the results. For example, nearly every recipe could conceivably contain pepper, but if someone was searching for say a bell pepper recipe, they would have all recipes returned. Plus usually people are searching for a dish title or the main ingredient around which the dish is based.
+
+#### The ability to browse by recipe course.
+
+#### The ability to easily print a recipe in a printer friendly format.
+
+On each recipe page there is a print button, which just easily allows the user to print a recipe. There is a print stylesheet that removes elements you would not need/want printed like the navigation, and it only loads on the individual recipe page.
 
 #### Users can only edit their own Recipes
 #### User can view their own recipes
@@ -203,38 +229,45 @@ Based on the functionality required and the data to be stored, I created my data
 By navigating to their profile page a user can view all the recipes that they have submitted to the site.
 
 #### Minor Features
-Expand the sections below for more info on details
+Expand the sections below for more info on details:
 
 <details>
   <summary><strong>Responsive images</strong></summary>
+
 As the recipe images are provided by external users I could not make these smaller for mobile.
 To allow me to use a different image for the 'no recipe image' for mobile I used the `<picture>` element. This allowed me to create a smaller image just for a mobile.
+The large images for the background of the search panel and title panels actually have 5 different size variations depending on the screen width, using CSS media queries.
+
 </details>
 
 <details>
   <summary><strong>Password matching on Register</strong></summary>
+
 There is a 'Confirm Password' field on the register form which compares the 2 password fields, basically by setting the pattern attribute of the 'Confirm password' field to the first using simple JavaScript onchange function. The basics of this are very simple, the onchange function on the first password field sets the pattern attribute on the second field to be the value of the first field.
 If they do not match, on submission the browser notifies the user "Please match the format requested", which means the password comparing is working but the notification is not clear in what it is asking for. This is the browser default for a pattern not matching, but ideally it should says something like "Passwords do not match". I thought I was going to have to find some javascript to change this and was looking on [this article](https://www.the-art-of-web.com/javascript/validate-password/#section_5) and found that the simplest thing to do is to use a title attribute, and most browsers will automatically display that text in case of a missing value or pattern mismatch. So I did not include any additional Javascript for this for the moment.
 I was also going to include a [RegEx polyfill](https://www.the-art-of-web.com/javascript/validate-password/#section_7) because if your password1 contains a '*' or other special regular expression characters, the pattern for password2 can become invalid. But at the moment my password1 field pattern attribute is actually set to just characters from a-z or numbers so this is not required.
+
 </details>
 
 <details>
   <summary><strong>Skip to main content</strong></summary>
 
- There is a 'Skip to main content' link just inside the body tag for accessibility for screen readers. The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is then hidden from view with the bootstrap class 'sr-only', however when it receives focus from keyboard it becomes visible, by basically reversing the Bootstrap CSS properties on focus. This is based on accessibility recommendations from https://webaim.org/techniques/skipnav/. This can be checked by pressing tab when a pages loads.
+ There is a 'Skip to main content' link just inside the body tag for accessibility for screen readers. The main content is not usually the first thing on a web page. Keyboard and screen reader users generally must navigate a long list of navigation links, sub-lists of links, corporate icons, site searches, and other elements before ever arriving at the main content. This is then hidden from view with the class 'sr-only', however when it receives focus from keyboard it becomes visible. This is based on accessibility recommendations from https://webaim.org/techniques/skipnav/. This can be checked by pressing tab when a pages loads, and then pressing tab again should show the next focused element is on the page content and not the logo or navigation.
+
  </details>
 
-##### Form input count
-The text area fields have a max number of characters allowed so I added a simple JavaScript character count on input to give the user an idea of how many characters they have used. This was based on references from [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp).
+##### 
+
+
 
 ### Features to consider implementing in the future
 
  - Additional Categorisation by Cuisine (Italian, Chinese etc...) and tags, like for specific ingredients like eggs or potatoes.
+  
 
 ## Testing
 
-Please see [Testing Document](TESTING.md) for all my testing
-
+Please see [Testing Document](TESTING.md) for all my testing.
 
 ## Deployment
 
@@ -274,7 +307,7 @@ I was first using the POST method from the category select dropdown form on the 
 
 So I changed the form method to GET and got the category selected using request.args. This way the category parameter is passed through the url like /category/?category_name=Chicken. So this url can be reloaded, or copied, shared and opened in a new window and still works. So the user cannot generate an error like was possible with POST.
 
-Similary I then changed the text search form and view to use the GET method, otherwise reloading the search result page cause an error. But using the GET method makes the search results url work if shared or copied to a new window.
+Similarly I then changed the text search form and view to use the GET method, otherwise reloading the search result page cause an error. But using the GET method makes the search results url work if shared or copied to a new window.
 
 ### Materialize select dropdown would not work on mobile
 
@@ -315,6 +348,7 @@ So I thought a better solution would be to set a max-height on the select dropdo
  - Information on message flashing I referenced [Flask Flash docs](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
  - Validation JavaScript for Materialize select - This script was supplied by Code Institute, because by default the materialize select provides no feedback on a required select field that is left blank.
  - Compare registration passwords - I reference [this article](https://www.the-art-of-web.com/javascript/validate-password/#section_5) when looking for a Javascript way to change the 'Confirm Password' field notification of wrong pattern.
+ - Form input count - The text area fields have a max number of characters allowed so I added a simple JavaScript character count on input to give the user an idea of how many characters they have used. This was based on references from [w3schools oninput](https://www.w3schools.com/jsref/event_oninput.asp) and [w3schools output](https://www.w3schools.com/tags/tag_output.asp).
  
 ### Content
 
@@ -331,7 +365,7 @@ The photos and vectors used in this site were obtained from:
  - All recipes page search panel image from [Ella Olsson](https://www.pexels.com/@ella-olsson-572949?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels) on [Pexels](https://www.pexels.com/photo/photo-of-vegetable-salad-in-bowls-1640770/).
  - Image for No Recipe Image by [Daria Yakovleva](https://pixabay.com/users/daria-yakovleva-3938704/) on [Pixabay](https://pixabay.com/photos/food-products-rustic-vegetables-1898194/).
  - 404 image by [laurentvalentinjospi0](https://pixabay.com/users/laurentvalentinjospi0-986947/) on [Pixabay](https://pixabay.com/photos/dishes-white-plate-stemware-938747/).
- - Courses illustrations were purchased on [shutterstock](https://www.shutterstock.com/image-vector/menu-icons-172235042) and the [other course here](https://www.shutterstock.com/image-vector/vector-hand-drawn-food-meal-on-201739760).
+ - Courses illustrations were purchased on [shutterstock](https://www.shutterstock.com/image-vector/menu-icons-172235042) and the ['other' course on shutterstock here](https://www.shutterstock.com/image-vector/vector-hand-drawn-food-meal-on-201739760).
  - Extended Material Design icons from [Material Design Icons](https://materialdesignicons.com/) and are packaged under the [SIL Open Font License 1.1.](https://github.com/Templarian/MaterialDesign/blob/master/LICENSE)
  - The favicons were generated at https://realfavicongenerator.net/
 
